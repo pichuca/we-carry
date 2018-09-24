@@ -8,6 +8,10 @@ const headerStyle = {
 
 const inventoryColumns = [
   {
+    dataField: 'image',
+    text: '',
+  },
+  {
     dataField: 'SKU',
     text: 'SKU o # de referencia',
   },
@@ -28,11 +32,9 @@ const inventoryColumns = [
 const inventoryProducts = [
   {
       SKU: '12345',
-      buyer: 'Antonio Sanchez',
-      products: ['producto 1', 'producto 2', 'producto 3'],
-      tracking: 'Link a pagina de tracking',
-      status: 'En camino',
-      key: 1,
+      name: 'Remera dryfit [ADIDAS]',
+      availability: '32/76',
+      orders: '11',
   },
 ];
 

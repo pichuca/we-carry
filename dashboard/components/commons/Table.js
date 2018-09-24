@@ -8,19 +8,17 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-// Util sorting functions.
-// import { stableSort, getSorting } from './sorting/sorting';
-
-// import './Table.css';
+import ImageAvatar from './Avatar.js';
 
 
 const CustomTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: '#2196f3',
+    backgroundColor: '#0076ff',
     color: theme.palette.common.white,
   },
   body: {
     fontSize: 14,
+    color: '#757575',
   },
 }))(TableCell);
 
@@ -28,6 +26,7 @@ const styles = theme => ({
   root: {
     width: '100%',
     marginTop: theme.spacing.unit * 3,
+    fontFamily: 'Roboto, sans-serif',
   },
   table: {
     minWidth: 700,
@@ -36,16 +35,11 @@ const styles = theme => ({
     '&:nth-of-type(odd)': {
       backgroundColor: theme.palette.background.default,
     },
+    height: 84,
   },
 });
 
-let id = 0;
-function createData(name, calories, fat, carbs, protein) {
-  id += 1;
-  return { id, name, calories, fat, carbs, protein };
-}
-
-function CustomTable(props) {
+const CustomTable = (props) => {
   const { classes, tableHeads, tableName, cols } = props;
 
   return (
@@ -55,25 +49,28 @@ function CustomTable(props) {
       <Table className={classes.table}>       
         <TableHead>
           <TableRow>
-            {tableHeads.map((head) => {
+            {tableHeads.map((head, index) => {
               return (
-                <CustomTableCell numeric={head.isNumeric} key={head.id}>{head.text}</CustomTableCell>
+                <CustomTableCell key={index}>{head.text}</CustomTableCell>
               );
             })}
           </TableRow>
         </TableHead>
         <TableBody>
-          {cols.map(row => {
+          {cols.map((row, index) => {
             return (
-              <TableRow className={classes.row} key={row.id}>
+              <TableRow className={classes.row} key={index}>
+                <CustomTableCell>
+                    <ImageAvatar />
+                </CustomTableCell>
                 <CustomTableCell component="th" scope="row">
                   {row.SKU}
                 </CustomTableCell>
-                <CustomTableCell>{row.buyer}</CustomTableCell>
-                <CustomTableCell>{row.products}</CustomTableCell>
-                <CustomTableCell>{row.tracking}</CustomTableCell>
+                <CustomTableCell>{row.buyer || row.name}</CustomTableCell>
+                <CustomTableCell>{row.products || row.availability}</CustomTableCell>
+                <CustomTableCell>{row.tracking || row.orders}</CustomTableCell>
 
-                {cols.length === 5 ? <CustomTableCell>{row.status}</CustomTableCell>: null}
+                {cols.length === 6 ? <CustomTableCell>{row.status}</CustomTableCell>: null}
               </TableRow>
             );
           })}

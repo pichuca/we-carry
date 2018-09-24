@@ -4,28 +4,49 @@ const linkStyle = {
     marginRight: 15,
 };
 
+const linksContent = [
+    {
+        label: 'Inicio',
+        route: '/',
+        id: 1,
+    },
+    {
+        label: 'Inventario',
+        route: '/inventory',
+        id: 2,
+    },
+    {
+        label: 'Pedidos',
+        route: '/orders',
+        id: 3,
+    },
+    {
+        label: 'Solicitudes',
+        route: '/entries',
+        id: 4,
+    },
+    {
+        label: 'Reportes y Estadísticas',
+        route: '/reports',
+        id: 5,
+    },
+    {
+        label: 'Configuración',
+        route: '/configuration',
+        id: 6,
+    }
+];
+
 const Header = () => (
     <div className="header-wrapper">
       <nav>
         <div className="links">
-            <Link href="/">
-                <a style={linkStyle}>Inicio</a>
-            </Link>
-            <Link href="/inventory">
-                <a style={linkStyle}>Inventario</a>
-            </Link>
-            <Link href="/orders">
-                <a style={linkStyle}>Pedidos</a>
-            </Link>
-            <Link href="/entries">
-                <a style={linkStyle}>Solicitudes</a>
-            </Link>
-            <Link href="/reports">
-                <a style={linkStyle}>Reportes y Estadísticas</a>
-            </Link>
-            <Link href="/configuration">
-                <a style={linkStyle}>Configuración</a>
-            </Link>
+            {linksContent.map((link, index) => {
+                return (
+                    <Link href={link.route} key={index}>
+                        <a style={linkStyle}>{link.label}</a>
+                    </Link>)
+            })}
         </div>
       </nav>
         <style jsx>{`
@@ -50,6 +71,9 @@ const Header = () => (
                 font-size: 0.8rem;
                 font-weight: 300;
                 letter-spacing: 0.1rem;
+            }
+            a:hover {
+                color: #0076ff;
             }
         `}</style>
     </div>
