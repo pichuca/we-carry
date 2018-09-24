@@ -1,6 +1,11 @@
 import Head from 'next/head'
 import Layout from '../components/commons/Layout.js';
 
+const headerStyle = {
+    color: '#0076ff',
+    fontWeight: 600,
+};
+
 const Index = () => (
   <div className="app-container">
     <Head>
@@ -8,7 +13,7 @@ const Index = () => (
       <title>We Carry - Dashboard</title>
     </Head>
     <Layout>
-        <p>We Carry dashboard</p>
+        <h1 style={headerStyle}>We Carry dashboard</h1>
     </Layout>
   </div>
 )  

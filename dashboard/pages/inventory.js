@@ -43,6 +43,6 @@ const emptyMessage = 'No hay productos para mostrar en su inventario.';
 export default () => (
   <Layout>
     <h1 style={headerStyle}>Inventario</h1>
-    <CustomTable tableHeads={inventoryColumns} cols={inventoryProducts} />
+    <CustomTable tableHeads={inventoryColumns} cols={inventoryProducts} type={'inventory'} />
   </Layout>
 )

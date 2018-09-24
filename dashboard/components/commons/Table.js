@@ -7,6 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Link from 'next/link';
 
 import ImageAvatar from './Avatar.js';
 
@@ -40,12 +41,11 @@ const styles = theme => ({
 });
 
 const CustomTable = (props) => {
-  const { classes, tableHeads, tableName, cols } = props;
+  const { classes, tableHeads, cols, type } = props;
 
   return (
    
     <Paper className={classes.root}>
-      <h2 className="ui-table-title">{tableName}</h2>
       <Table className={classes.table}>       
         <TableHead>
           <TableRow>
@@ -60,17 +60,22 @@ const CustomTable = (props) => {
           {cols.map((row, index) => {
             return (
               <TableRow className={classes.row} key={index}>
-                <CustomTableCell>
-                    <ImageAvatar />
-                </CustomTableCell>
+                {type === 'inventory'? <CustomTableCell><ImageAvatar /></CustomTableCell>: null}
                 <CustomTableCell component="th" scope="row">
-                  {row.SKU}
+                  <Link href={`http://localhost:3000/products/${row.SKU}`}>
+                    <a target="_blank">{row.SKU}</a>
+                  </Link>
                 </CustomTableCell>
-                <CustomTableCell>{row.buyer || row.name}</CustomTableCell>
+                <CustomTableCell>
+                    {/* { type === 'inventory' ? row.buyer.name : null } */}
+                    {/* { type === 'orders' ? row.name : null } */}
+                    <br />
+                    {/* {row.buyer.email ? row.buyer.email : null} */}
+                </CustomTableCell>
                 <CustomTableCell>{row.products || row.availability}</CustomTableCell>
                 <CustomTableCell>{row.tracking || row.orders}</CustomTableCell>
 
-                {cols.length === 6 ? <CustomTableCell>{row.status}</CustomTableCell>: null}
+                {type === 'orders' ? <CustomTableCell>{row.status}</CustomTableCell>: null}
               </TableRow>
             );
           })}

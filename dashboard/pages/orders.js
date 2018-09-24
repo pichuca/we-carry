@@ -1,4 +1,10 @@
 import Layout from '../components/commons/Layout.js'
+import CustomTable from '../components/commons/Table.js'
+
+const headerStyle = {
+    color: '#0076ff',
+    fontWeight: 600,
+};
 
 const inventoryColumns = [
     {
@@ -26,7 +32,7 @@ const inventoryColumns = [
 const inventoryProducts = [
     {
         SKU: '12345',
-        buyer: 'Antonio Sanchez',
+        buyer: { name: 'Antonio Sanchez', email: 'antoniosanchez@gmail.com'},
         products: ['producto 1', 'producto 2', 'producto 3'],
         tracking: 'Link a pagina de tracking',
         status: 'En camino',
@@ -36,6 +42,7 @@ const inventoryProducts = [
 
 export default () => (
   <Layout>
-    <p>Pedidos</p>
+    <h1 style={headerStyle}>Pedidos</h1>
+    <CustomTable tableHeads={inventoryColumns} cols={inventoryProducts} type={'orders'} />
   </Layout>
 )
