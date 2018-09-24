@@ -17,6 +17,15 @@ const Header = () => (
             <Link href="/orders">
                 <a style={linkStyle}>Pedidos</a>
             </Link>
+            <Link href="/entries">
+                <a style={linkStyle}>Solicitudes</a>
+            </Link>
+            <Link href="/reports">
+                <a style={linkStyle}>Reportes y Estadísticas</a>
+            </Link>
+            <Link href="/configuration">
+                <a style={linkStyle}>Configuración</a>
+            </Link>
         </div>
       </nav>
         <style jsx>{`
@@ -38,7 +47,7 @@ const Header = () => (
             a {
                 text-decoration: none;
                 color: #757575;
-                font-size: 1rem;
+                font-size: 0.8rem;
                 font-weight: 300;
                 letter-spacing: 0.1rem;
             }

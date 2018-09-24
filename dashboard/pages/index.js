@@ -10,13 +10,6 @@ const Index = () => (
     <Layout>
         <p>We Carry dashboard</p>
     </Layout>
-    <style jsx>
-        {`
-            .links a {
-              font-weight: 300;
-            }
-        `}
-    </style>
   </div>
 )  
 export default Index
