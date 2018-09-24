@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -498,7 +498,7 @@ var CustomTable = function CustomTable(props) {
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_9___default.a, {
-      href: "http://localhost:3000/products/".concat(row.SKU),
+      href: "/products/".concat(row.SKU),
       __source: {
         fileName: _jsxFileName,
         lineNumber: 65
@@ -624,7 +624,7 @@ var emptyMessage = 'No hay productos para mostrar en su inventario.';
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!**********************************!*\
   !*** multi ./pages/inventory.js ***!
   \**********************************/

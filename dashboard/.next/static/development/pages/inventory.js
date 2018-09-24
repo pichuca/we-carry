@@ -405,7 +405,7 @@ var CustomTable = function CustomTable(props) {
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_9___default.a, {
-      href: "http://localhost:3000/products/".concat(row.SKU),
+      href: "/products/".concat(row.SKU),
       __source: {
         fileName: _jsxFileName,
         lineNumber: 65
@@ -20327,7 +20327,7 @@ var emptyMessage = 'No hay productos para mostrar en su inventario.';
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!**********************************!*\
   !*** multi ./pages/inventory.js ***!
   \**********************************/
@@ -20352,5 +20352,5 @@ module.exports = dll_5d62d38be3592dca3a42;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]));;
+},[[4,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=inventory.js.map
