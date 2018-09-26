@@ -150,7 +150,7 @@ var CustomTable = function CustomTable(props) {
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_9___default.a, {
-      href: "/products/".concat(row.SKU),
+      href: "/products/?sku=".concat(row.SKU),
       __source: {
         fileName: _jsxFileName,
         lineNumber: 65
@@ -205,4 +205,4 @@ CustomTable.propTypes = {
 /***/ })
 
 })
-//# sourceMappingURL=inventory.js.8215ddd39aa4d12307a2.hot-update.js.map
+//# sourceMappingURL=inventory.js.c39b8904289fabf0090b.hot-update.js.map

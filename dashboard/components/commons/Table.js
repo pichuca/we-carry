@@ -62,7 +62,7 @@ const CustomTable = (props) => {
               <TableRow className={classes.row} key={index}>
                 {type === 'inventory'? <CustomTableCell><ImageAvatar /></CustomTableCell>: null}
                 <CustomTableCell component="th" scope="row">
-                  <Link href={`/products/${row.SKU}`}>
+                  <Link href={`/product?sku=${row.SKU}&name=${row.name}`}>
                     <a target="_blank">{row.SKU}</a>
                   </Link>
                 </CustomTableCell>

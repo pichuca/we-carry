@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -552,10 +552,10 @@ CustomTable.propTypes = {
 
 /***/ }),
 
-/***/ "./pages/inventory.js":
-/*!****************************!*\
-  !*** ./pages/inventory.js ***!
-  \****************************/
+/***/ "./pages/orders.js":
+/*!*************************!*\
+  !*** ./pages/orders.js ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -565,7 +565,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_commons_Layout_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/commons/Layout.js */ "./components/commons/Layout.js");
 /* harmony import */ var _components_commons_Table_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/commons/Table.js */ "./components/commons/Table.js");
-var _jsxFileName = "/Users/saroibon/Documents/Salvador/projects/we-carry-dev/we-carry/dashboard/pages/inventory.js";
+var _jsxFileName = "/Users/saroibon/Documents/Salvador/projects/we-carry-dev/we-carry/dashboard/pages/orders.js";
 
 
 
@@ -574,28 +574,32 @@ var headerStyle = {
   fontWeight: 600
 };
 var inventoryColumns = [{
-  dataField: 'image',
-  text: ''
-}, {
   dataField: 'SKU',
   text: 'SKU o # de referencia'
 }, {
-  dataField: 'name',
-  text: 'Nombre'
+  dataField: 'buyer',
+  text: 'Comprador'
 }, {
-  dataField: 'availability',
-  text: 'Disponibilidad'
+  dataField: 'products',
+  text: 'Productos'
 }, {
-  dataField: 'ordered',
-  text: 'Pedidos'
+  dataField: 'tracking',
+  text: 'Tracking'
+}, {
+  dataField: 'status',
+  text: 'Estado'
 }];
 var inventoryProducts = [{
   SKU: '12345',
-  name: 'Remera dryfit [ADIDAS]',
-  availability: '32/76',
-  orders: '11'
+  buyer: {
+    name: 'Antonio Sanchez',
+    email: 'antoniosanchez@gmail.com'
+  },
+  products: ['producto 1', 'producto 2', 'producto 3'],
+  tracking: 'Link a pagina de tracking',
+  status: 'En camino',
+  key: 1
 }];
-var emptyMessage = 'No hay productos para mostrar en su inventario.';
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_commons_Layout_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
@@ -610,10 +614,10 @@ var emptyMessage = 'No hay productos para mostrar en su inventario.';
       lineNumber: 45
     },
     __self: this
-  }, "Inventario"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_commons_Table_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, "Pedidos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_commons_Table_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
     tableHeads: inventoryColumns,
     cols: inventoryProducts,
-    type: 'inventory',
+    type: 'orders',
     __source: {
       fileName: _jsxFileName,
       lineNumber: 46
@@ -624,14 +628,14 @@ var emptyMessage = 'No hay productos para mostrar en su inventario.';
 
 /***/ }),
 
-/***/ 4:
-/*!**********************************!*\
-  !*** multi ./pages/inventory.js ***!
-  \**********************************/
+/***/ 5:
+/*!*******************************!*\
+  !*** multi ./pages/orders.js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./pages/inventory.js */"./pages/inventory.js");
+module.exports = __webpack_require__(/*! ./pages/orders.js */"./pages/orders.js");
 
 
 /***/ }),
@@ -769,4 +773,4 @@ module.exports = require("styled-jsx/style");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=inventory.js.map
+//# sourceMappingURL=orders.js.map
