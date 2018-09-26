@@ -20327,7 +20327,7 @@ var emptyMessage = 'No hay productos para mostrar en su inventario.';
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!**********************************!*\
   !*** multi ./pages/inventory.js ***!
   \**********************************/
@@ -20352,5 +20352,5 @@ module.exports = dll_5d62d38be3592dca3a42;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]));;
+},[[3,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=inventory.js.map
