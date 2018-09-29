@@ -9,12 +9,12 @@ app.prepare()
     .then(() => {
         const server = express();
 
-        // server.get('/p/:sku', (req, res) => {
-        //     const actualPage = '/product'
-        //     const queryParams = { sku: req.params.id, name: req.params.name } 
-        //     app.render(req, res, actualPage, queryParams)
-        // })
-
+        server.get('/p/:sku/:name', (req, res) => {
+            const actualPage = '/product';
+            const queryParams = { sku: req.params.sku };
+            app.render(req, res, actualPage, queryParams);
+        });
+        
         server.get('*', (req, res) => {
             return handle(req, res);
         });
