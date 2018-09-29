@@ -40,9 +40,20 @@ const inventoryProducts = [
 
 const emptyMessage = 'No hay productos para mostrar en su inventario.';
 
-export default () => (
-  <Layout>
-    <h1 style={headerStyle}>Inventario</h1>
-    <CustomTable tableHeads={inventoryColumns} cols={inventoryProducts} type={'inventory'} />
-  </Layout>
-)
+class Inventory extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <Layout>
+        <h1 style={headerStyle}>Inventario</h1>
+        <CustomTable tableHeads={inventoryColumns} cols={inventoryProducts} type={'inventory'} />
+      </Layout>
+    );
+  }
+}
+
+export default Inventory;
