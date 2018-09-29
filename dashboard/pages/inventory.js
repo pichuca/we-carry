@@ -1,5 +1,6 @@
 import Layout from '../components/commons/Layout.js'
 import CustomTable from '../components/commons/Table.js'
+import Button from '@material-ui/core/Button'
 
 const headerStyle = {
   color: '#0076ff',
@@ -46,10 +47,28 @@ class Inventory extends React.Component {
     this.state = {};
   }
 
+  handleFilterClick(event) {
+    console.log(event);
+    console.log('Click on filter button');
+  }
+
   render() {
+    const Filter = (props) => {
+      return (
+        <div className="ui-filter">
+          <div className="ui-filter-buttons">
+           {props.list.map((button, index) => {
+             return <Button variant="contained" color="primary" onClick={this.handleFilterClick} key={index}>{button.label}</Button>
+           })}
+          </div>
+        </div>
+      );
+    }
+    const buttonList = [{label: 'Todos'}, {label: 'Con stock'}, {label: 'Por agotarse'}, {label: 'Sin stock'}]
     return (
       <Layout>
         <h1 style={headerStyle}>Inventario</h1>
+        <Filter list={buttonList} />
         <CustomTable tableHeads={inventoryColumns} cols={inventoryProducts} type={'inventory'} />
       </Layout>
     );
