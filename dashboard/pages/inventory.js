@@ -59,7 +59,6 @@ class Inventory extends React.Component {
   }
 
   handleFilterClick(event) {
-    console.log('clicked:', event.currentTarget.id);
     const clickedFilterID = event.currentTarget.id;
     this.setState({
       clicked: clickedFilterID,

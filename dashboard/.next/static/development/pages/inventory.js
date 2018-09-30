@@ -23411,7 +23411,6 @@ function (_React$Component) {
   _createClass(Inventory, [{
     key: "handleFilterClick",
     value: function handleFilterClick(event) {
-      console.log('clicked:', event.currentTarget.id);
       var clickedFilterID = event.currentTarget.id;
       this.setState({
         clicked: clickedFilterID
