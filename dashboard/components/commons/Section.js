@@ -1,20 +1,15 @@
 
 const sectionStyle = {
-  margin: 20,
+  margin: '78px 10px 10px',
   padding: 20,
-  border: '1px solid #DDD'
+  border: '1px solid #DDD',
+  borderRadius: 5,
+  fontFamily: "'Roboto', sans-serif",
 };
 
 const Section = (props) => (
   <section style={sectionStyle}>
     {props.children}
-    <style jsx>{`
-      section {
-        font-family: 'Roboto', sans-serif;
-        margin: 78px 10px 10px !important;
-        border-radius: 5px;
-      }
-    `}</style>
   </section>
 );
 
