@@ -7,6 +7,6 @@ const headerStyle = {
 
 export default () => (
   <Layout>
-    <h1 style={headerStyle}>Reportes y Configuración</h1>
+    <h1 style={headerStyle}>Estadísticas</h1>
   </Layout>
 )

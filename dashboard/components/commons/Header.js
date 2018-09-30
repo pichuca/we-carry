@@ -28,11 +28,6 @@ const anchorStyles = {
 
 const linksContent = [
     {
-        label: 'Inicio',
-        route: '/',
-        id: 1,
-    },
-    {
         label: 'Inventario',
         route: '/inventory',
         id: 2,
@@ -48,8 +43,8 @@ const linksContent = [
         id: 4,
     },
     {
-        label: 'Reportes y Estadísticas',
-        route: '/reports',
+        label: 'Estadísticas',
+        route: '/stats',
         id: 5,
     },
     {
@@ -65,7 +60,7 @@ const Header = () => (
         <div className="links" style={linksStyles}>
             {linksContent.map((link, index) => {
                 return (
-                    <Link href={link.route} key={index}>
+                    <Link prefetch href={link.route} key={index}>
                         <a style={anchorStyles}>{link.label}</a>
                     </Link>)
             })}
