@@ -1,8 +1,30 @@
 import Link from 'next/link'
 
-const linkStyle = {
+const wrapperStyles = {
+    width: '100%',
+    height: 64,
+    fontFamily: "'Roboto', sans-serif",
+    boxShadow: '0px 6px 20px rgba(0, 0, 0, 0.06)',
+    position: 'fixed',
+    top: 0,
+    backgroundColor: '#FFFFFF',
+}
+
+const linksStyles = {
+    width: '100%',
+    margin: '0 auto',
+    padding: '1.5rem',
+    textAlign: 'left',
+}
+
+const anchorStyles = {
+    textDecoration: 'none',
+    color: '#757575',
+    fontSize: '0.8rem',
+    fontWeight: 300,
+    letterSpacing: '0.1rem',
     marginRight: 15,
-};
+}
 
 const linksContent = [
     {
@@ -38,42 +60,20 @@ const linksContent = [
 ];
 
 const Header = () => (
-    <div className="header-wrapper">
+    <div className="header-wrapper" style={wrapperStyles}>
       <nav>
-        <div className="links">
+        <div className="links" style={linksStyles}>
             {linksContent.map((link, index) => {
                 return (
                     <Link href={link.route} key={index}>
-                        <a style={linkStyle}>{link.label}</a>
+                        <a style={anchorStyles}>{link.label}</a>
                     </Link>)
             })}
         </div>
       </nav>
         <style jsx>{`
-            .header-wrapper {
-                width: 100%;
-                height: 64px;
-                font-family: 'Roboto', sans-serif;
-                box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.06);
-                position: fixed;
-                top: 0px;
-                background-color: #FFFFFF;
-            }
-            .links {
-                width: 100%;
-                margin: 0 auto;
-                padding: 1.5rem;
-                text-align: left;
-            }
-            a {
-                text-decoration: none;
-                color: #757575;
-                font-size: 0.8rem;
-                font-weight: 300;
-                letter-spacing: 0.1rem;
-            }
-            a:hover {
-                color: #0076ff;
+            .links a:hover {
+                color: #0076ff !important;
             }
         `}</style>
     </div>

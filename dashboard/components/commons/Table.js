@@ -68,8 +68,8 @@ const CustomTable = (props) => {
                   </Link>
                 </CustomTableCell>
                 <CustomTableCell>
-                    {/* { type === 'inventory' ? row.buyer.name : null } */}
-                    {/* { type === 'orders' ? row.name : null } */}
+                    { type === 'orders' ? row.buyer.name : null }
+                    { type === 'inventory' ? row.name : null }
                     <br />
                     {/* {row.buyer.email ? row.buyer.email : null} */}
                 </CustomTableCell>
