@@ -562,7 +562,7 @@ function (_React$Component) {
           className: _this2.state.clicked === 'all' ? 'selected' : '',
           variant: "outlined",
           onClick: _this2.handleFilterClick.bind(_this2)
-        }, "All"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        }, "Todos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
           id: "withStock",
           style: buttonStyles,
           className: _this2.state.clicked === 'withStock' ? 'selected' : '',

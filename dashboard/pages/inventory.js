@@ -71,7 +71,7 @@ class Inventory extends React.Component {
         <div className="ui-filter">
           <div className="ui-filter-buttons">
              <Button id="all" style={buttonStyles} className={this.state.clicked === 'all' ? 'selected' : ''} variant="outlined" onClick={this.handleFilterClick.bind(this)}>
-               All
+               Todos
              </Button>
              <Button id="withStock" style={buttonStyles} className={this.state.clicked === 'withStock' ? 'selected' : ''} variant="outlined" onClick={this.handleFilterClick.bind(this)}>
                Con Stock
