@@ -1,10 +1,26 @@
 {
-  "/Users/saroibon/Documents/Salvador/projects/we-carry-dev/we-carry/dashboard/noop": [
+  "./noop": [
     {
       "id": "./node_modules/next/dist/client/noop.js",
       "name": "./node_modules/next/dist/client/noop.js",
       "file": "static/chunks/0.js",
       "publicPath": "static/chunks/0.js"
+    }
+  ],
+  "./css/inventory.css": [
+    {
+      "id": "./pages/css/inventory.css",
+      "name": "./pages/css/inventory.css",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "undefined": [
+    {
+      "id": 4,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
     }
   ]
 }

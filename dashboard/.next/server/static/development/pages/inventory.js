@@ -435,6 +435,17 @@ CustomTable.propTypes = {
 
 /***/ }),
 
+/***/ "./pages/css/inventory.css":
+/*!*********************************!*\
+  !*** ./pages/css/inventory.css ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
 /***/ "./pages/inventory.js":
 /*!****************************!*\
   !*** ./pages/inventory.js ***!
@@ -450,6 +461,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_commons_Table_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/commons/Table.js */ "./components/commons/Table.js");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _css_inventory_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./css/inventory.css */ "./pages/css/inventory.css");
+/* harmony import */ var _css_inventory_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_css_inventory_css__WEBPACK_IMPORTED_MODULE_4__);
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -473,6 +486,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var headerStyle = {
   color: '#0076ff',
   fontWeight: 600
@@ -480,7 +494,8 @@ var headerStyle = {
 var buttonStyles = {
   color: '#0076ff',
   border: '0',
-  marginRight: '15px'
+  marginRight: '15px',
+  textDecoration: 'capitalize'
 };
 var inventoryColumns = [{
   dataField: 'image',
@@ -517,50 +532,61 @@ function (_React$Component) {
     _classCallCheck(this, Inventory);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Inventory).call(this, props));
-    _this.state = {};
+    _this.state = {
+      clickedFilter: null
+    };
     return _this;
   }
 
   _createClass(Inventory, [{
     key: "handleFilterClick",
     value: function handleFilterClick(event) {
-      console.log(event.currentTarget);
-      console.log('Click on filter button');
+      console.log('clicked:', event.currentTarget.id);
+      var clickedFilterID = event.currentTarget.id;
+      this.setState({
+        clicked: clickedFilterID
+      });
     }
   }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      var Filter = function Filter(props) {
+      var Filter = function Filter() {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "ui-filter"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "ui-filter-buttons"
-        }, props.list.map(function (button, index) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
-            style: buttonStyles,
-            variant: "outlined",
-            onClick: _this2.handleFilterClick,
-            key: index
-          }, button.label);
-        })));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+          id: "all",
+          style: buttonStyles,
+          className: _this2.state.clicked === 'all' ? 'selected' : '',
+          variant: "outlined",
+          onClick: _this2.handleFilterClick.bind(_this2)
+        }, "All"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+          id: "withStock",
+          style: buttonStyles,
+          className: _this2.state.clicked === 'withStock' ? 'selected' : '',
+          variant: "outlined",
+          onClick: _this2.handleFilterClick.bind(_this2)
+        }, "Con Stock"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+          id: "lastInStock",
+          style: buttonStyles,
+          className: _this2.state.clicked === 'lastInStock' ? 'selected' : '',
+          variant: "outlined",
+          onClick: _this2.handleFilterClick.bind(_this2)
+        }, "Por agotarse"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+          id: "noStock",
+          style: buttonStyles,
+          className: _this2.state.clicked === 'noStock' ? 'selected' : '',
+          variant: "outlined",
+          onClick: _this2.handleFilterClick.bind(_this2)
+        }, "Sin Stock")));
       };
 
-      var buttonList = [{
-        label: 'Todos'
-      }, {
-        label: 'Con stock'
-      }, {
-        label: 'Por agotarse'
-      }, {
-        label: 'Sin stock'
-      }];
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_commons_Layout_js__WEBPACK_IMPORTED_MODULE_1__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         style: headerStyle
-      }, "Inventario"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Filter, {
-        list: buttonList
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_commons_Table_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, "Inventario"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Filter, null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_commons_Table_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
         tableHeads: inventoryColumns,
         cols: inventoryProducts,
         type: 'inventory'

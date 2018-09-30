@@ -2,6 +2,8 @@ import Layout from '../components/commons/Layout.js'
 import CustomTable from '../components/commons/Table.js'
 import Button from '@material-ui/core/Button'
 
+import './css/inventory.css'
+
 const headerStyle = {
   color: '#0076ff',
   fontWeight: 600,
@@ -11,6 +13,7 @@ const buttonStyles = {
   color: '#0076ff',
   border: '0',
   marginRight: '15px',
+  textDecoration: 'capitalize',
 }
 
 const inventoryColumns = [
@@ -50,31 +53,44 @@ const emptyMessage = 'No hay productos para mostrar en su inventario.';
 class Inventory extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      clickedFilter: null
+    };
   }
 
   handleFilterClick(event) {
-    console.log(event.currentTarget);
-    console.log('Click on filter button');
+    console.log('clicked:', event.currentTarget.id);
+    const clickedFilterID = event.currentTarget.id;
+    this.setState({
+      clicked: clickedFilterID,
+    });
   }
 
   render() {
-    const Filter = (props) => {
+    const Filter = () => {
       return (
         <div className="ui-filter">
           <div className="ui-filter-buttons">
-           {props.list.map((button, index) => {
-             return <Button style={buttonStyles} variant="outlined" onClick={this.handleFilterClick} key={index}>{button.label}</Button>
-           })}
+             <Button id="all" style={buttonStyles} className={this.state.clicked === 'all' ? 'selected' : ''} variant="outlined" onClick={this.handleFilterClick.bind(this)}>
+               All
+             </Button>
+             <Button id="withStock" style={buttonStyles} className={this.state.clicked === 'withStock' ? 'selected' : ''} variant="outlined" onClick={this.handleFilterClick.bind(this)}>
+               Con Stock
+             </Button>
+             <Button id="lastInStock" style={buttonStyles} className={this.state.clicked === 'lastInStock' ? 'selected' : ''} variant="outlined" onClick={this.handleFilterClick.bind(this)}>
+               Por agotarse
+             </Button>
+             <Button id="noStock" style={buttonStyles} className={this.state.clicked === 'noStock' ? 'selected' : ''}  variant="outlined" onClick={this.handleFilterClick.bind(this)}>
+               Sin Stock
+             </Button>
           </div>
         </div>
       );
     }
-    const buttonList = [{label: 'Todos'}, {label: 'Con stock'}, {label: 'Por agotarse'}, {label: 'Sin stock'}]
     return (
       <Layout>
         <h1 style={headerStyle}>Inventario</h1>
-        <Filter list={buttonList} />
+        <Filter />
         <CustomTable tableHeads={inventoryColumns} cols={inventoryProducts} type={'inventory'} />
       </Layout>
     );
