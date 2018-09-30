@@ -7,6 +7,12 @@ const headerStyle = {
   fontWeight: 600,
 };
 
+const buttonStyles = {
+  color: '#0076ff',
+  border: '0',
+  marginRight: '15px',
+}
+
 const inventoryColumns = [
   {
     dataField: 'image',
@@ -48,7 +54,7 @@ class Inventory extends React.Component {
   }
 
   handleFilterClick(event) {
-    console.log(event);
+    console.log(event.currentTarget);
     console.log('Click on filter button');
   }
 
@@ -58,7 +64,7 @@ class Inventory extends React.Component {
         <div className="ui-filter">
           <div className="ui-filter-buttons">
            {props.list.map((button, index) => {
-             return <Button variant="contained" color="primary" onClick={this.handleFilterClick} key={index}>{button.label}</Button>
+             return <Button style={buttonStyles} variant="outlined" onClick={this.handleFilterClick} key={index}>{button.label}</Button>
            })}
           </div>
         </div>

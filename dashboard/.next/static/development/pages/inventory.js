@@ -23358,6 +23358,11 @@ var headerStyle = {
   color: '#0076ff',
   fontWeight: 600
 };
+var buttonStyles = {
+  color: '#0076ff',
+  border: '0',
+  marginRight: '15px'
+};
 var inventoryColumns = [{
   dataField: 'image',
   text: ''
@@ -23400,7 +23405,7 @@ function (_React$Component) {
   _createClass(Inventory, [{
     key: "handleFilterClick",
     value: function handleFilterClick(event) {
-      console.log(event);
+      console.log(event.currentTarget);
       console.log('Click on filter button');
     }
   }, {
@@ -23415,8 +23420,8 @@ function (_React$Component) {
           className: "ui-filter-buttons"
         }, props.list.map(function (button, index) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
-            variant: "contained",
-            color: "primary",
+            style: buttonStyles,
+            variant: "outlined",
             onClick: _this2.handleFilterClick,
             key: index
           }, button.label);
@@ -23470,7 +23475,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!**********************************!*\
   !*** multi ./pages/inventory.js ***!
   \**********************************/
@@ -23495,5 +23500,5 @@ module.exports = dll_5d62d38be3592dca3a42;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]));;
+},[[3,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=inventory.js.map
