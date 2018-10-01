@@ -9,9 +9,9 @@ app.prepare()
     .then(() => {
         const server = express();
 
-        server.get('/p/:sku/:name', (req, res) => {
+        server.get('/product/:sku/:name', (req, res) => {
             const actualPage = '/product';
-            const queryParams = { sku: req.params.sku };
+            const queryParams = { sku: req.params.sku, name: req.params.name };
             app.render(req, res, actualPage, queryParams);
         });
         

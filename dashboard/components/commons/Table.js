@@ -63,7 +63,7 @@ const CustomTable = (props) => {
                 {type === 'inventory'? <CustomTableCell><ImageAvatar /></CustomTableCell>: null}
                 <CustomTableCell component="th" scope="row">
                   {/* <Link  as={`/product/${row.SKU}`} href={`/product?sku=${row.SKU}&name=${row.name}`}> */}
-                  <Link as={`/product/${row.SKU}`} href={`/product?sku=${row.SKU}&name=${row.name}`}>
+                  <Link as={`/product/${row.SKU}/${row.name}`} href={`/product?sku=${row.SKU}&name=${row.name}`}>
                     <a>{row.SKU}</a>
                   </Link>
                 </CustomTableCell>
