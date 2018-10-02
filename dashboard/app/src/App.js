@@ -11,6 +11,7 @@ import Configuration from './components/sections/configuration/Configuration';
 
 // import logo from './logo.svg';
 import './App.css';
+import './components/sections/Sections.css';
 
 class App extends Component {
   render() {
