@@ -1,26 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {  BrowserRouter as Router, Route } from 'react-router-dom';
+import Header from './components/header/Header';
+
+// Sections
+import Inventory from './components/sections/inventory/Inventory';
+import Orders from './components/sections/orders/Orders';
+import Entries from './components/sections/entries/Entries';
+import Stats from './components/sections/stats/Stats';
+import Configuration from './components/sections/configuration/Configuration';
+
+// import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div className="App">
+          <Header />
+          <div className="sections">
+            {/* Sections. */}
+            <Route exact path="/inventory" component={Inventory} />
+            <Route path="/orders" component={Orders} />
+            <Route path="/entries" component={Entries} />
+            <Route path="/stats" component={Stats} />
+            <Route path="/configuration" component={Configuration} />
+          </div>
+        </div>
+      </Router>
     );
   }
 }
