@@ -20,6 +20,7 @@ class App extends Component {
           <Header />
           <div className="sections">
             {/* Sections. */}
+            <Route exact path="/" component={Inventory} />
             <Route exact path="/inventory" component={Inventory} />
             <Route path="/orders" component={Orders} />
             <Route path="/entries" component={Entries} />
