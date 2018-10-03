@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import SimpleTable from '../../../components/table/SimpleTable';
+import EnancedTable from '../../../components/table/EnancedTable';
 
 class Inventory extends Component {
   render() {
     return (
       <React.Fragment>
         <h1>Inventory</h1>
-        <SimpleTable />
+        <EnancedTable />
       </React.Fragment>
     );
   }
