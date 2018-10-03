@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, location } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import './Header.css';
 
@@ -13,7 +13,6 @@ class Header extends Component {
     return window.location.pathname.includes(match);
   }
   render() {
-    const selectedLink = this.state.selectedLink;
     return (
     <React.Fragment>
         <header className="App-header">
