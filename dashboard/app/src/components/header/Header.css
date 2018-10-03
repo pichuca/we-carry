@@ -20,9 +20,9 @@ header .links {
 
 header .links a {
     text-decoration: none;
-    color: #757575;
+    color: #000000;
     font-size: 0.8rem;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 0.1rem;
     margin-right: 15px;
     font-family: 'Roboto', sans-serif;
@@ -30,10 +30,10 @@ header .links a {
 }
 
 header .links a:hover,
-header .links a.selected {
+header .links .selected {
   color: #0076ff !important;
 }
 
-header .links a.selected {
+header .links .selected {
     font-weight: 700;
 }

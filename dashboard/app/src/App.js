@@ -9,6 +9,9 @@ import Entries from './components/sections/entries/Entries';
 import Stats from './components/sections/stats/Stats';
 import Configuration from './components/sections/configuration/Configuration';
 
+// Single pages
+import Product from './components/single-pages/Product';
+
 // import logo from './logo.svg';
 import './App.css';
 import './components/sections/Sections.css';
@@ -27,6 +30,7 @@ class App extends Component {
             <Route path="/entries" component={Entries} />
             <Route path="/stats" component={Stats} />
             <Route path="/configuration" component={Configuration} />
+            <Route path="/product/:sku/:name" component={Product} />
           </div>
         </div>
       </Router>

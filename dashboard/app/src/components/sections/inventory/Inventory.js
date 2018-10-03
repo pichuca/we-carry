@@ -5,7 +5,7 @@ class Inventory extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Inventory</h1>
+        <h1>Inventario</h1>
         <EnancedTable />
       </React.Fragment>
     );
