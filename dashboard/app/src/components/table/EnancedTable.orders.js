@@ -22,6 +22,9 @@ import { lighten } from '@material-ui/core/styles/colorManipulator';
 // Router
 import { Link } from "react-router-dom";
 
+// CSS
+import './Table.css';
+
 let counter = 0;
 function createData(name, calories, fat, carbs, status) {
   counter += 1;
@@ -210,7 +213,7 @@ class EnhancedTable extends React.Component {
     data: [
       createData('Hernesto Gonzalez', 305, 3.7, 67, 'En camino'),
       createData('Jose Peryra Iraola', 452, 25.0, 51, 'Entregado'),
-      createData('Marcos Funes', 262, 16.0, 24, 'Pausado'),
+      createData('Marcos Funes', 262, 16.0, 24, 'Listo para despachar'),
       createData('Tierry Henry', 159, 6.0, 24, 'En camino'),
       createData('Gonzalo Larre', 356, 16.0, 49, 'En camino'),
       createData('Guns', 408, 3.2, 87, 'En camino'),
@@ -218,9 +221,9 @@ class EnhancedTable extends React.Component {
       createData('Patito Conzensa', 375, 0.0, 94, 'Entregado'),
       createData('Rupert', 518, 26.0, 65, 'Entregado'),
       createData('Myloqui de Avenida del golf', 392, 0.2, 98, 'Entregado'),
-      createData('Pablo Carnelli', 318, 0, 81, 'Pausado'),
+      createData('Pablo Carnelli', 318, 0, 81, 'Listo para despachar'),
       createData('Juan Quintan', 360, 19.0, 9, 'En camino'),
-      createData('Esteban Duran', 437, 18.0, 63, 'Pausado'),
+      createData('Esteban Duran', 437, 18.0, 63, 'Listo para despachar'),
     ],
     page: 0,
     rowsPerPage: 5,
@@ -316,15 +319,21 @@ class EnhancedTable extends React.Component {
                         {n.name}
                       </TableCell>
                       {/* Link to tracking page!!! */}
-                      <TableCell numeric>{n.calories}</TableCell>
+                      <TableCell numeric><Link to={`/product/${n.calories}/${n.name}/${n.fat}`}>{n.calories}</Link></TableCell>
                       <TableCell numeric>{n.fat}</TableCell>
-                      <TableCell numeric><Link to={`/tracking/${n.calories}`}>tracking-link</Link></TableCell>
+                      <TableCell numeric>
+                        <Link to={`/tracking/${n.calories}`}>
+                        <i class="material-icons tracking">near_me</i>
+                        </Link>
+                      </TableCell>
                       <TableCell>
-                        {n.status}
-                        {/* ICON */}
-                        {n.status === 'Entregado' ? <i className="material-icons">where_to_vote</i> : null}
-                        {n.status === 'Pausado' ? <i className="material-icons">warning</i> : null}
-                        {n.status === 'En camino' ? <i className="material-icons">local_shipping</i> : null}
+                        <div className="status-text">
+                          <p>{n.status}</p>
+                          {/* ICON */}
+                            {n.status === 'Entregado' ? <i className="material-icons delivered">where_to_vote</i> : null}
+                            {n.status === 'Listo para despachar' ? <i className="material-icons ready">send</i> : null}
+                            {n.status === 'En camino' ? <i className="material-icons ontheway">local_shipping</i> : null}
+                        </div>
                       </TableCell>
                     </TableRow>
                   );

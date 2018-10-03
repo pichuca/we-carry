@@ -1,0 +1,19 @@
+.status-text {
+    position: relative;
+    top: -4px;
+}
+
+.material-icons {
+    position: relative;
+    top: 2px;
+}
+
+.material-icons.delivered {
+    color: #690;
+}
+
+.material-icons.ontheway,
+.material-icons.ready,
+.material-icons.tracking {
+    color: #0076ff;
+}
