@@ -29,6 +29,11 @@ header .links a {
     text-transform: uppercase;
 }
 
-header .links a:hover {
+header .links a:hover,
+header .links a.selected {
   color: #0076ff !important;
+}
+
+header .links a.selected {
+    font-weight: 700;
 }
