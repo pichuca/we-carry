@@ -11,6 +11,7 @@ import Configuration from './components/sections/configuration/Configuration';
 
 // Single pages
 import Product from './components/single-pages/Product';
+import Tracking from './components/single-pages/Tracking';
 
 // import logo from './logo.svg';
 import './App.css';
@@ -31,6 +32,7 @@ class App extends Component {
             <Route path="/stats" component={Stats} />
             <Route path="/configuration" component={Configuration} />
             <Route path="/product/:sku/:name/:availability" component={Product} />
+            <Route path="/tracking/:sku" component={Tracking} />
           </div>
         </div>
       </Router>
