@@ -10,8 +10,8 @@ import Stats from './components/sections/stats/Stats';
 import Configuration from './components/sections/configuration/Configuration';
 
 // Single pages
-import Product from './components/single-pages/Product';
-import Tracking from './components/single-pages/Tracking';
+import Product from './components/single-pages/product/Product';
+import Tracking from './components/single-pages/tracking/Tracking';
 
 // import logo from './logo.svg';
 import './App.css';
