@@ -17,3 +17,19 @@
 .material-icons.tracking {
     color: #0076ff;
 }
+
+.tracking-link-wrapper .material-icons.tracking {
+    position: relative;
+    top: 14px;
+    right: 13px;
+}
+
+
+.tracking-link-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.tracking-link-wrapper:hover {
+    background-color: #FFFFFF;
+}

@@ -322,9 +322,11 @@ class EnhancedTable extends React.Component {
                       <TableCell numeric><Link to={`/product/${n.calories}/${n.name}/${n.fat}`}>{n.calories}</Link></TableCell>
                       <TableCell numeric>{n.fat}</TableCell>
                       <TableCell numeric>
-                        <Link to={`/tracking/${n.calories}`}>
-                        <i class="material-icons tracking">near_me</i>
-                        </Link>
+                        <div className="tracking-link-wrapper">
+                          <Link to={`/tracking/${n.calories}`}>
+                            <i className="material-icons tracking">near_me</i>
+                          </Link>
+                        </div>
                       </TableCell>
                       <TableCell>
                         <div className="status-text">
