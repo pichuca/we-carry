@@ -314,7 +314,7 @@ class EnhancedTable extends React.Component {
                       <TableCell component="th" scope="row" padding="none">
                         {n.name}
                       </TableCell>
-                      <TableCell numeric><Link to={`/product/${n.calories}/${n.name}`}>{n.calories}</Link></TableCell>
+                      <TableCell numeric><Link to={`/product/${n.calories}/${n.name}/${n.fat}`}>{n.calories}</Link></TableCell>
                       <TableCell numeric>{n.fat}</TableCell>
                       <TableCell numeric>{n.carbs}</TableCell>
                     </TableRow>

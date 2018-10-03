@@ -30,7 +30,7 @@ class App extends Component {
             <Route path="/entries" component={Entries} />
             <Route path="/stats" component={Stats} />
             <Route path="/configuration" component={Configuration} />
-            <Route path="/product/:sku/:name" component={Product} />
+            <Route path="/product/:sku/:name/:availability" component={Product} />
           </div>
         </div>
       </Router>
