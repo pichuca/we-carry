@@ -1,0 +1,19 @@
+.step svg,
+.step-delivery-time {
+    color: #0076ff !important;
+}
+
+.step-button {
+    background: #0076ff !important;
+}
+
+.step-content {
+    margin: 0 0 10px 0 !important;
+    padding-right: 840px !important;
+    text-align: justify;
+    letter-spacing: 1px;
+}
+
+.step-delivery-time {
+    font-weight: 700 !important;
+}
