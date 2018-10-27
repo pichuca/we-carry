@@ -28,9 +28,7 @@ class App extends Component {
   componentDidMount() {
     // Fake loading time to N seconds.
     let fakeLoadingTime = 2500;
-    setTimeout(() => this.setState({ isLoading: false, }, () => {
-      console.log('Finished loading!');
-    }), fakeLoadingTime);
+    setTimeout(() => this.setState({ isLoading: false }), fakeLoadingTime);
   }
   render() {
     const { isLoading } = this.state;
