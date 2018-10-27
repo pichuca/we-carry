@@ -143,6 +143,8 @@ const toolbarStyles = theme => ({
 
 let EnhancedTableToolbar = props => {
   const { numSelected, classes } = props;
+  const variosSelectedProductsText = 'productos seleccionados';
+  const singleSelectedProductText = 'producto seleccionado';
 
   return (
     <Toolbar
@@ -153,7 +155,7 @@ let EnhancedTableToolbar = props => {
       <div className={classes.title}>
         {numSelected > 0 ? (
           <Typography color="inherit" variant="subheading">
-            {numSelected} selected
+            {numSelected} {numSelected > 1 ? variosSelectedProductsText : singleSelectedProductText}
           </Typography>
         ) : (
           <Typography variant="title" id="tableTitle">
