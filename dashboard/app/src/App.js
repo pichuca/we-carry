@@ -27,12 +27,16 @@ class App extends Component {
   }
   componentDidMount() {
     // Fake loading time to N seconds.
-    let fakeLoadingTime = 1500;
+    let fakeLoadingTime = 2500;
     setTimeout(() => this.setState({ isLoading: false, }, () => {
       console.log('Finished loading!');
     }), fakeLoadingTime);
   }
   render() {
+    const { isLoading } = this.state;
+    if(isLoading) { // if your component doesn't have to wait for async data, remove this block 
+      return null; // render null when app is not ready
+    }
     return (
       <Router>
         <div className="App">
