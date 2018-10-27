@@ -32,7 +32,7 @@ header .links a {
 
 header .links a:hover,
 header .links .selected {
-  color: #0076ff !important;
+  color: #99CC33 !important;
 }
 
 header .links .selected {
