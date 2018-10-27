@@ -7,7 +7,7 @@ import Inventory from './components/sections/inventory/Inventory';
 import Orders from './components/sections/orders/Orders';
 import Entries from './components/sections/entries/Entries';
 import Stats from './components/sections/stats/Stats';
-import Configuration from './components/sections/configuration/Configuration';
+// import Configuration from './components/sections/configuration/Configuration';
 
 // Single pages
 import Product from './components/single-pages/product/Product';
@@ -31,7 +31,7 @@ class App extends Component {
             <Route path="/orders" component={Orders} />
             <Route path="/entries" component={Entries} />
             <Route path="/stats" component={Stats} />
-            <Route path="/configuration" component={Configuration} />
+            {/* <Route path="/configuration" component={Configuration} /> */}
             <Route path="/product/:sku/:name/:availability" component={Product} />
             <Route path="/tracking/:sku" component={Tracking} />
             <Route path="/entry" component={SingleEntry} />

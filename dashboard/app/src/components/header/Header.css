@@ -38,3 +38,8 @@ header .links .selected {
 header .links .selected {
     font-weight: 700;
 }
+
+header img.app-logo {
+    width: 120px;
+    height: auto;
+}
