@@ -17,6 +17,7 @@ header .links {
     margin: 0 auto;
     padding: 1.5rem;
     text-align: left;
+    vertical-align: middle;
 }
 
 header .links a {
@@ -28,6 +29,8 @@ header .links a {
     margin-right: 15px;
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
+    position: relative;
+    top: -20px;
 }
 
 header .links a:hover,
@@ -42,4 +45,6 @@ header .links .selected {
 header img.app-logo {
     width: 120px;
     height: auto;
+    position: relative;
+    top: 23px;
 }

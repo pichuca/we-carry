@@ -19,6 +19,19 @@ import './App.css';
 import './components/sections/Sections.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true,
+    };
+  }
+  componentDidMount() {
+    // Fake loading time to N seconds.
+    let fakeLoadingTime = 1500;
+    setTimeout(() => this.setState({ isLoading: false, }, () => {
+      console.log('Finished loading!');
+    }), fakeLoadingTime);
+  }
   render() {
     return (
       <Router>
