@@ -5,9 +5,13 @@ import ClearFix from '../../commons/clear-fix/ClearFix';
 import './Stats.css';
 
 // Charts
-import SimpleScatterChart from '../../charts/simple-scatter-chart/SimpleScatterChart';
+// import SimpleScatterChart from '../../charts/simple-scatter-chart/SimpleScatterChart';
+
+const chartsWidth = 650;
+const chartsHeight = 450;
 
 
+// TODO: add real DATA set.
 const data = [
   {name: 'Page A', uv: 590, pv: 800, amt: 1400},
   {name: 'Page B', uv: 868, pv: 967, amt: 1506},
@@ -18,7 +22,7 @@ const data = [
 ];
 
 const SimpleLineChart = () => {
-    	return (<LineChart width={450} height={250} data={data}
+    	return (<LineChart width={chartsWidth} height={chartsHeight} data={data}
             margin={{top: 5, right: 30, left: 20, bottom: 5}}>
        <XAxis dataKey="name"/>
        <YAxis/>
@@ -32,7 +36,7 @@ const SimpleLineChart = () => {
 
 const LineBarAreaComposedChart = () => {
   	return (
-    	<ComposedChart width={450} height={250} data={data}
+    	<ComposedChart width={chartsWidth} height={chartsHeight} data={data}
             margin={{top: 20, right: 20, bottom: 20, left: 20}}>
           <CartesianGrid stroke='#f5f5f5'/>
           <XAxis dataKey="name"/>
@@ -54,10 +58,10 @@ class Stats extends Component {
         <div className="charts-wrapper">
           <div className="left">
             <SimpleLineChart />
-            <LineBarAreaComposedChart />
           </div>
           <div className="right">
-            <SimpleScatterChart className="scatter" />
+            <LineBarAreaComposedChart />
+            {/* <SimpleScatterChart className="scatter" /> */}
           </div>
           <ClearFix />
         </div>
