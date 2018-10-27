@@ -33,3 +33,7 @@
 .tracking-link-wrapper:hover {
     background-color: #FFFFFF;
 }
+
+td a {
+    color: #99CC33 !important;
+}
