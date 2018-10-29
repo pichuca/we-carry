@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import UserModule from './user-module/UserModule';
 import logo from '../../assets/svg/we_carry.svg';
 import './Header.css';
 
@@ -27,9 +28,7 @@ class Header extends Component {
               {/* <Link id="configuration" className={this.browserUrlIncludes('/configuration') ? 'selected' : ''} to="/configuration">Configuración</Link> */}
           </div>
           <div className="flex-div"></div>
-          <div className="user-module">
-            Hola, Salvador Roibon
-          </div>
+          <UserModule userName={'Salvador Roibon'} />
         </header>
     </React.Fragment>
     );
