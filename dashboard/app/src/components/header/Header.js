@@ -16,19 +16,20 @@ class Header extends Component {
     return (
     <React.Fragment>
         <header className="App-header">
-            <nav>
-              <div className="links">
-                  <Link id="home" to="/inventory">
-                    <img src={logo} className="app-logo" alt="logo" />
-                  </Link>
-                  <Link id="inventory" className={this.browserUrlIncludes('/inventory') ? 'selected' : ''} to="/inventory">Inventario</Link>
-                  <Link id="orders" className={this.browserUrlIncludes('/orders') ? 'selected' : ''} to="/orders">Pedidos</Link>
-                  <Link id="entries" className={this.browserUrlIncludes('/entries') ? 'selected' : ''} to="/entries">Solicitudes</Link>
-                  <Link id="stats" className={this.browserUrlIncludes('/stats') ? 'selected' : ''} to="/stats">Estadísticas</Link>
-                  {/* <Link id="configuration" className={this.browserUrlIncludes('/configuration') ? 'selected' : ''} to="/configuration">Configuración</Link> */}
-              </div>
-            </nav>
-
+          <div className="links">
+              <Link id="home" to="/inventory">
+                <img src={logo} className="app-logo" alt="logo" />
+              </Link>
+              <Link id="inventory" className={this.browserUrlIncludes('/inventory') ? 'selected' : ''} to="/inventory">Inventario</Link>
+              <Link id="orders" className={this.browserUrlIncludes('/orders') ? 'selected' : ''} to="/orders">Pedidos</Link>
+              <Link id="entries" className={this.browserUrlIncludes('/entries') ? 'selected' : ''} to="/entries">Solicitudes</Link>
+              <Link id="stats" className={this.browserUrlIncludes('/stats') ? 'selected' : ''} to="/stats">Estadísticas</Link>
+              {/* <Link id="configuration" className={this.browserUrlIncludes('/configuration') ? 'selected' : ''} to="/configuration">Configuración</Link> */}
+          </div>
+          <div className="flex-div"></div>
+          <div className="user-module">
+            Hola, Salvador Roibon
+          </div>
         </header>
     </React.Fragment>
     );
