@@ -1,1 +1,33 @@
-/* .user-module {} */
+.user-module {
+    width: auto;
+    display: inherit;
+    padding-right: 1.5rem;
+}
+
+.user-module .user-name {
+    width: auto;
+}
+
+.user-module h6 {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    margin-right: 15px;
+    font-family: 'Roboto', sans-serif;
+    width: 240px;
+    margin: 26px 0;
+}
+
+.user-module .user-module-icon {
+    width: 50px;
+    height: 50px;
+    color: #99CC33;
+    position: relative;
+    top: 8px;
+}
+
+.user-module h6,
+.user-module .user-module-icon:hover {
+    color: #55565B;
+}

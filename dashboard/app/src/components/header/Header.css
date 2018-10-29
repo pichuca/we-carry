@@ -48,7 +48,3 @@ header img.app-logo {
     position: relative;
     top: 23px;
 }
-
-.flex-div {
-    flex: 1 1 auto;
-}
