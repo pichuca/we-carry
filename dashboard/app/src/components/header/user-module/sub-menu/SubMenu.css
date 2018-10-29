@@ -7,6 +7,10 @@
     background: #55565B;
     /* border: 1px solid #55565B; */
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.06);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    right: 1.5rem;
+    opacity: 0.8;
 }
 
 .sub-menu h4 {
