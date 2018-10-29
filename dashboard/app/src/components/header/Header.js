@@ -27,7 +27,7 @@ class Header extends Component {
               <Link id="stats" className={this.browserUrlIncludes('/stats') ? 'selected' : ''} to="/stats">Estadísticas</Link>
               {/* <Link id="configuration" className={this.browserUrlIncludes('/configuration') ? 'selected' : ''} to="/configuration">Configuración</Link> */}
           </div>
-          <UserModule userName={'Salvador Roibon'} />
+          <UserModule userName={'Santiago Fernandez (Momio)'} />
         </header>
     </React.Fragment>
     );

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import IconButton from '@material-ui/core/IconButton';
-import MoreIcon from '@material-ui/icons/MoreVert';
-import { fade } from '@material-ui/core/styles/colorManipulator';
 
 import './UserModule.css';
 
@@ -22,7 +20,7 @@ class UserModule extends Component {
       <React.Fragment>
         <div className="user-module">
           <div className="user-name">
-            <h6>Bienvenido, {this.props.userName}</h6>
+            <h6><span>Bienvenido,</span> {this.props.userName}</h6>
           </div>
           <IconButton
             className="user-module-icon"
