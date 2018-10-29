@@ -10,10 +10,14 @@ class UserModule extends Component {
     super(props);
     this.state = {};
 
-    this.handleAccountIconClick = this.handleAccountIconClick.bind(this);
+    this.handleNotificationsIconClick = this.handleNotificationsIconClick.bind(this);
+    this.handleProfileMenuOpen = this.handleProfileMenuOpen.bind(this);
   }
-  handleAccountIconClick(event) {
-    console.log('click on account icon. Event ->: ', event);
+  handleNotificationsIconClick(event) {
+    console.log('handleNotificationsIconClick() event: ', event);
+  }
+  handleProfileMenuOpen(event) {
+    console.log('handleProfileMenuOpen() event: ', event);
   }
   render() {
     return(
@@ -26,7 +30,7 @@ class UserModule extends Component {
             className="user-module-icon"
             aria-owns={'material-appbar'}
             aria-haspopup="true"
-            onClick={this.handleAccountIconClick}
+            onClick={this.handleNotificationsIconClick}
             color="inherit"
             >
             <NotificationsIcon />
@@ -35,7 +39,7 @@ class UserModule extends Component {
             className="user-module-icon"
             aria-owns={'material-appbar'}
             aria-haspopup="true"
-            onClick={this.handleAccountIconClick}
+            onClick={this.handleProfileMenuOpen}
             color="inherit"
               >
             <AccountCircle />
