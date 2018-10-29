@@ -33,6 +33,11 @@
 }
 
 .user-module h6,
-.user-module .user-module-icon:hover {
+.user-module .user-module-icon:hover,
+.user-module-icon.selected {
     color: #55565B;
+}
+
+.user-module-icon.selected {
+    background-color: rgba(0, 0, 0, 0.08);
 }

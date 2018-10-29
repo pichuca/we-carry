@@ -18,29 +18,36 @@ class UserModule extends Component {
     this.handleProfileMenuOpen = this.handleProfileMenuOpen.bind(this);
     this.checkIfMenuIsVisible = this.checkIfMenuIsVisible.bind(this);
   }
+  componentDidMount() {
+    // Bind methods once component is mounted.
+    this.setAccountMenuVisibility = this.setAccountMenuVisibility.bind(this);
+    this.setNotificationsMenuVisibility = this.setNotificationsMenuVisibility.bind(this);
+  }
   handleNotificationsIconClick(event) {
-    console.log('handleNotificationsIconClick() event: ', event);
     if (this.checkIfMenuIsVisible('notifications')) {
-      this.setState({
-        isNotificationsMenuVisible: false,
-      });
+      this.setNotificationsMenuVisibility(false);
     } else {
-      this.setState({
-        isNotificationsMenuVisible: true,
-      });
+      this.setNotificationsMenuVisibility(true);
+      this.setAccountMenuVisibility(false);
     }
   }
   handleProfileMenuOpen(event) {
-    console.log('handleProfileMenuOpen() event: ', event);
     if (this.checkIfMenuIsVisible('account')) {
-        this.setState({
-          isAccountMenuVisible: false,
-        });
+      this.setAccountMenuVisibility(false);
     } else {
-    this.setState({
-        isAccountMenuVisible: true,
-    });
+      this.setAccountMenuVisibility(true);
+      this.setNotificationsMenuVisibility(false);
     }
+  }
+  setAccountMenuVisibility(isVisible) {
+    this.setState({
+      isAccountMenuVisible: isVisible,
+    });
+  }
+  setNotificationsMenuVisibility(isVisible) {
+    this.setState({
+      isNotificationsMenuVisible: isVisible,
+    });
   }
   checkIfMenuIsVisible(menu) {
     if (menu === 'notifications') {
@@ -84,7 +91,7 @@ class UserModule extends Component {
             <h6><span>Bienvenido,</span> {this.props.userName}</h6>
           </div>
           <IconButton
-            className="user-module-icon"
+            className={this.state.isNotificationsMenuVisible ? 'user-module-icon selected' : 'user-module-icon'}
             aria-owns={'material-appbar'}
             aria-haspopup="true"
             onClick={this.handleNotificationsIconClick}
@@ -93,7 +100,7 @@ class UserModule extends Component {
             <NotificationsIcon />
           </IconButton>
           <IconButton
-            className="user-module-icon"
+            className={this.state.isAccountMenuVisible ? 'user-module-icon selected' : 'user-module-icon'}
             aria-owns={'material-appbar'}
             aria-haspopup="true"
             onClick={this.handleProfileMenuOpen}
