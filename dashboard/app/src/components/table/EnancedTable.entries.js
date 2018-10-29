@@ -91,7 +91,7 @@ class EnhancedTableHead extends React.Component {
                 sortDirection={orderBy === row.id ? order : false}
               >
                 <Tooltip
-                  title="Sort"
+                  title="Haz click para ordenar de manera descendente o ascendente"
                   placement={row.numeric ? 'bottom-end' : 'bottom-start'}
                   enterDelay={300}
                 >
