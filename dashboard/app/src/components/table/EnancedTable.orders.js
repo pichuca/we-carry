@@ -88,6 +88,7 @@ class EnhancedTableHead extends React.Component {
                 numeric={row.numeric}
                 padding={row.disablePadding ? 'none' : 'default'}
                 sortDirection={orderBy === row.id ? order : false}
+                className={row.label === 'Tracking' ? 'tracking-head' : ''}
               >
                 <Tooltip
                   title="Haz click para ordenar de manera descendente o ascendente"
