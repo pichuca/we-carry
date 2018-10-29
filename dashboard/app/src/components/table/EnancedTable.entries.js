@@ -26,9 +26,9 @@ import { Link } from "react-router-dom";
 import dateFormat from 'dateformat';
 
 let counter = 0;
-function createData(sku, when, status, packages, items, priority) {
+function createData(sku, when, status, packages, items, priority, name) {
   counter += 1;
-  return { id: counter, sku, when, status, packages, items, priority };
+  return { id: counter, sku, when, status, packages, items, priority, name };
 }
 
 function desc(a, b, orderBy) {
@@ -217,7 +217,7 @@ class EnhancedTable extends React.Component {
       orderBy: 'sku',
       selected: [],
       data: [
-        createData(3245, dateFormat(dataDate, "dd/mm/yyyy h:MM:ss TT"), 'Ingresado', 8, 67, true),
+        createData(3245, dateFormat(dataDate, "dd/mm/yyyy h:MM:ss TT"), 'Ingresado', 8, 67, true, 'Camiseta Rugby generica Adidas'),
       ],
       page: 0,
       rowsPerPage: 6,
@@ -312,7 +312,7 @@ class EnhancedTable extends React.Component {
                       </TableCell>
                       {/* Link to produc page!!! */}
                       <TableCell numeric scope="" padding="none">
-                        <Link to={`/product/${n.sku}`}>{n.sku}</Link>
+                        <Link to={`/product/${n.sku}/${n.name}/12`}>{n.sku}</Link>
                       </TableCell>
                       <TableCell component="th" scope="row">
                         {n.when}
