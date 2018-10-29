@@ -1,25 +1,30 @@
 import React, { Component } from 'react';
+import onClickOutside from "react-onclickoutside";
 import { Link } from "react-router-dom";
 
 import './SubMenu.css';
 
 class SubMenu extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  handleClickOutside() {
+    this.props.hide();
+  };
   render() {
+    const HtmlComponent = () => (
+      <div className="sub-menu">
+        <h4>{this.props.label}</h4>
+        <ul>
+          {this.props.links.map((link, index) => {
+            return <li key={index}><Link to={link.url}>{link.label}</Link></li>;
+          })}
+        </ul>
+      </div>
+    );
     return (
       <React.Fragment>
-        <div className="sub-menu">
-          <h4>{this.props.label}</h4>
-          {this.props.links.forEach((link) => {
-            return <Link to={link.url}>link.label</Link>
-          })}
-        </div>
+        {this.props.shouldBeVisible ? <HtmlComponent />: null}
       </React.Fragment>
     );
   }
 }
 
-export default SubMenu;
+export default onClickOutside(SubMenu);

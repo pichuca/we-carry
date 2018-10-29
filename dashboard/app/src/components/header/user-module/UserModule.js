@@ -17,6 +17,7 @@ class UserModule extends Component {
     this.handleNotificationsIconClick = this.handleNotificationsIconClick.bind(this);
     this.handleProfileMenuOpen = this.handleProfileMenuOpen.bind(this);
     this.checkIfMenuIsVisible = this.checkIfMenuIsVisible.bind(this);
+    this.hideAll = this.hideAll.bind(this);
   }
   componentDidMount() {
     // Bind methods once component is mounted.
@@ -57,9 +58,16 @@ class UserModule extends Component {
       return this.state.isAccountMenuVisible;
     }
   }
+  hideAll() {
+    this.setAccountMenuVisibility(false);
+    this.setNotificationsMenuVisibility(false);
+  }
+  hideOnClickOutSide() {
+    this.hideAll();
+  }
   render() {
     const submenuAccountConfig = {
-      label: 'Menu de usuario',
+      label: '',
       links: [
         {
           label: 'Editar perfil',
@@ -72,7 +80,7 @@ class UserModule extends Component {
       ],
     };
     const submenuNotificationsConfig = {
-        label: 'Menu de notificaciones',
+        label: 'Notificaciones',
         links: [
           {
             label: 'Tu producto fue entregado',
@@ -108,17 +116,10 @@ class UserModule extends Component {
               >
             <AccountCircle />
           </IconButton>
-          {/* <IconButton
-            className="user-module-icon"
-            aria-owns={'material-appbar'}
-            aria-haspopup="true"
-            onClick={this.handleAccountIconClick}
-            color="inherit">
-            <MoreIcon />
-          </IconButton> */}
         </div>
-        {this.state.isAccountMenuVisible ? <SubMenu {...submenuAccountConfig} /> : null }
-        {this.state.isNotificationsMenuVisible ? <SubMenu {...submenuNotificationsConfig} /> : null }
+
+        <SubMenu {...submenuAccountConfig} shouldBeVisible={this.state.isAccountMenuVisible} hide={this.hideOnClickOutSide.bind(this)} />
+        <SubMenu {...submenuNotificationsConfig} shouldBeVisible={this.state.isNotificationsMenuVisible} hide={this.hideOnClickOutSide.bind(this)} />
     
       </React.Fragment>
     );
