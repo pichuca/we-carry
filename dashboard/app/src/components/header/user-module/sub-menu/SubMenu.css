@@ -42,10 +42,11 @@
 
 .sub-menu li:hover {
     background: #99CC33;
-    cursor: pointer;
+    cursor: inherit;
 }
 
 .sub-menu li a:hover {
     text-decoration: underline;
     color: #55565B;
+    cursor: pointer;
 }

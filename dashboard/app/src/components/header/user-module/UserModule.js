@@ -69,10 +69,10 @@ class UserModule extends Component {
     const submenuAccountConfig = {
       label: 'Usuario',
       links: [
-        {
-          label: 'Editar perfil',
-          url: '/edit/profile',
-        },
+        // {
+        //   label: 'Editar perfil',
+        //   url: '/edit/profile',
+        // },
         {
           label: 'Cerrar sesión',
           url: '/logout',
