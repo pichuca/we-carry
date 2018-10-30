@@ -28,7 +28,7 @@
 }
 
 .sub-menu li {
-    height: 35px;
+    height: 65px;
     border-bottom: 1px solid #99CC33;
 }
 
@@ -37,7 +37,7 @@
     font-weight: 400;
     font-size: 14px;
     position: relative;
-    top: 7px;
+    top: 24px;
 }
 
 .sub-menu li:hover {
