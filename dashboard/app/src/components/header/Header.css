@@ -48,3 +48,9 @@ header img.app-logo {
     position: relative;
     top: 23px;
 }
+
+@media screen and (max-width: 1000px) {
+    body {
+      background-color: blue;
+    }
+}
