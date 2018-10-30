@@ -16,3 +16,7 @@
     position: relative;
     top: 23px;
 }
+
+.mobile-menu .selected {
+    background-color: rgba(0, 0, 0, 0.08);
+}

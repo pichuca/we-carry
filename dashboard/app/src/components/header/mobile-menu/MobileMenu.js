@@ -56,7 +56,7 @@ class MobileMenu extends Component {
   render() {
     return (
       <div className="mobile-menu">
-        <IconButton style={styles} className={''} color="inherit" aria-label="Menu">
+        <IconButton style={styles} className={this.state.showMobileMenuList ? 'selected' : ''} color="inherit" aria-label="Menu">
           <MenuIcon onClick={this.openMobileMenu.bind(this)} />
         </IconButton>
         <SubMenu {...subMenuMobileConfig} shouldBeVisible={this.state.showMobileMenuList} hide={this.closeMobileMenu.bind(this)} />
