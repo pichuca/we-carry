@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
+import DatePicker from '../commons/date-picker/DatePicker';
 
 const styles = theme => ({
   root: {
@@ -21,6 +22,12 @@ const styles = theme => ({
   },
 });
 
+const datePickerConfig = {
+  id: 'date',
+  label: 'Fecha de ingreso',
+  type: 'date',
+};
+
 class InputAdornments extends React.Component {
   state = {
     amount: '',
@@ -32,10 +39,6 @@ class InputAdornments extends React.Component {
 
   handleChange = prop => event => {
     this.setState({ [prop]: event.target.value });
-  };
-
-  handleClickShowPassword = () => {
-    this.setState(state => ({ showPassword: !state.showPassword }));
   };
 
   render() {
@@ -87,6 +90,7 @@ class InputAdornments extends React.Component {
             }}
             margin="normal"
           />
+          <DatePicker {...datePickerConfig} />
         </FormControl>
       </div>
     );
