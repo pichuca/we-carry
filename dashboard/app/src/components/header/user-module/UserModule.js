@@ -120,7 +120,7 @@ class UserModule extends Component {
               >
             <AccountCircle />
           </IconButton>
-          <MediaQuery query="(max-width: 1000px)">
+          <MediaQuery query="(max-width: 1015px)">
             <MobileMenu />
           </MediaQuery>
         </div>

@@ -50,3 +50,11 @@
     color: #55565B;
     cursor: pointer;
 }
+
+@media screen and (max-width: 670px) {
+    .sub-menu {
+        width: 100%;
+        right: 0;
+    }
+}
+

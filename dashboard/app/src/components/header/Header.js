@@ -18,7 +18,7 @@ class Header extends Component {
     return (
     <React.Fragment>
         <header className="App-header">
-          <MediaQuery query="(min-width: 1001px)">
+          <MediaQuery query="(min-width: 1016px)">
             <div className="links">
                 <Link id="home" to="/inventory">
                   <img src={logo} className="app-logo" alt="logo" />
@@ -30,7 +30,7 @@ class Header extends Component {
                 {/* <Link id="configuration" className={this.browserUrlIncludes('/configuration') ? 'selected' : ''} to="/configuration">Configuración</Link> */}
             </div>
           </MediaQuery>
-          <MediaQuery query="(max-width: 1000px)">
+          <MediaQuery query="(max-width: 1015px)">
             <Link id="home" to="/inventory">
               <img src={logo} className="app-logo" alt="logo" />
             </Link>
