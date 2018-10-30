@@ -11,10 +11,6 @@ const styles = {
   grow: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
 };
 
 class MobileMenu extends Component {
@@ -25,7 +21,7 @@ class MobileMenu extends Component {
   render() {
     return (
       <div className="mobile-menu">
-        <IconButton style={styles} className={''} color="blue" aria-label="Menu">
+        <IconButton style={styles} className={''} color="inherit" aria-label="Menu">
           <MenuIcon />
         </IconButton>
       </div>

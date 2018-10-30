@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import IconButton from '@material-ui/core/IconButton';
+import MediaQuery from 'react-responsive';
+import MobileMenu from '../mobile-menu/MobileMenu';
 import SubMenu from './sub-menu/SubMenu';
 
 import './UserModule.css';
@@ -95,9 +97,11 @@ class UserModule extends Component {
     return(
       <React.Fragment>
         <div className="user-module">
-          <div className="user-name">
-            <h6><span>Bienvenido,</span> {this.props.userName}</h6>
-          </div>
+          <MediaQuery query="(min-width: 670px)">
+            <div className="user-name">
+                <h6><span>Bienvenido,</span> {this.props.userName}</h6>
+            </div>
+          </MediaQuery>
           <IconButton
             className={this.state.isNotificationsMenuVisible ? 'user-module-icon selected' : 'user-module-icon'}
             aria-owns={'material-appbar'}
@@ -116,6 +120,9 @@ class UserModule extends Component {
               >
             <AccountCircle />
           </IconButton>
+          <MediaQuery query="(max-width: 1000px)">
+            <MobileMenu />
+          </MediaQuery>
         </div>
 
         <SubMenu {...submenuAccountConfig} shouldBeVisible={this.state.isAccountMenuVisible} hide={this.hideOnClickOutSide.bind(this)} />

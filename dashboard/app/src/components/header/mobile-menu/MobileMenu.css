@@ -1,5 +1,17 @@
+.mobile-menu {
+    display: flex;
+}
+
 .mobile-menu button {
-  color: #99CC33;
-  padding-left: 1.5rem;
-  top: 10px;
-} 
+    color: #99CC33;
+    width: 50px;
+    height: 50px;
+    top: 8px;
+}
+
+.mobile-menu img.app-logo {
+    width: 120px;
+    height: auto;
+    position: relative;
+    top: 23px;
+}

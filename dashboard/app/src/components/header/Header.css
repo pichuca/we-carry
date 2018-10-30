@@ -50,7 +50,9 @@ header img.app-logo {
 }
 
 @media screen and (max-width: 1000px) {
-    body {
-      background-color: blue;
+    header img.app-logo {
+        position: relative;
+        top: 4px;
+        margin: 0 10px 0;
     }
 }
