@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 import DatePicker from '../commons/date-picker/DatePicker';
 
 const styles = theme => ({
@@ -91,6 +93,89 @@ class InputAdornments extends React.Component {
             margin="normal"
           />
           <DatePicker {...datePickerConfig} />
+        </FormControl>
+        <FormControl fullWidth className={classes.margin}>
+        <FormControlLabel
+            control={
+              <Checkbox
+                checked={this.state.checkedG}
+                onChange={this.handleChange('checkedG')}
+                value="checkedG"
+                classes={{
+                  root: classes.root,
+                  checked: classes.checked,
+                }}
+              />
+            }
+            label="Envía mercadería"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={this.state.checkedG}
+                onChange={this.handleChange('checkedG')}
+                value="checkedG"
+                classes={{
+                  root: classes.root,
+                  checked: classes.checked,
+                }}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                margin="normal"
+              />
+            }
+            label="Solicita retiro de mercadería"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={this.state.checkedG}
+                onChange={this.handleChange('checkedG')}
+                value="checkedG"
+                classes={{
+                  root: classes.root,
+                  checked: classes.checked,
+                }}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                margin="normal"
+              />
+            }
+            label="Es mercadería fragil"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={this.state.checkedG}
+                onChange={this.handleChange('checkedG')}
+                value="checkedG"
+                classes={{
+                  root: classes.root,
+                  checked: classes.checked,
+                }}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                margin="normal"
+              />
+            }
+            label="Prioritario"
+          />
+        </FormControl>
+        <FormControl fullWidth className={classes.margin}>
+          <TextField
+            id="standard-number"
+            label="Comentarios"
+            value=""
+            type="text"
+            className={classNames(classes.margin, classes.textField)}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            margin="normal"
+          />
         </FormControl>
       </div>
     );

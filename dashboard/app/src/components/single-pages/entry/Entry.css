@@ -10,3 +10,20 @@
 .entry-form-wrapper {
     padding: 24px;
 }
+
+.entry button {
+    color: #FFFFFF !important;
+    background: #55565B !important;
+    box-shadow: none !important;
+    margin-top: 30px;
+}
+
+.entry button:hover {
+    background: #99CC33 !important;
+}
+  
+@media screen and (max-width: 1015px) {
+    .entry button {
+        background: #99CC33 !important;
+    }
+}  

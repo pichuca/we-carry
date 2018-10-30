@@ -8,10 +8,10 @@ import './Entry.css';
 const Entry = () => (
   <div className="entry">
     <h2>Pedido de ingreso:</h2>
-    <h4>Completa los datos para realizar tu pedido de nuevo ingreso de mercadería.</h4>
+    <h4>Completa los datos para realizar tu pedido de ingreso de nueva mercadería.</h4>
     <Card className="entry-form-wrapper">
       <Form />
-      <Button variant="outlined">
+      <Button>
           Ingresar
       </Button>
     </Card>
