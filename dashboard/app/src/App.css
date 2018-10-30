@@ -38,3 +38,12 @@
     opacity: 0;
   }
 }
+
+@media screen and (max-width: 1015px) {
+  .loader:empty {
+    top: calc(50% - 6em);
+    left: calc(50% - 10em);
+    width: 20em;
+    height: 20em;
+  }
+}
