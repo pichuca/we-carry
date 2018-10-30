@@ -1,34 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import UserModule from './user-module/UserModule';
 import MediaQuery from 'react-responsive';
+import UserModule from './user-module/UserModule';
+import MobileMenu from './mobile-menu/MobileMenu';
 import logo from '../../assets/svg/we_carry.svg';
 import './Header.css';
-
-const styles = {
-  root: {
-    flexGrow: 1,
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
-};
-
-const MobileMenu = () => {
-  return (
-    <React.Fragment>
-      <IconButton style={styles} className={''} color="blue" aria-label="Menu">
-        <MenuIcon />
-      </IconButton>
-    </React.Fragment>
-  );
-};
 
 class Header extends Component {
   constructor(props) {
