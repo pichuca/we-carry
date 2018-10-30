@@ -30,6 +30,8 @@ const datePickerConfig = {
   type: 'date',
 };
 
+const weCarryHexaColor = '#99CC33';
+
 class InputAdornments extends React.Component {
   state = {
     amount: '',
@@ -53,7 +55,7 @@ class InputAdornments extends React.Component {
             label="Nombre del producto"
             id="simple-start-adornment"
             className={classNames(classes.margin, classes.textField)}
-            InputLabelProps={{
+            inputlabelprops={{
               shrink: true,
             }}
             margin="normal"
@@ -64,7 +66,7 @@ class InputAdornments extends React.Component {
             onChange={this.handleChange('age')}
             type="number"
             className={classNames(classes.margin, classes.textField)}
-            InputLabelProps={{
+            inputlabelprops={{
               shrink: true,
             }}
             margin="normal"
@@ -76,7 +78,7 @@ class InputAdornments extends React.Component {
             onChange={this.handleChange('weight')}
             type="number"
             className={classNames(classes.margin, classes.textField)}
-            InputLabelProps={{
+            inputlabelprops={{
               shrink: true,
             }}
             margin="normal"
@@ -87,7 +89,7 @@ class InputAdornments extends React.Component {
             value=""
             type="text"
             className={classNames(classes.margin, classes.textField)}
-            InputLabelProps={{
+            inputlabelprops={{
               shrink: true,
             }}
             margin="normal"
@@ -105,6 +107,11 @@ class InputAdornments extends React.Component {
                   root: classes.root,
                   checked: classes.checked,
                 }}
+                inputlabelprops={{
+                  shrink: true,
+                }}
+                margin="normal"
+                style={{color: weCarryHexaColor}}
               />
             }
             label="Envía mercadería"
@@ -119,10 +126,11 @@ class InputAdornments extends React.Component {
                   root: classes.root,
                   checked: classes.checked,
                 }}
-                InputLabelProps={{
+                inputlabelprops={{
                   shrink: true,
                 }}
                 margin="normal"
+                style={{color: weCarryHexaColor}}
               />
             }
             label="Solicita retiro de mercadería"
@@ -137,10 +145,11 @@ class InputAdornments extends React.Component {
                   root: classes.root,
                   checked: classes.checked,
                 }}
-                InputLabelProps={{
+                inputlabelprops={{
                   shrink: true,
                 }}
                 margin="normal"
+                style={{color: weCarryHexaColor}}
               />
             }
             label="Es mercadería fragil"
@@ -155,10 +164,11 @@ class InputAdornments extends React.Component {
                   root: classes.root,
                   checked: classes.checked,
                 }}
-                InputLabelProps={{
+                inputlabelprops={{
                   shrink: true,
                 }}
                 margin="normal"
+                style={{color: weCarryHexaColor}}
               />
             }
             label="Prioritario"
@@ -171,7 +181,7 @@ class InputAdornments extends React.Component {
             value=""
             type="text"
             className={classNames(classes.margin, classes.textField)}
-            InputLabelProps={{
+            inputlabelprops={{
               shrink: true,
             }}
             margin="normal"
