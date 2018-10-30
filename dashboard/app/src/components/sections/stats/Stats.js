@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ComposedChart, Area, Bar } from 'recharts';
+import MediaQuery from 'react-responsive';
 import ClearFix from '../../commons/clear-fix/ClearFix';
 
 import './Stats.css';
 
 // Charts
 // import SimpleScatterChart from '../../charts/simple-scatter-chart/SimpleScatterChart';
-
-const chartsWidth = 650;
-const chartsHeight = 450;
-
 
 // TODO: add real DATA set.
 const data = [
@@ -21,8 +18,8 @@ const data = [
   {name: 'Page F', uv: 1400, pv: 680, amt: 1700}
 ];
 
-const SimpleLineChart = () => {
-    	return (<LineChart width={chartsWidth} height={chartsHeight} data={data}
+const SimpleLineChart = (props) => {
+    	return (<LineChart width={props.width} height={props.height} data={data}
             margin={{top: 5, right: 30, left: 20, bottom: 5}}>
        <XAxis dataKey="name"/>
        <YAxis/>
@@ -34,9 +31,9 @@ const SimpleLineChart = () => {
       </LineChart>);
 }
 
-const LineBarAreaComposedChart = () => {
+const LineBarAreaComposedChart = (props) => {
   	return (
-    	<ComposedChart width={chartsWidth} height={chartsHeight} data={data}
+    	<ComposedChart width={props.width} height={props.height} data={data}
             margin={{top: 20, right: 20, bottom: 20, left: 20}}>
           <CartesianGrid stroke='#f5f5f5'/>
           <XAxis dataKey="name"/>
@@ -50,19 +47,51 @@ const LineBarAreaComposedChart = () => {
     );
 }
 
+/**
+ * Divices width and height for charts.
+ */
+
+// Large.
+const largeWidth = 650;
+const largeHeight = 450;
+
+// Small.
+const smallWidth = 325;
+const smallHeight = 225;
+
 class Stats extends Component {
   render() {
     return (
       <React.Fragment>
         <h1>Estadísticas</h1>
         <div className="charts-wrapper">
-          <div className="left">
-            <SimpleLineChart />
-          </div>
-          <div className="right">
-            <LineBarAreaComposedChart />
-            {/* <SimpleScatterChart className="scatter" /> */}
-          </div>
+          {/* Large */}
+          <MediaQuery query="(min-width: 1350px)">
+            <div className="left">
+              <SimpleLineChart width={largeWidth} height={largeHeight} />
+            </div>
+            <div className="right">
+              <LineBarAreaComposedChart width={largeWidth} height={largeHeight} />
+            </div>
+          </MediaQuery>
+
+          {/* Medium */}
+          <MediaQuery query="(min-width: 730px)">
+            <div className="charts-inner-wrapper">
+              <SimpleLineChart width={largeWidth} height={largeHeight} />
+              <LineBarAreaComposedChart width={largeWidth} height={largeHeight} />
+            </div>
+          </MediaQuery>
+
+          {/* Small */}
+          <MediaQuery query="(max-width: 729px)">
+            <div className="charts-inner-wrapper">
+              <SimpleLineChart width={smallWidth} height={smallHeight} />
+              <LineBarAreaComposedChart width={smallWidth} height={smallHeight} />
+            </div>
+          </MediaQuery>
+          {/* <SimpleScatterChart className="scatter" /> */}
+
           <ClearFix />
         </div>
       </React.Fragment>
