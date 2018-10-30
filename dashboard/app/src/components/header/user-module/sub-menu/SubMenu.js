@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import onClickOutside from "react-onclickoutside";
 import { Link } from "react-router-dom";
+import browserUrlIncludes from '../../../../utils/browserUrlIncludes.js';
 
 import './SubMenu.css';
 
@@ -14,7 +15,7 @@ class SubMenu extends Component {
         <h4>{this.props.label}</h4>
         <ul>
           {this.props.links.map((link, index) => {
-            return <Link to={link.url} onClick={this.props.hide} key={index}><li>{link.label}</li></Link>;
+            return <Link to={link.url} onClick={this.props.hide} key={index}><li className={link.id && browserUrlIncludes(link.id) ? 'selected' : ''}>{link.label}</li></Link>;
           })}
         </ul>
       </div>

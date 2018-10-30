@@ -20,18 +20,22 @@ const subMenuMobileConfig = {
     {
       label: 'Inventario',
       url: '/inventory',
+      id: 'inventory',
     },
     {
       label: 'Pedidos',
       url: '/orders',
+      id: 'orders',
     },
     {
       label: 'Solicitudes',
       url: '/entries',
+      id: 'entries',
     },
     {
       label: 'Estadísticas',
       url: '/stats',
+      id: 'stats',
     },
   ],
 };

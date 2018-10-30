@@ -42,6 +42,10 @@
     cursor: inherit;
 }
 
+.sub-menu li.selected {
+    background: #99CC33;
+}
+
 .sub-menu li a:hover {
     text-decoration: underline;
     color: #55565B;
