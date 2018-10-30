@@ -2,6 +2,10 @@
     color: #99CC33;
 }
 
+.entry h4 {
+    font-weight: 400;
+}
+
 .entry-form-wrapper {
     padding: 24px;
 }
