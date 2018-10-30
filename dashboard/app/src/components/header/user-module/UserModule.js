@@ -67,7 +67,7 @@ class UserModule extends Component {
   }
   render() {
     const submenuAccountConfig = {
-      label: '',
+      label: 'Usuario',
       links: [
         {
           label: 'Editar perfil',
