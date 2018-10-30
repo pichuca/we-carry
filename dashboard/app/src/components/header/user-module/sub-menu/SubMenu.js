@@ -14,7 +14,7 @@ class SubMenu extends Component {
         <h4>{this.props.label}</h4>
         <ul>
           {this.props.links.map((link, index) => {
-            return <li key={index}><Link to={link.url} onClick={this.props.hide}>{link.label}</Link></li>;
+            return <Link to={link.url} onClick={this.props.hide} key={index}><li>{link.label}</li></Link>;
           })}
         </ul>
       </div>
