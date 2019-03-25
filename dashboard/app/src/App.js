@@ -3,6 +3,7 @@ import {  BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/header/Header';
 
 // Sections
+import LoginRegister from './components/login/LoginRegister';
 import Inventory from './components/sections/inventory/Inventory';
 import Orders from './components/sections/orders/Orders';
 import Entries from './components/sections/entries/Entries';
@@ -23,25 +24,29 @@ class App extends Component {
     super(props);
     this.state = {
       isLoading: true,
+      isLoggedIn: false,
     };
   }
   componentDidMount() {
     // Fake loading time to N seconds.
-    let fakeLoadingTime = 2500;
+    let fakeLoadingTime = 300;
     setTimeout(() => this.setState({ isLoading: false }), fakeLoadingTime);
+  }
+  getHeader(isLoggedIn) {
+    return isLoggedIn ? <Header /> : null;
   }
   render() {
     const { isLoading } = this.state;
-    if(isLoading) { // if your component doesn't have to wait for async data, remove this block 
+    if(isLoading) { // if your component doesn't have to wait for async data, remove this block
       return null; // render null when app is not ready
     }
     return (
       <Router>
         <div className="App">
-          <Header />
+          {this.getHeader(this.state.isLoggedIn)}
           <div className="sections">
             {/* Routes. */}
-            <Route exact path="/" component={Inventory} />
+            <Route exact path="/" component={LoginRegister} />
             <Route exact path="/inventory" component={Inventory} />
             <Route path="/orders" component={Orders} />
             <Route path="/entries" component={Entries} />
