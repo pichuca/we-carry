@@ -1,0 +1,45 @@
+.status-text {
+    position: relative;
+    top: -4px;
+}
+
+.material-icons {
+    position: relative;
+    top: 2px;
+}
+
+.material-icons.delivered {
+    color: #690;
+}
+
+.material-icons.ontheway,
+.material-icons.ready,
+.material-icons.tracking {
+    color: #0076ff;
+}
+
+.tracking-link-wrapper .material-icons.tracking {
+    position: relative;
+    top: 14px;
+    right: 13px;
+}
+
+
+.tracking-link-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    left: 24px;
+}
+.tracking-link-wrapper:hover {
+    background-color: #FFFFFF;
+}
+
+td a {
+    color: #99CC33 !important;
+}
+
+.tracking-head {
+    text-align: left !important;
+}

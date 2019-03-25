@@ -1,0 +1,16 @@
+.left,
+.right {
+    float: left;
+}
+
+/* Override charts styles. */
+.charts-inner-wrapper .recharts-wrapper {
+    margin: 0 auto !important;
+    display: block;
+}
+
+@media screen and (min-width: 1350px) {
+    .charts-inner-wrapper {
+        display: none;
+    }
+}
