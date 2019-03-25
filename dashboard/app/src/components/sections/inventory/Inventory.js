@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import EnancedTable from '../../../components/table/EnancedTable';
 
 class Inventory extends Component {
+  componentDidMount() {
+    // TODO:
+  }
   render() {
     return (
       <React.Fragment>
