@@ -37,8 +37,16 @@ class Login extends Component {
     });
   };
   login() {
-    // TODO: call backend login
     console.log(`User: ${this.state.user}, password: ${this.state.password}`);
+    fetch('/users/login', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: this.state.user,
+          password: this.state.password
+        })
+      }).then((response) => response.json)
+        .then((response) => console.log(JSON.stringify(response)))
+        .catch((error) => console.log(error));
   }
   render() {
     return (

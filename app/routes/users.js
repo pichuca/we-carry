@@ -13,26 +13,7 @@ router.get('/login', (req, res) => res.render('login'));
 // Register page
 router.get('/register', (req, res) => res.render('register'));
 
-const successLogin = function (req, res) {
-    console.log('success login!');
-    console.log('req');
-    console.log(req);
-};
-
-const failureLogin = function(req, res) {
-    console.log('Login failed');
-};
-
-// Login Handle
-router.post('/login', (req, res, next) => {
-    passport.authenticate('local', {
-        successRedirect: successLogin(req, res),
-        failureRedirect: failureLogin(req, res),
-        failureFlash: true
-    })(req, res, next);
-});
-
-// Resgister handle
+// Resgiser handle
 router.post('/register', (req, res) => {
     const { name, email, password, password2 } = req.body;
     let errors = [];
@@ -98,6 +79,15 @@ router.post('/register', (req, res) => {
                 }
             });
     }
+});
+
+// Login Handle
+router.post('/login', (req, res, next) => {
+    passport.authenticate('local', {
+        successRedirect: '/dashboard',
+        failureRedirect: '/users/login',
+        failureFlash: true
+    })(req, res, next);
 });
 
 // Logout Handle

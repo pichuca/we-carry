@@ -1,0 +1,35 @@
+/* Brand COLOR Green: #99CC33 */
+/* Brand COLOR Grey: #55565B */
+
+/* Commons */
+html, body,
+h1, h2, h3, h4, h5, h6,
+a, button, input,
+ul, ol, li {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* Welcome page */
+.logo {
+    background-image: url("/images/svg/we_carry.svg");
+    background-repeat: no-repeat;
+    position: relative;
+    margin: 0 auto;
+    width: 12em;
+    height: 6em;
+}
+#welcome-page a {
+    background-color: #FFF;
+    border: 1px solid #99CC33;
+    color: #55565B;
+}
+
+#welcome-page a:hover {
+    background-color: #99CC33;
+    color: #FFF;
+}
