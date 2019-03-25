@@ -1,3 +1,4 @@
+const path = require('path');
 const debug = require('debug')('app:startup');
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
@@ -51,10 +52,20 @@ app.use((req, res, next) => {
     next();
 });
 
+
+/**
+ * Serve react app from server.
+ */
+app.use(express.static(path.join(__dirname, '/client/app/build')));
+
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, '/client/app/build', 'index.html'));
+});
+
 // Routes
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 
-const PORT = process.env.PORT || 5002;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));
