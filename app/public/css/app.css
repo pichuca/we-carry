@@ -23,13 +23,40 @@ ul, ol, li {
     width: 12em;
     height: 6em;
 }
-#welcome-page a {
+#welcome-page a,
+#login-page button.btn-primary,
+#register-page button.btn-primary {
     background-color: #FFF;
     border: 1px solid #99CC33;
+}
+
+#welcome-page a:hover,
+#login-page button.btn-primary:hover,
+#register-page button.btn-primary:hover {
+    background-color: #99CC33;
+    color: #FFF;
+}
+
+#login-page h1,
+#login-page h1 i,
+#register-page h1,
+#register-page h1 i {
+    font-size: 22px;
+}
+
+#welcome-page a,
+#login-page button.btn-primary,
+#register-page button.btn-primary,
+#login-page h1.text-center,
+#register-page h1.text-center,
+#login-page h1 i,
+#register-page h1 i,
+#register-page a,
+#login-page a {
     color: #55565B;
 }
 
-#welcome-page a:hover {
-    background-color: #99CC33;
-    color: #FFF;
+#login-page a:hover,
+#register-page a:hover {
+    color: #99CC33;
 }

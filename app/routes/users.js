@@ -20,7 +20,7 @@ router.post('/register', (req, res) => {
 
     // Check required fields
     if (!name || !email || !password || !password2) {
-        errors.push({ msg: 'Please fill in all fields' });
+        errors.push({ msg: 'Por favor, llene todos los campos' });
     }
 
     // Check password match
@@ -29,8 +29,8 @@ router.post('/register', (req, res) => {
     }
 
     // Check password length
-    if (password.length < 6) {
-        errors.push({ msg: 'Password should be at least 6 characters' });
+    if (password.length < 8) {
+        errors.push({ msg: 'Su contraseña debe tener al menos 8 caracteres' });
     }
 
     if (errors.length > 0) {
