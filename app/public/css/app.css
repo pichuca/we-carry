@@ -14,6 +14,13 @@ ul, ol, li {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+.sections h1 {
+    color: #99CC33;
+    text-align: center;
+    margin: 20px;
+}
+
 /* Welcome page */
 .logo {
     background-image: url("/images/svg/we_carry.svg");
@@ -32,7 +39,8 @@ ul, ol, li {
 
 #welcome-page a:hover,
 #login-page button.btn-primary:hover,
-#register-page button.btn-primary:hover {
+#register-page button.btn-primary:hover,
+#dashboard a.btn:hover {
     background-color: #99CC33;
     color: #FFF;
 }
@@ -130,6 +138,7 @@ header img.app-logo {
     width: auto;
     display: inherit;
     padding-right: 1.5rem;
+    margin-bottom: 40px;
 }
 
 .user-module .user-name {
@@ -204,7 +213,40 @@ header img.app-logo {
     }
 }
 
+table {
+    font-size: 0.8125rem;
+}
+
 /* Dashboard page */
-#dashboard {
+#dashboard,
+#orders,
+#tracking-page,
+#product-page {
     margin-top: 128px; /* Double the Header height */
+}
+
+#dashboard .lead {
+    float: left;
+    margin-top: 3px;
+}
+
+#dashboard a,
+#orders a {
+    margin-left: 20px;
+}
+
+#dashboard a.btn:hover,
+#orders a.btn:hover {
+    border-color: #99CC33;
+}
+
+#dashboard table a,
+#orders table a {
+    color: blue;
+    margin-left: 0;
+    text-decoration: underline;
+}
+#dashboardtable a:hover,
+#orders a:hover {
+    color: #99CC33;
 }

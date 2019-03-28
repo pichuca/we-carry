@@ -13,4 +13,10 @@ router.get('/dashboard', ensureAuthenticated, (req, res) =>
         }
     }));
 
+router.get('/orders', ensureAuthenticated, (req, res) =>
+    res.render('orders'));
+
+router.get('/entries', ensureAuthenticated, (req, res) =>
+    res.render('entries'));
+
 module.exports = router;
