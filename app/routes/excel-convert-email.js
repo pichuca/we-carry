@@ -24,6 +24,10 @@ router.post('/generatefile', (req, res) => {
          */
         var transporter = nodemailer.createTransport({
             service: 'gmail',
+            host: "smtpout.secureserver.net",
+            secureConnection: true,
+            port: 465,
+
             auth: {
               user: 's.roibon@gmail.com',
               pass: 's4lv4d0r82'
@@ -31,10 +35,14 @@ router.post('/generatefile', (req, res) => {
         });
         
         var mailOptions = {
+            // from: 'html2excel@gmail.com',
+            // to: 's.roibon@gmail.com',
+            // subject: 'Sending Email using Node.js',
+            // text: 'That was easy!',
             from: 'html2excel@gmail.com',
-            to: 's.roibon@gmail.com',
+            to: 'info@pichucasystems.com',
             subject: 'Sending Email using Node.js',
-            text: 'That was easy!',
+            text: 'YAY!!',
             attachments: [{
                 fileName: filePath,
                 path: filePath,

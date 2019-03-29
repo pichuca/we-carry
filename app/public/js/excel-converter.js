@@ -33,8 +33,7 @@ Converter.prototype.getProductsDataLength = function() {
 Converter.prototype.createInput = function(id) {
     var input = document.createElement("input");
     input.type = "text";
-    input.name = id;
-    // input.placeholder = id;
+    // input.name = id;
     input.className = 'form-control';
     input.onfocus = this.onInputFocus;
     input.onfocusout = this.onFocusOut;
@@ -61,6 +60,8 @@ Converter.prototype.addItem = function() {
     document.getElementById('products-for-excel').appendChild(cloneRow);
     this.clearEditor();
     document.querySelector('#id-number input').focus();
+    // Animate to bottom when adding item
+    $('html, body').animate({scrollTop:$(document).height()}, 'slow');
 };
 Converter.prototype.setExcelTableData = function() {
     this.workbook = XLSX.utils.table_to_book(document.getElementById('products-for-excel'));
