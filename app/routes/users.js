@@ -25,7 +25,7 @@ router.post('/register', (req, res) => {
 
     // Check password match
     if (password !== password2) {
-        errors.push({ msg: 'Passwords do not match' });
+        errors.push({ msg: 'Las contraseñas no son iguales' });
     }
 
     // Check password length
@@ -47,7 +47,7 @@ router.post('/register', (req, res) => {
             .then(user => {
                 if (user) {
                     // User exists
-                    errors.push({ msg: 'Email is already registered' });
+                    errors.push({ msg: 'Este email ya se encuentra registrado' });
                     res.render('register', {
                         errors,
                         name,
@@ -71,7 +71,7 @@ router.post('/register', (req, res) => {
                             // Save user
                             newUser.save()
                                 .then(user => {
-                                    req.flash('success_msg', 'You are now registered and can log in');
+                                    req.flash('success_msg', 'Ya estas registrado, ahora podes ingresar');
                                     res.redirect('/users/login');
                                 })
                                 .catch(err => console.log(err));
