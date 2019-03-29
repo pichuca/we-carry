@@ -19,4 +19,7 @@ router.get('/orders', ensureAuthenticated, (req, res) =>
 router.get('/entries', ensureAuthenticated, (req, res) =>
     res.render('entries'));
 
+router.get('/stats', ensureAuthenticated, (req, res) =>
+    res.render('stats'));
+
 module.exports = router;

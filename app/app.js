@@ -44,6 +44,7 @@ app.use(flash());
 // Global Vars
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
+    res.locals.success_email_msg = req.flash('success_email_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
     next();
@@ -54,6 +55,7 @@ app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 app.use('/products', require('./routes/products'));
 app.use('/tracking', require('./routes/tracking'));
+app.use('/entries', require('./routes/excel-convert-email'));
 
 const PORT = process.env.PORT || 5001;
 

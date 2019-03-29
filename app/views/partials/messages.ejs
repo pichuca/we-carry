@@ -35,3 +35,10 @@
         </button>
     </div>
 <% } %>
+
+<% if (success_email_msg != '') { %>
+    <div class="alert alert-dismissible alert-success fade show"">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Bien hecho!</strong> <%= success_email_msg %><a href="#" class="alert-link">this important alert message</a>
+    </div>
+<% } %>
