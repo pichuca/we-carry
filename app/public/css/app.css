@@ -97,7 +97,8 @@ header .links {
     vertical-align: middle;
 }
 
-header .links a {
+header .links a,
+.user-module a {
     text-decoration: none;
     color: #55565B;
     font-size: 0.8rem;
@@ -190,35 +191,68 @@ header img.app-logo {
 }
 
 
-.mobile-menu {
+#mobileMenu {
     display: none;
 }
 /* Mobile */
 @media screen and (max-width: 1024px) {
-    header .links .navs {
+    header .links .navs,
+    .user-module a {
         display: none;
     }
-    .mobile-menu {
+    #mobileMenu {
         display: flex;
     }
-    
-    .mobile-menu button {
+
+    header .links {
+        padding-left: 1.0rem;
+    }
+
+    #mobileMenu i,
+    #mobileMenu #mobileMenuIcon {
+        font-size: 28px;
+        color: #55565B;
+        margin: 19px 20px;
+        cursor: pointer;
+    }
+
+    #mobileMenu #mobileMenuIcon.selected {
         color: #99CC33;
-        width: 50px;
-        height: 50px;
-        top: 8px;
-        margin-left: 10px;
     }
     
-    .mobile-menu img.app-logo {
+    #mobileMenu .links {
+        display: none;
+        width: 100% !important;
+        height: auto;
+        top: 65px;
+        position: absolute;
+        left: 0;
+        background-color: #555;
+        opacity: 0.9;
+        text-align: center;
+    }
+
+    #mobileMenu .links a {
+        color: #99CC33;
+        font-weight: bold;
+        margin: 20px 0 20px;
+    }
+
+    #mobileMenu .links a.btn {
+        color: #FFF;
+        background-color: transparent;
+        border: none;
+    }
+
+    #mobileMenu .links a:hover {
+        text-decoration: underline;
+    }
+    
+    #mobileMenu img.app-logo {
         width: 120px;
         height: auto;
         position: relative;
         top: 23px;
-    }
-    
-    .mobile-menu .selected {
-        background-color: rgba(0, 0, 0, 0.08);
     }
 }
 

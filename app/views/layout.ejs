@@ -25,6 +25,16 @@
             <!-- TODO add icons -->
             <a id="logout" class="navs" href="/users/logout" class="btn btn-secondary">Salir</a>
         </div>
+        <div id="mobileMenu">
+            <div class="links">
+                <a id="inventory" class="navs-mobile" href="/dashboard">Inventario</a>
+                <a id="orders" class="navs-mobile" href="/orders">Pedidos</a>
+                <a id="entries" class="navs-mobile" href="/entries">Solicitudes</a>
+                <a id="stats" class="navs-mobile" href="/stats">Estadísticas</a>
+                <a id="logout" class="btn btn-secondary navs-mobile" href="/users/logout">Salir</a>
+            </div>
+            <i id="mobileMenuIcon" class="fas fa-bars"></i>
+        </div>
     </header>
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -33,6 +43,7 @@
     <script src="/js/FileSaver.min.js"></script>
     <script src="/js/lodash.js"></script>
     <script src="/js/excel-converter.js"></script>
+    <script src="/js/mobile-menu.js"></script>
     <div class="container">
         <%- body %>
     </div>
