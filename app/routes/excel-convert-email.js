@@ -31,7 +31,7 @@ router.post('/generatefile', (req, res) => {
                 user: "info@pichucasystems.com",
                 pass: "pichuca123!"
                 // user: "info@wecarry.com.ar",
-                // pass: "magento2"
+                // pass: "magento2."
             }
         });
         
