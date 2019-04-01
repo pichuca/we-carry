@@ -23,14 +23,13 @@ router.post('/generatefile', (req, res) => {
          * MAIL with Nodemailer 
          */
         var transporter = nodemailer.createTransport({
-            service: 'gmail',
-            host: "smtpout.secureserver.net",
-            secureConnection: true,
-            port: 465,
-
+            // service: 'Godaddy',
+            host: "outlook.office365.com",  
+            // secureConnection: true,
+            // port: 80, // Outlook don't ask for port, use a Protocol for sending emails.
             auth: {
-              user: 's.roibon@gmail.com',
-              pass: 's4lv4d0r82'
+                user: "info@pichucasystems.com",
+                pass: "pichuca123!"
             }
         });
         
@@ -39,10 +38,10 @@ router.post('/generatefile', (req, res) => {
             // to: 's.roibon@gmail.com',
             // subject: 'Sending Email using Node.js',
             // text: 'That was easy!',
-            from: 'html2excel@gmail.com',
+            from: 'info@pichucasystems.com',
             to: 'info@pichucasystems.com',
-            subject: 'Sending Email using Node.js',
-            text: 'YAY!!',
+            subject: 'We Carry solicitud de envio de mercadería',
+            text: 'El archivo excel con los productos a ingresar se encuentra como archivo adjunto. Gracias, el equipo de We Carry.',
             attachments: [{
                 fileName: filePath,
                 path: filePath,

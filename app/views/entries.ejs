@@ -1,12 +1,14 @@
 <div id="entries" class="sections">
-        <!-- <div id="sentEmail" class="alert alert-dismissible alert-success fade">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <div id="sentEmail" class="alert alert-dismissible alert-success collapse success-message">
+            <!-- <button type="button" class="close">&times;</button> -->
             <strong>Bien hecho!</strong> Tu archivo fue enviado con exito a los depositos de We Carry.
         </div>
-        <div id="errorSentEmail" class="alert alert-dismissible alert-danger fade">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
+        
+        <div id="errorSentEmail" class="alert alert-dismissible alert-danger collapse error-message">
+            <!-- <button type="button" class="close">&times;</button> -->
             <strong>Oh no!</strong> Algo salio mal, vuelve a intentarlo por favor.
         </div>
+        <!-- 
         <div id="sentEmailExcelMessageOneItem" class="alert alert-dismissible alert-info fade">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <strong>Debes agregar al menos 1 item para poder enviar tu archivo!</strong>
@@ -110,4 +112,13 @@
     var converter = new Converter('add product and send email table', $, _);
     converter.createTableInputs();
     converter.addItemOnEnter();
+    $(document).ready(function () {
+        $(document)
+            .ajaxStart(function() {
+                $('html, body').animate({scrollTop:0}, 'fast');
+                $('.loader-wrapper').show();
+                $('#sentEmail.alert').alert();
+                $('#errorSentEmail.alert').alert();
+            });
+    });
 </script>

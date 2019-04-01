@@ -109,8 +109,12 @@ Converter.prototype.clearExcelTable = function() {
         product.remove(product);
     });
 };
-// TODO: add download file button
 Converter.prototype.downloadFile = function(event) {
+    var hasAnyItemsAdded = document.getElementById('products-for-excel').children.length > 1;
+    if (!hasAnyItemsAdded) {
+        alert('Por favor, agregue al menos 1 item');
+        return;
+    }
     var fileName = this.fileName || 'test';
     var url = fileName + '.xlsx';
     var workbook = XLSX.utils.table_to_book(document.getElementById('products-for-excel'));
@@ -135,14 +139,26 @@ Converter.prototype.sendExcelFileViaMail = function() {
         dataType: 'json',
         contentType: 'application/json',
         success: function(result) {
-            console.log(result);
+            $('.loader-wrapper').hide();
             that.resetAll();
-            alert('Su archivo ha sido enviado con exito a los depositos de We Carry!');
+            console.log(result);
+            // Show success message
+            $('#sentEmail').show();
+            $('html, body').animate({scrollTop:0}, 'fast');
+            setTimeout(function() {
+                $('#sentEmail').fadeOut(200);
+            }, 3000);
         },
         error: function(error) {
+            $(".loader-wrapper").hide();
             console.log(error);
             console.log('Error has occured: ' + error);
-            alert('Error has occured: ' + error);
+            // Show error message
+            $('#errorSentEmail').show();
+            $('html, body').animate({scrollTop:0}, 'fast');
+            setTimeout(function() {
+                $('#errorSentEmail').fadeOut(200);
+            }, 3000);
         }
     });
 };
