@@ -30,18 +30,17 @@ router.post('/generatefile', (req, res) => {
             auth: {
                 user: "info@pichucasystems.com",
                 pass: "pichuca123!"
+                // user: "info@wecarry.com.ar",
+                // pass: "magento2"
             }
         });
         
         var mailOptions = {
-            // from: 'html2excel@gmail.com',
-            // to: 's.roibon@gmail.com',
-            // subject: 'Sending Email using Node.js',
-            // text: 'That was easy!',
+            // from: 'info@wecarry.com.ar',
             from: 'info@pichucasystems.com',
-            to: 'info@pichucasystems.com',
+            to: 'info@pichucasystems.com, santiagofernandez@wecarry.com.ar',
             subject: 'We Carry solicitud de envio de mercadería',
-            text: 'El archivo excel con los productos a ingresar se encuentra como archivo adjunto. Gracias, el equipo de We Carry.',
+            text: 'El archivo Excel con los productos a ingresar se encuentra como archivo adjunto. Gracias, el equipo de We Carry.',
             attachments: [{
                 fileName: filePath,
                 path: filePath,
