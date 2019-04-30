@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+  <soap12:Body>
+    <obtenerMovimientos xmlns="http://brainsys.com.ar/">
+      <sesion>
+        <usuario>
+          <usua_id>int</usua_id>
+          <usua_nombre>south</usua_nombre>
+          <usua_clie_id>string</usua_clie_id>
+          <usua_estadoPorDefecto>string</usua_estadoPorDefecto>
+          <usua_vencimientoPassword>int</usua_vencimientoPassword>
+          <usua_ingreso>dateTime</usua_ingreso>
+          <usua_password>SO001</usua_password>
+          <usua_altaPassword>dateTime</usua_altaPassword>
+        </usuario>
+        <fecha>dateTime</fecha>
+      </sesion>
+      <filtro>
+        <fechaDesde>dateTime</fechaDesde>
+        <fechaHasta>dateTime</fechaHasta>
+        <compania>string</compania>
+        <producto>string</producto>
+        <tipo>string</tipo>
+      </filtro>
+    </obtenerMovimientos>
+  </soap12:Body>
+</soap12:Envelope>

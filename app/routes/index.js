@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-var request = require('request');
+// var request = require('request');
+const soapRequest = require('../modules/soapRequest.js');
+const fs = require('fs');
 const { ensureAuthenticated } = require('../config/auth');
 
 // Welcome Page
@@ -8,22 +10,45 @@ router.get('/', (req, res) => res.render('welcome'));
 
 // Dashboard
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
-    // const url = 'http://190.221.30.210/intranet/ServiciosWeb/ConsultaStock.asmx?op=obtenerStock';
-    // const data = request(url, (err, res, body) => {
-    //     console.log('error:', err); // Print the error if one occurred
-    //     console.log('statusCode:', res && res.statusCode); // Print the response status code if a response was received
-    //     console.log('body:', body); // Print the HTML for the Google homepage.
-    //     return body;
+//      POST /intranet/ServiciosWeb/ConsultaStock.asmx HTTP/1.1
+//      Host: 190.221.30.210
+//      Content-Type: text/xml; charset=utf-8
+//      Content-Length: length
+//      SOAPAction: "http://brainsys.com.ar/obtenerStock"
+    let username = 'south';
+    let password = 'SO001';
+    const url = 'http://190.221.30.210/intranet/ServiciosWeb/ConsultaStock.asmx';
+    const headers = {
+        'POST': '/intranet/ServiciosWeb/ConsultaStock.asmx HTTP/1.1',
+        'Host': '190.221.30.210',
+        'Content-Type': 'text/xml; charset=utf-8',
+        'usua_password': password,
+        'usua_nombre': username,
+            //  Content-Length: length
+        'SOAPAction': "http://brainsys.com.ar/obtenerStock"
+    };
+    const xml = fs.readFileSync('xml/getStock.xml', 'utf-8');
+    console.log(xml);
+    // Self invoke request
+    // const soapRequestBody = (async () => {
+    //     const { response } = await soapRequest(url, headers, xml, 1000);
+    //     const { body, statusCode } = response;
+    //     console.log('SOAP request body:');
+    //     console.log(body);
+    //     console.log(`Status code: ${statusCode}`)
+    //     return response;
+    // })();
+
+    // soapRequestBody.then((response) => {
+    //     console.log(response);
+    // }).catch((err) => {
+    //     console.log(err);
     // });
+
     res.render('dashboard', {
         user: {
             name: req.user.name
-        },
-        products: [{
-            id: 1,
-            name: "test",
-            SKD: 1210394
-        }]
+        }
     });
 });
 

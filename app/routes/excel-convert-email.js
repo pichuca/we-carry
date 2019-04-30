@@ -23,22 +23,20 @@ router.post('/generatefile', (req, res) => {
          * MAIL with Nodemailer 
          */
         var transporter = nodemailer.createTransport({
-            // service: 'Godaddy',
-            host: "outlook.office365.com",  
-            // secureConnection: true,
-            // port: 80, // Outlook don't ask for port, use a Protocol for sending emails.
+            service: 'gmail',
+            host: 'smtp.gmail.com',
+            port: 587,
+            secure: false,
+            requireTLS: true,
             auth: {
-                user: "info@pichucasystems.com",
-                pass: "pichuca123!"
-                // user: "info@wecarry.com.ar",
-                // pass: "magento2."
+                user: 'wecarryinfo@gmail.com',
+                pass: 'magento2'
             }
         });
         
         var mailOptions = {
-            // from: 'info@wecarry.com.ar',
-            from: 'info@pichucasystems.com',
-            to: 'info@pichucasystems.com, santiagofernandez@wecarry.com.ar',
+            from: 'wecarryinfo@gmail.com',
+            to: 'info@pichucasystems.com, wecarryinfo@gmail.com', // TODO: add warehouse email address
             subject: 'We Carry solicitud de envio de mercadería',
             text: 'El archivo Excel con los productos a ingresar se encuentra como archivo adjunto. Gracias, el equipo de We Carry.',
             attachments: [{
