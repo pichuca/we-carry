@@ -23,12 +23,16 @@
         </div>
         <div class="row">
             <div class="col">
-                <button type="button" class="btn btn-success" onclick="converter.removeLastItem()">Borrar ultimo agregado</button>
-            </div>
+                <input type="file" name="fileupload" />
         </div>
         <div class="row">
             <div class="col">
                 <button type="button" class="btn btn-success" onclick="converter.sendExcelFileViaMail()">Enviar archivo Excel por mail</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-success" onclick="converter.uploadFile()">Subir archivo Excel</button>
             </div>
         </div>
         <div class="row">

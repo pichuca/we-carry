@@ -1,6 +1,7 @@
 // Converter
 function Converter(name, $, _) {
     this.name = name;
+    // this.listenToFileUpload();
 };
 Converter.prototype.fileNameDebounceKeyUp = _.debounce(function(event) {
     var value = event.target.value;
@@ -119,6 +120,25 @@ Converter.prototype.downloadFile = function(event) {
     var url = fileName + '.xlsx';
     var workbook = XLSX.utils.table_to_book(document.getElementById('products-for-excel'));
     XLSX.writeFile(workbook, url);
+};
+Converter.prototype.uploadFile = function() {
+    var fileName = document.querySelector('input[name=fileupload]').files[0].name;
+    console.log(fileName);
+    $.ajax({
+        url: '/entries/fileupload',
+        data: JSON.stringify({ name: fileName }),
+        method: 'POST',
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function(result) {
+            console.log('File upload success');
+            console.log(result);
+        },
+        error: function(result) {
+            console.log('File upload error');
+            console.log(result);
+        }
+    });
 };
 Converter.prototype.sendExcelFileViaMail = function() {
     var that = this;

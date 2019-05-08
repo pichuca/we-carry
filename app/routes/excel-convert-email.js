@@ -1,13 +1,17 @@
 const fs = require('fs');
+const path = require('path');
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const XLSX = require('xlsx');
+var formidable = require('formidable');
 
 
 router.use(bodyParser.json()); // for parsing application/json
 router.use(bodyParser.urlencoded({ extended: true }));
+
+// TODO: send email function to use it in any route
 
 router.post('/generatefile', (req, res) => {
         // TODO: make it dynamic if necessry.
@@ -66,5 +70,17 @@ router.post('/generatefile', (req, res) => {
 
     }
 );
+
+router.post('/fileupload', (req, res) => {
+    var fileName = req.body.name;
+    console.log(fileName);
+    var filePath = path.resolve(fileName);
+    console.log(filePath);
+    // fs.writeFile('mynewfile3.txt', 'Hello content!', function (err) {
+    //     if (err) throw err;
+    //     console.log('Saved!');
+    //   });
+    res.write('Uploaded File!');
+});
 
 module.exports = router;

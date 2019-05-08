@@ -6,7 +6,8 @@ const fs = require('fs');
 const { ensureAuthenticated } = require('../config/auth');
 
 // Welcome Page
-router.get('/', (req, res) => res.render('welcome'));
+// TODO: should add welcome view if want to re add register option
+router.get('/', (req, res) => res.render('login'));
 
 // Dashboard
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
