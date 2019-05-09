@@ -5,51 +5,76 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const XLSX = require('xlsx');
-var formidable = require('formidable');
+const fileUpload = require('express-fileupload');
 
-
+router.use(bodyParser());
 router.use(bodyParser.json()); // for parsing application/json
 router.use(bodyParser.urlencoded({ extended: true }));
+router.use(fileUpload());
 
-// TODO: send email function to use it in any route
+// variables
 
+/**
+ * EMAIL service
+ */
+const getMailOptions = (fileName, filePath) => {
+    return {
+        from: 'wecarryinfo@gmail.com',
+        to: 'info@pichucasystems.com, wecarryinfo@gmail.com', // TODO: add warehouse email address
+        subject: 'We Carry solicitud de envio de mercadería',
+        text: 'El archivo Excel con los productos a ingresar se encuentra como archivo adjunto. Gracias, el equipo de We Carry.',
+        attachments: [{
+            fileName: fileName,
+            path: filePath,
+            contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        }]
+    };
+};
+
+const getTransporter = () => {
+    return nodemailer.createTransport({
+        service: 'gmail',
+        host: 'smtp.gmail.com',
+        port: 587,
+        secure: false,
+        requireTLS: true,
+        auth: {
+            user: 'wecarryinfo@gmail.com',
+            pass: 'magento2'
+        }
+    });
+};
+
+const removeFile = (filePath) => {
+    fs.unlink(filePath, (err) => {
+        if (err) throw err;
+        console.log(filePath + ' Was deleted after sending it via email.')
+    });
+};
+
+/**
+ * 
+ * End email service 
+ *  
+ */
+
+// Generate and send excel file
 router.post('/generatefile', (req, res) => {
         // TODO: make it dynamic if necessry.
         const fileExtension = '.xlsx';
-        let filePath = req.body.fileName + fileExtension;
+        var filePath = req.body.fileName + fileExtension;
 
         /**
          * Get excel file.
          */
         XLSX.writeFile(req.body.workbook, filePath);
 
-        /**
-         * MAIL with Nodemailer 
-         */
-        var transporter = nodemailer.createTransport({
-            service: 'gmail',
-            host: 'smtp.gmail.com',
-            port: 587,
-            secure: false,
-            requireTLS: true,
-            auth: {
-                user: 'wecarryinfo@gmail.com',
-                pass: 'magento2'
-            }
-        });
-        
-        var mailOptions = {
-            from: 'wecarryinfo@gmail.com',
-            to: 'info@pichucasystems.com, wecarryinfo@gmail.com', // TODO: add warehouse email address
-            subject: 'We Carry solicitud de envio de mercadería',
-            text: 'El archivo Excel con los productos a ingresar se encuentra como archivo adjunto. Gracias, el equipo de We Carry.',
-            attachments: [{
-                fileName: filePath,
-                path: filePath,
-                contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-            }]
-        };
-        
+        // /**
+        //  * MAIL with Nodemailer 
+        //  */
+        var transporter = getTransporter();
+        var mailOptions = getMailOptions(filePath, filePath);
+
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
                 console.log(error);
@@ -60,10 +85,7 @@ router.post('/generatefile', (req, res) => {
                     message: 'success'
                 });
                 // Remove local file after was sent.
-                fs.unlink(filePath, (err) => {
-                    if (err) throw err;
-                    console.log(filePath + ' Was deleted after sending it via email.')
-                });
+                removeFile(filePath);
                 req.flash('success_email_msg', 'El archivo a sido enviado al deposito para el ingresa de tu mercadería.');
             }
         });
@@ -71,16 +93,38 @@ router.post('/generatefile', (req, res) => {
     }
 );
 
+// Send uploaded
 router.post('/fileupload', (req, res) => {
-    var fileName = req.body.name;
-    console.log(fileName);
-    var filePath = path.resolve(fileName);
-    console.log(filePath);
-    // fs.writeFile('mynewfile3.txt', 'Hello content!', function (err) {
-    //     if (err) throw err;
-    //     console.log('Saved!');
-    //   });
-    res.write('Uploaded File!');
+    if (Object.keys(req.files).length === 0) {
+        return res.status(400).send('No files were uploaded.');
+    }
+
+    var file = req.files.fileupload;
+    var fileName = file.name;
+    
+    // move into server dir (express-fileupload method)
+    file.mv(fileName, (err) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+    });
+
+    // NOTE: fileName is actual file path.
+
+    var transporter = getTransporter();
+    var mailOptions = getMailOptions(fileName, fileName);
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Uploaded file sent: ' + info.response);
+            removeFile(fileName);
+            res.send('File uploaded and sent!');
+            req.flash('success_email_msg', 'Tu archivo a sido enviado al deposito para el ingresa de tu mercadería.');
+        }
+    });
+
 });
 
 module.exports = router;

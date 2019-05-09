@@ -29,7 +29,7 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
         'SOAPAction': "http://brainsys.com.ar/obtenerStock"
     };
     const xml = fs.readFileSync('xml/getStock.xml', 'utf-8');
-    console.log(xml);
+    // console.log(xml);
     // Self invoke request
     // const soapRequestBody = (async () => {
     //     const { response } = await soapRequest(url, headers, xml, 1000);

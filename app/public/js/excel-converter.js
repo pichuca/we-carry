@@ -121,25 +121,6 @@ Converter.prototype.downloadFile = function(event) {
     var workbook = XLSX.utils.table_to_book(document.getElementById('products-for-excel'));
     XLSX.writeFile(workbook, url);
 };
-Converter.prototype.uploadFile = function() {
-    var fileName = document.querySelector('input[name=fileupload]').files[0].name;
-    console.log(fileName);
-    $.ajax({
-        url: '/entries/fileupload',
-        data: JSON.stringify({ name: fileName }),
-        method: 'POST',
-        dataType: 'json',
-        contentType: 'application/json',
-        success: function(result) {
-            console.log('File upload success');
-            console.log(result);
-        },
-        error: function(result) {
-            console.log('File upload error');
-            console.log(result);
-        }
-    });
-};
 Converter.prototype.sendExcelFileViaMail = function() {
     var that = this;
     var workbook = XLSX.utils.table_to_book(document.getElementById('products-for-excel'));
@@ -150,7 +131,7 @@ Converter.prototype.sendExcelFileViaMail = function() {
     }
     var data = {
         workbook: workbook,
-        fileName: this.fileName || 'test'
+        fileName: this.fileName || 'we-carry-archivo-solicitud-ingreso'
     };
     $.ajax({
         url: '/entries/generatefile',
