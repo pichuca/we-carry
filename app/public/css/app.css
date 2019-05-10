@@ -60,13 +60,22 @@ ul, ol, li {
 #login-page h1 i,
 #register-page h1 i,
 #register-page a,
-#login-page a {
+#login-page a,
+#fileupload-success a,
+#fileupload-error a {
     color: #55565B;
 }
 
 #login-page a:hover,
-#register-page a:hover {
+#register-page a:hover,
+#fileupload-success a:hover,
+#fileupload-error a:hover {
     color: #99CC33;
+}
+
+#fileupload-success a,
+#fileupload-error a {
+    text-decoration: underline;
 }
 
 /* Header */
@@ -260,13 +269,7 @@ table {
     font-size: 0.8125rem;
 }
 
-/* Dashboard page */
-#dashboard,
-#orders,
-#tracking-page,
-#product-page,
-#entries,
-#stats {
+.sections {
     margin-top: 88px; /* Double the Header height */
 }
 
@@ -306,33 +309,26 @@ table {
     margin-bottom: 40px;
 }
 
-#entries .html2excel button {
+#generatefile .html2excel button {
     width: 100%;
     margin: 10px 0 10px; 
 }
 
-#entries .html2excel .file-title {
+#generatefile .html2excel .file-title {
     height: 60px;
 }
 
-#entries .html2excel .file-title-text {
+#generatefile .html2excel .file-title-text {
     font-weight: bold;
     color: #55565B;
 }
 
-@media screen and (min-width: 1360px) {
-    #entries .table-wrapper {
-        width: 124%;
-        margin-left: -12%;
-    }
-}
-
-#entries .html2excel button {
+#generatefile .html2excel button {
     background-color: #99CC33;
     border-color: #99CC33;
 }
 
-#entries .html2excel button:hover {
+#generatefile .html2excel button:hover {
     background-color: #55565B;
     border-color: #55565B;
 }
@@ -348,9 +344,38 @@ table {
     color: #FFF;
 }
 
+#entries a {
+    color: #55565B;
+    text-decoration: underline;
+}
+
+#entries a:hover {
+    color: #99CC33;
+    text-decoration: none;
+}
+
 #entries .loader {
     display: none;
 }
+
+#uploadfile h1,
+#generatefile h1 {
+    text-align: left;
+    margin-left: 0;
+}
+
+#uploadfile .back,
+#generatefile .back {
+    color: #55565B;
+    text-decoration: underline;
+}
+
+#uploadfile .back:hover,
+#generatefile .back:hover {
+    color: #99CC33;
+    text-decoration: none;
+}
+
 
 /* #entries .alert {
     display: none;

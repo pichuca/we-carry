@@ -1,0 +1,32 @@
+<div id="uploadfile" class="sections">
+    <h1>Subi tu archivo Excel:</h1>
+    <p>Subi el archivo con el listado de tus productos a ingresar en nuestro deposito y envialo.</p>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <form ref='uploadForm' action="/entries/fileupload" id="uploadForm" method="post" encType="multipart/form-data">
+                    <input type="file" name="fileupload" />
+                    <input id="uploadfilesubmit" type="submit" />
+                </form>
+            </div>
+            <a class="back" href="/entries">Volver</a>
+        </div>
+    </div>
+</div>
+<script>
+    // Show header when view is dashboard.
+    document.getElementsByTagName('header')[0].classList.add('show');
+    $(document).ready(function () {
+        $(document)
+            .ajaxStart(function() {
+                $('html, body').animate({scrollTop:0}, 'fast');
+                $('.loader-wrapper').show();
+                $('#sentEmail.alert').alert();
+                $('#errorSentEmail.alert').alert();
+            });
+        $('form').on('submit', function() {
+            $('.loader-wrapper').show();
+        });
+    });
+</script>

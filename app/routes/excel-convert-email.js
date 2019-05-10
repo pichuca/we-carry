@@ -1,11 +1,11 @@
 const fs = require('fs');
-
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const XLSX = require('xlsx');
 const fileUpload = require('express-fileupload');
+const { ensureAuthenticated } = require('../config/auth');
 
 router.use(bodyParser());
 router.use(bodyParser.json()); // for parsing application/json
@@ -58,6 +58,11 @@ const removeFile = (filePath) => {
  *  
  */
 
+ // Generate file
+router.get('/generate', ensureAuthenticated, (req, res) => {
+    res.render('generatefile');
+});
+
 // Generate and send excel file
 router.post('/generatefile', (req, res) => {
         // TODO: make it dynamic if necessry.
@@ -93,6 +98,11 @@ router.post('/generatefile', (req, res) => {
     }
 );
 
+// Upload file
+router.get('/upload', ensureAuthenticated, (req, res) => {
+    res.render('uploadfile');
+});
+
 // Send uploaded
 router.post('/fileupload', (req, res) => {
     if (Object.keys(req.files).length === 0) {
@@ -117,11 +127,15 @@ router.post('/fileupload', (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.log(error);
+            res.render('fileupload-error');
         } else {
             console.log('Uploaded file sent: ' + info.response);
             removeFile(fileName);
-            res.send('File uploaded and sent!');
-            req.flash('success_email_msg', 'Tu archivo a sido enviado al deposito para el ingresa de tu mercadería.');
+            res.render('fileupload-success', {
+                file: {
+                    name: fileName
+                }
+            });
         }
     });
 

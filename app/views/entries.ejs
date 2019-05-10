@@ -1,131 +1,18 @@
 <div id="entries" class="sections">
-        <div id="sentEmail" class="alert alert-dismissible alert-success collapse success-message">
-            <!-- <button type="button" class="close">&times;</button> -->
-            <strong>Bien hecho!</strong> Tu archivo fue enviado con exito a los depositos de We Carry.
+    <h1>Ingresos de mercadería</h1>
+    <!-- Entries options -->
+    <div class="row">
+        <div class="col">
+            <a id="upload-excel-file" href="/entries/upload">Subir un archivo Excel</a>
         </div>
-        
-        <div id="errorSentEmail" class="alert alert-dismissible alert-danger collapse error-message">
-            <!-- <button type="button" class="close">&times;</button> -->
-            <strong>Oh no!</strong> Algo salio mal, vuelve a intentarlo por favor.
-        </div>
-        <!-- 
-        <div id="sentEmailExcelMessageOneItem" class="alert alert-dismissible alert-info fade">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Debes agregar al menos 1 item para poder enviar tu archivo!</strong>
-        </div> -->
-        <h1>Ingresos de mercadería</h1>
-        <!-- HTML 2 Excel -->
-    <div class="html2excel">
-        <div class="row">
-            <div class="col">
-                <button id="add-item-button" type="button" class="btn btn-success" onclick="converter.addItem()">Agregar Item</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <form ref='uploadForm' action="/entries/fileupload" id="uploadForm" method="post" encType="multipart/form-data">
-                    <input type="file" name="fileupload" />
-                    <input id="uploadfilesubmit" type="submit" />
-                </form>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button type="button" class="btn btn-success" onclick="converter.sendExcelFileViaMail()">Enviar archivo Excel por mail</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button type="button" class="btn btn-success" onclick="converter.uploadFile()">Subir archivo Excel</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button type="button" class="btn btn-success" onclick="converter.downloadFile(event)">Descargar archivo Excel</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button type="button" class="btn btn-outline-danger" onclick="converter.resetAll()">Borrar Todo</button>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-form-label" for="file-name">Nombre del archivo: </label>
-            <span id="file-title"><span class="file-title-text"></span><code>.xlsx</code></span>
-            <input id="file-name" class="form-control" type="text" placeholder="Ingresa el nombre de tu archivo (sin .xlsx)" onkeyup="converter.fileNameDebounceKeyUp(event)" onfocusout="converter.clearFileNameInput()" />
-        </div>
-        <div class="table-wrapper" style="overflow-x:auto;">
-            <table id="products" class="table table-hover">
-                <thead>
-                    <tr class="table-default">
-                    <th scope="col">NRO_ID</th>
-                    <th scope="col">Nombre y Apellido</th> 
-                    <th scope="col">CALLE</th>
-                    <th scope="col">CP</th>
-                    <th scope="col">LOCALIDAD</th>
-                    <th scope="col">PROVINCIA</th>
-                    <th scope="col">CODIGO DE PRODUCTO</th>
-                    <th scope="col">DESCRIPCION DEL PRODUCTO</th>
-                    <th scope="col">VD</th>
-                    <th scope="col">E-MAIL</th>
-                    <th scope="col">OBSERVACION</th>
-                    <th scope="col">CANTIDAD</th>
-                    <th scope="col">GESTION A REALIZAR</th>
-                </tr>
-                </thead>
-                <tr class="editor">
-                <!-- USER INPUT -->
-                <td id="id-number"></td>
-                <td id="full-name"></td>
-                <td id="street"></td>
-                <td id="zipcode"></td>
-                <td id="locality"></td>
-                <td id="province"></td>
-                <td id="product-id"></td>
-                <td id="product-description"></td>
-                <td id="vd"></td>
-                <td id="email"></td>
-                <td id="observation"></td>
-                <td id="quantity"></td>
-                <td id="mgmt-to-be-carried-out"></td>
-                </tr>
-            </table>
-            <table id="products-for-excel" class="table table-hover">
-                <tr class="table-default" style="visibility:hidden;">
-                <th>NRO_ID</th>
-                <th>Nombre y Apellido</th> 
-                <th>CALLE</th>
-                <th>CP</th>
-                <th>LOCALIDAD</th>
-                <th>PROVINCIA</th>
-                <th>CODIGO DE PRODUCTO</th>
-                <th>DESCRIPCION DEL PRODUCTO</th>
-                <th>VD</th>
-                <th>E-MAIL</th>
-                <th>OBSERVACION</th>
-                <th>CANTIDAD</th>
-                <th>GESTION A REALIZAR</th>
-                </tr>
-                <tr class="data">
-                <!-- Info append's here -->
-                </tr>
-            </table>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a id="genereate-excel-file" href="/entries/generate">Generar un archivo Excel</a>
         </div>
     </div>
 </div>
 <script>
     // Show header when view is dashboard.
     document.getElementsByTagName('header')[0].classList.add('show');
-    // Start HTML2Excel converter.
-    var converter = new Converter('add product and send email table', $, _);
-    converter.createTableInputs();
-    converter.addItemOnEnter();
-    $(document).ready(function () {
-        $(document)
-            .ajaxStart(function() {
-                $('html, body').animate({scrollTop:0}, 'fast');
-                $('.loader-wrapper').show();
-                $('#sentEmail.alert').alert();
-                $('#errorSentEmail.alert').alert();
-            });
-    });
 </script>
