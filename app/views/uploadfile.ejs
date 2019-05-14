@@ -6,8 +6,10 @@
         <div class="col">
             <div class="form-group">
                 <form ref='uploadForm' action="/entries/fileupload" id="uploadForm" method="post" encType="multipart/form-data">
-                    <input type="file" name="fileupload" />
-                    <input id="uploadfilesubmit" type="submit" />
+                    <label class="form-check-label">
+                        <input type="file" name="fileupload" />
+                    </label>
+                    <input id="uploadfilesubmit" type="submit" class="btn btn-primary success" />
                 </form>
             </div>
             <a class="back" href="/entries">Volver</a>

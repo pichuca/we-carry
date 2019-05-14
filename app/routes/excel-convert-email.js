@@ -105,40 +105,46 @@ router.get('/upload', ensureAuthenticated, (req, res) => {
 
 // Send uploaded
 router.post('/fileupload', (req, res) => {
-    if (Object.keys(req.files).length === 0) {
-        return res.status(400).send('No files were uploaded.');
-    }
-
-    var file = req.files.fileupload;
-    var fileName = file.name;
+    if (!req.files) {
+        res.render('warning', {
+            message: 'Tenes que subir un archivo para enviar.',
+            backUrl: req.baseUrl + '/upload'
+        });
+    } else {
+        if (Object.keys(req.files).length === 0) {
+            return res.status(400).send('No files were uploaded.');
+        }
     
-    // move into server dir (express-fileupload method)
-    file.mv(fileName, (err) => {
-        if (err) {
-            return res.status(500).send(err);
-        }
-    });
-
-    // NOTE: fileName is actual file path.
-
-    var transporter = getTransporter();
-    var mailOptions = getMailOptions(fileName, fileName);
-
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.log(error);
-            res.render('fileupload-error');
-        } else {
-            console.log('Uploaded file sent: ' + info.response);
-            removeFile(fileName);
-            res.render('fileupload-success', {
-                file: {
-                    name: fileName
-                }
-            });
-        }
-    });
-
+        var file = req.files.fileupload;
+        var fileName = file.name;
+        
+        // move into server dir (express-fileupload method)
+        file.mv(fileName, (err) => {
+            if (err) {
+                return res.status(500).send(err);
+            }
+        });
+    
+        // NOTE: fileName is actual file path.
+    
+        var transporter = getTransporter();
+        var mailOptions = getMailOptions(fileName, fileName);
+    
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log(error);
+                res.render('fileupload-error');
+            } else {
+                console.log('Uploaded file sent: ' + info.response);
+                removeFile(fileName);
+                res.render('fileupload-success', {
+                    file: {
+                        name: fileName
+                    }
+                });
+            }
+        });
+    }
 });
 
 module.exports = router;
