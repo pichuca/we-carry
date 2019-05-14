@@ -245,11 +245,11 @@ header img.app-logo {
         color: #99CC33;
         font-weight: bold;
         margin: 20px 0 20px;
+        background-color: transparent;
     }
 
     #mobileMenu .links a.btn {
-        color: #FFF;
-        background-color: transparent;
+        background-color: transparent !important;
         border: none;
     }
 
@@ -386,6 +386,10 @@ table {
     border-color: #99CC33;
 }
 
+/* MODAL */
+.modal-footer {
+    border-top: 0;
+}
 
 /* #entries .alert {
     display: none;

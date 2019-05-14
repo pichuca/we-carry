@@ -53,14 +53,21 @@ Converter.prototype.createTableInputs = function() {
         document.querySelector('#' + id).appendChild(this.createInput(id));
     }
 };
+Converter.prototype.openAddItemModal = function() {
+    $('#additemmodal').modal('show');
+};
 Converter.prototype.addItem = function() {
+    var fieldsData = [];
+    $("form#additemform :input.datafield").each(function(){
+        var input = $(this);
+        fieldsData.push(input.val());
+    });
     var cloneRow = document.querySelector('.editor').cloneNode(true);
     cloneRow.className = 'products-data';
-    this.removePlaceholders(cloneRow.children);
-    this.convertInputsIntoInnerHTMLText(cloneRow.children);
+    this.convertInputsIntoInnerHTMLText(cloneRow.children, fieldsData);
     document.getElementById('products-for-excel').appendChild(cloneRow);
-    this.clearEditor();
-    document.querySelector('#id-number input').focus();
+    // Close modal
+    $('#additemmodal').modal('hide');
     // Animate to bottom when adding item
     $('html, body').animate({scrollTop:$(document).height()}, 'slow');
 };
@@ -76,9 +83,9 @@ Converter.prototype.clearEditor = function() {
         editor.children[i].children[0].value = '';
     }
 };
-Converter.prototype.convertInputsIntoInnerHTMLText = function(htmlCollection) {
+Converter.prototype.convertInputsIntoInnerHTMLText = function(htmlCollection, inputdata) {
     for (var i = 0; i < htmlCollection.length; i++) {
-        htmlCollection[i].innerHTML = $('table#products #' + htmlCollection[i].id + ' input').val();
+        htmlCollection[i].innerHTML = inputdata[i];
     }
 };
 Converter.prototype.removePlaceholders = function(htmlCollection) {
@@ -95,6 +102,7 @@ Converter.prototype.removeLastItem = function() {
         return;
     }
 };
+// Not in use
 Converter.prototype.addItemOnEnter = function() {
     document.addEventListener('keyup', function(event) {
         if (event.keyCode === 13) {
@@ -167,6 +175,5 @@ Converter.prototype.resetAll = function() {
     this.fileName = ''; // File name to empty String
     this.clearFileNameInput();
     this.clearFileNameHTML();
-    this.clearEditor(); // Clear editor
     this.clearExcelTable(); // Clear excel table
 };

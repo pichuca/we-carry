@@ -8,6 +8,96 @@
         <!-- <button type="button" class="close">&times;</button> -->
         <strong>Oh no!</strong> Algo salio mal, vuelve a intentarlo por favor.
     </div>
+
+    <div id="additemmodal" class="modal" style="z-index: 999999;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- MODAL HEADER -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Agregue un Item</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <div class="modal-body">
+                <form id="additemform">
+                    <fieldset>
+                        <div class="form-group">
+                            <!-- <label for="numnerid">NRO ID</label> -->
+                            <input type="text" class="form-control datafield" id="numnerid" aria-describedby="id-number" placeholder="NRO ID">
+                            <!-- <small id="emailHelp" class="form-text text-muted">El numero de identificación de tu producto.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="nameandsurname">Nombre y apellido</label> -->
+                            <input type="text" class="form-control datafield" id="nameandsurname" aria-describedby="name-surname" placeholder="Nombre y apellido">
+                            <!-- <small id="emailHelp" class="form-text text-muted">El nombre y apellido del remitente.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="street">Calle</label> -->
+                            <input type="text" class="form-control datafield" id="street" aria-describedby="street" placeholder="Calle">
+                            <!-- <small id="emailHelp" class="form-text text-muted">Calle a la cual debe ser enviado el item.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="zipcode">CP</label> -->
+                            <input type="text" class="form-control datafield" id="zipcode" aria-describedby="zipcode" placeholder="CP">
+                            <!-- <small id="emailHelp" class="form-text text-muted">Codigo Postal.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="localidad">Localidad</label> -->
+                            <input type="text" class="form-control datafield" id="localidad" aria-describedby="localidad" placeholder="Localidad">
+                            <!-- <small id="emailHelp" class="form-text text-muted">Localidad.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="localidad">Provincia</label> -->
+                            <input type="text" class="form-control datafield" id="province" aria-describedby="province" placeholder="Provincia">
+                            <!-- <small id="emailHelp" class="form-text text-muted">Provincia.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="localidad">Codigo de Producto</label> -->
+                            <input type="text" class="form-control datafield" id="product-code" aria-describedby="product-code" placeholder="Codigo de producto">
+                            <!-- <small id="emailHelp" class="form-text text-muted">Codigo de producto.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="localidad">Descripción</label> -->
+                            <input type="text" class="form-control datafield" id="description" aria-describedby="description" placeholder="Descripción">
+                            <!-- <small id="emailHelp" class="form-text text-muted">Descripción de producto.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="localidad">VD</label> -->
+                            <input type="text" class="form-control datafield" id="vd" aria-describedby="vd" placeholder="VD">
+                            <!-- <small id="emailHelp" class="form-text text-muted">VD.</small> -->
+                        </div>
+                        <div class="form-group">
+                                <!-- <label for="email">Email</label> -->
+                            <input type="text" class="form-control datafield" id="email" aria-describedby="email" placeholder="Email">
+                            <!-- <small id="emailHelp" class="form-text text-muted">Direccioón de</small> -->
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="observations">Observaciones</label> -->
+                            <textarea class="form-control datafield" id="observations" rows="3" placeholder="Observaciones"></textarea>
+                        </div>
+                        <div class="form-group">
+                                <!-- <label for="email">Cantidad</label> -->
+                            <input type="number" class="form-control datafield" id="quantity" aria-describedby="quantity" placeholder="Cantidad" min="0">
+                            <!-- <small id="emailHelp" class="form-text text-muted">Cantidad.</small> -->
+                        </div>
+                        <div class="form-group">
+                                <!-- <label for="email">Gestion a realizar</label> -->
+                            <input type="text" class="form-control datafield" id="action" aria-describedby="action" placeholder="Gestion a realizar">
+                            <!-- <small id="emailHelp" class="form-text text-muted">Gestion a realizar.</small> -->
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="" type="button" class="btn btn-primary" onclick="converter.addItem()">Agregar item</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
     <h1>Generar archivo Excel:</h1>
     <p>Crea el listado de tus productos a ingresar en nuestro deposito y envialo como archivo Excel automaticamente desde acá.</p>
     <br>
@@ -15,7 +105,7 @@
     <div class="html2excel">
         <div class="row">
             <div class="col">
-                <button id="add-item-button" type="button" class="btn btn-success" onclick="converter.addItem()">Agregar Item</button>
+                <button id="add-item-button" type="button" class="btn btn-success" onclick="converter.openAddItemModal()">Agregar Item</button>
             </div>
         </div>
         <div class="row">
@@ -30,16 +120,16 @@
         </div>
         <div class="row">
             <div class="col">
-                <button type="button" class="btn btn-outline-danger" onclick="converter.resetAll()">Borrar Todo</button>
+                <button type="button" class="btn btn-success" onclick="converter.resetAll()">Borrar Todo</button>
             </div>
         </div>
         <div class="form-group">
+            <input id="file-name" class="form-control" type="text" placeholder="Ingresa el nombre de tu archivo (sin .xlsx)" onkeyup="converter.fileNameDebounceKeyUp(event)" onfocusout="converter.clearFileNameInput()" />
             <label class="col-form-label" for="file-name">Nombre del archivo: </label>
             <span id="file-title"><span class="file-title-text"></span><code>.xlsx</code></span>
-            <input id="file-name" class="form-control" type="text" placeholder="Ingresa el nombre de tu archivo (sin .xlsx)" onkeyup="converter.fileNameDebounceKeyUp(event)" onfocusout="converter.clearFileNameInput()" />
         </div>
         <div class="table-wrapper" style="overflow-x:auto;">
-            <table id="products" class="table table-hover">
+            <table id="products" class="table table-hover" style="visibility: hidden;">
                 <thead>
                     <tr class="table-default">
                     <th scope="col">NRO_ID</th>
@@ -103,7 +193,7 @@
     // Start HTML2Excel converter.
     var converter = new Converter('add product and send email table', $, _);
     converter.createTableInputs();
-    converter.addItemOnEnter();
+    // converter.addItemOnEnter();
     $(document).ready(function () {
         $(document)
             .ajaxStart(function() {
@@ -113,4 +203,5 @@
                 $('#errorSentEmail.alert').alert();
             });
     });
+    
 </script>

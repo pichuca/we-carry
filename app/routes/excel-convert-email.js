@@ -105,6 +105,7 @@ router.get('/upload', ensureAuthenticated, (req, res) => {
 
 // Send uploaded
 router.post('/fileupload', (req, res) => {
+    // Check if req.files is not null or undefined
     if (!req.files) {
         res.render('warning', {
             message: 'Tenes que subir un archivo para enviar.',
