@@ -56,6 +56,7 @@ Converter.prototype.createTableInputs = function() {
 Converter.prototype.openAddItemModal = function() {
     $('#additemmodal').modal('show');
 };
+// Add item form modal
 Converter.prototype.addItem = function() {
     var fieldsData = [];
     $("form#additemform :input.datafield").each(function(){
@@ -69,7 +70,14 @@ Converter.prototype.addItem = function() {
     // Close modal
     $('#additemmodal').modal('hide');
     // Animate to bottom when adding item
+    this.animateBottomScroll();
+};
+// Anitamte body scroll top
+Converter.prototype.animateBottomScroll = function() {
     $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+};
+Converter.prototype.animateTopScroll = function() {
+    $('html, body').animate({scrollTop:0}, 'fast');
 };
 Converter.prototype.setExcelTableData = function() {
     this.workbook = XLSX.utils.table_to_book(document.getElementById('products-for-excel'));
@@ -153,7 +161,7 @@ Converter.prototype.sendExcelFileViaMail = function() {
             console.log(result);
             // Show success message
             $('#sentEmail').show();
-            $('html, body').animate({scrollTop:0}, 'fast');
+            this.animateTopScroll();
             setTimeout(function() {
                 $('#sentEmail').fadeOut(200);
             }, 3000);
@@ -164,7 +172,7 @@ Converter.prototype.sendExcelFileViaMail = function() {
             console.log('Error has occured: ' + error);
             // Show error message
             $('#errorSentEmail').show();
-            $('html, body').animate({scrollTop:0}, 'fast');
+            this.animateTopScroll();
             setTimeout(function() {
                 $('#errorSentEmail').fadeOut(200);
             }, 3000);
@@ -176,4 +184,5 @@ Converter.prototype.resetAll = function() {
     this.clearFileNameInput();
     this.clearFileNameHTML();
     this.clearExcelTable(); // Clear excel table
+    this.animateTopScroll();
 };

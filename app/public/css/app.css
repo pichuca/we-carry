@@ -33,8 +33,8 @@ ul, ol, li {
 #welcome-page a,
 #login-page button.btn-primary,
 #register-page button.btn-primary {
-    background-color: #FFF;
     border: 1px solid #99CC33;
+    background: #99CC33 linear-gradient(180deg, #99CC33, #99CC33) repeat-x;
 }
 
 #welcome-page a:hover,

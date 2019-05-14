@@ -48,6 +48,7 @@ app.use((req, res, next) => {
     res.locals.success_email_msg = req.flash('success_email_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
+    res.locals.suggestion_msg = req.flash('suggestion_msg');
     next();
 });
 

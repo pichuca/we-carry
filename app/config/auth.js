@@ -3,7 +3,7 @@ module.exports = {
         if (req.isAuthenticated()) {
             return next();
         }
-        req.flash('error_msg', 'Por favor, ingresa tu Usuario y Contraseña.');
+        req.flash('suggestion_msg', 'Por favor, ingresa tu Usuario y Contraseña.');
         res.redirect('/users/login');
     }
 };
