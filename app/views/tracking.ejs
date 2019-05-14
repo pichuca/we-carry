@@ -1,8 +1,24 @@
 <div id="tracking-page" class="sections">
-    <h1>Haga el seguimiento de su producto</h1>
-    <h1>ID: <%= product.id %></h1>
+    <h3>Haga el seguimiento de su producto:</h3>
+    <h4>
+        <code>ID: <%= product.id %></code>
+    </h4>
+    <br>
+    <h5>
+        Estado: en camino.
+    </h5>
+    <br>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <p>
+        Tu producto esta en camino en este momento. Fue retirado del deposito a las:
+    </p>
+    <p>
+        <%= product.date %>
+    </p>
 </div>
 <script>
-    // Show header when view is dashboard.
+    // Show header when view is tracking.
     document.getElementsByTagName('header')[0].classList.add('show');
 </script>
