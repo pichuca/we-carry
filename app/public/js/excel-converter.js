@@ -67,6 +67,8 @@ Converter.prototype.addItem = function() {
     cloneRow.className = 'products-data';
     this.convertInputsIntoInnerHTMLText(cloneRow.children, fieldsData);
     document.getElementById('products-for-excel').appendChild(cloneRow);
+    // Clear form
+    $("form#additemform").trigger("reset");
     // Close modal
     $('#additemmodal').modal('hide');
     // Animate to bottom when adding item
