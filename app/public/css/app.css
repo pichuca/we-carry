@@ -386,6 +386,16 @@ table {
     border-color: #99CC33;
 }
 
+#tracking-page .time {
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+#tracking-page code.destination,
+#tracking-page .name {
+    color: #555555 !important;
+}
+
 /* MODAL */
 .modal-footer {
     border-top: 0;

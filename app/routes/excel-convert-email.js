@@ -7,7 +7,7 @@ const XLSX = require('xlsx');
 const fileUpload = require('express-fileupload');
 const { ensureAuthenticated } = require('../config/auth');
 
-router.use(bodyParser());
+// router.use(bodyParser());
 router.use(bodyParser.json()); // for parsing application/json
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(fileUpload());

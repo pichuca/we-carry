@@ -1,22 +1,32 @@
 <div id="tracking-page" class="sections">
-    <h3>Haga el seguimiento de su producto:</h3>
+    <h3>Haga el seguimiento de su producto: <code><%= product.name %></code></h3>
     <h4>
-        <code>ID: <%= product.id %></code>
+        <code><span class="name">ID:</span> <%= product.id %></code>
     </h4>
     <br>
     <h5>
-        Estado: en camino.
+        Estado: <code><%= product.status %></code>
     </h5>
     <br>
     <div class="progress">
         <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
     <p>
-        Tu producto esta en camino en este momento. Fue retirado del deposito a las:
+        Tu producto esta en camino en este momento. Fue retirado del deposito el dia:
     </p>
-    <p>
-        <%= product.date %>
+    <p class="time">
+        <code>
+            <%= product.time %>
+        </code>
     </p>
+    <h3>Destino:</h3>
+    <p class="code">
+        <%= product.destination %>
+        <a href="<%= product.linkURL %>" target="_blank">
+            Ver mapa
+        </a>
+    </p>
+    <a class="back" href="/orders">Volver</a>
 </div>
 <script>
     // Show header when view is tracking.
