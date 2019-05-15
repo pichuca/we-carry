@@ -93,7 +93,7 @@ router.post('/login', (req, res, next) => {
 // Logout Handle
 router.get('/logout', (req, res) => {
     req.logout();
-    req.flash('success_msg', 'Ingrese su usuario y contraseña para ingresar');
+    req.flash('success_msg', 'Ingresa tu usuario y contraseña para ingresar');
     res.redirect('/users/login');
 });
 
