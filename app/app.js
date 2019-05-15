@@ -58,6 +58,7 @@ app.use('/users', require('./routes/users'));
 app.use('/products', require('./routes/products'));
 app.use('/tracking', require('./routes/tracking'));
 app.use('/entries', require('./routes/excel-convert-email'));
+app.use('/integrations', require('./routes/integrations'));
 
 const PORT = process.env.PORT || 5001;
 

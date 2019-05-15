@@ -30,6 +30,9 @@ router.get('/orders', ensureAuthenticated, (req, res) =>
 router.get('/entries', ensureAuthenticated, (req, res) =>
     res.render('entries'));
 
+router.get('/integrations', ensureAuthenticated, (req, res) =>
+    res.render('integrations'));
+
 router.get('/stats', ensureAuthenticated, (req, res) =>
     res.render('stats'));
 
