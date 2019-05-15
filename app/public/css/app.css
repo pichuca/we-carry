@@ -396,6 +396,19 @@ table {
     color: #555555 !important;
 }
 
+#product-page .card {
+    background: #555555 !important;
+}
+
+#product-page h1 {
+    text-align: left;
+    margin-left: 0;
+}
+
+#product-page .data-text {
+    color: #99CC33;
+}
+
 /* MODAL */
 .modal-footer {
     border-top: 0;

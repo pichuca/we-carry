@@ -1,8 +1,21 @@
 <div id="product-page" class="sections">
-    <h1>ID: <%= product.id %></h1>
-    <h1>Nombre: <%= product.name %></h1>
-    <h1>Disponibilidad: <%= product.availability %></h1>
-    <h1>Pedidos: <%= product.ordered %></h1>
+    <div class="card text-white bg-dark mb-3" style="max-width: 100%;">
+        <div class="card-header">
+            <h1>ID: <%= product.id %></h1>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Nombre: <span class="data-text"><%= product.name %></span></h4>
+            <h5>Disponibilidad: <span class="data-text"><%= product.availability %></span></h5>
+            <h5>Pedidos: <span class="data-text"><%= product.ordered %></span></h5>
+            <h5>Stock: <span class="data-text"><%= product.stock %></span></h5>
+            <br>
+            <h6>Descripción:</h6>
+            <p class="card-text">
+                <%= product.description %>
+            </p>
+        </div>
+    </div>
+    <a href="/dashboard" class="back">Volver</a>
 </div>
 <script>
     // Show header when view is dashboard.
