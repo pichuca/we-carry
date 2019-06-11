@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 // var request = require('request');
-// const soapRequest = require('../modules/soapRequest.js');
+const soapRequest = require('../modules/soapRequest.js');
 const fs = require('fs');
 const { ensureAuthenticated } = require('../config/auth');
 
@@ -15,7 +15,8 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
     let password = '123456';
     const url = 'http://190.221.30.210/intranet/Login.aspx';
    
-    // const xml = fs.readFileSync('xml/getStock.xml', 'utf-8');
+    const xml = fs.readFileSync('xml/AutenticacionRequest.xml', 'utf-8');
+    
 
     res.render('dashboard', {
         user: {

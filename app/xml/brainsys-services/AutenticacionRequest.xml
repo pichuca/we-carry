@@ -3,9 +3,9 @@
    <soapenv:Body>
       <bra:autenticar>
          <!--Optional:-->
-         <bra:usuario></bra:usuario>
+         <bra:usuario>AgGalicia</bra:usuario>
          <!--Optional:-->
-         <bra:contraseña></bra:contraseña>
+         <bra:contraseña>123456</bra:contraseña>
       </bra:autenticar>
    </soapenv:Body>
 </soapenv:Envelope>
