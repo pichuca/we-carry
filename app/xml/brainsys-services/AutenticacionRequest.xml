@@ -1,0 +1,11 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bra="http://brainsys.com.ar/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <bra:autenticar>
+         <!--Optional:-->
+         <bra:usuario></bra:usuario>
+         <!--Optional:-->
+         <bra:contraseña></bra:contraseña>
+      </bra:autenticar>
+   </soapenv:Body>
+</soapenv:Envelope>

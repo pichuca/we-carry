@@ -1,0 +1,59 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <obtenerMovimientosResponse xmlns="http://brainsys.com.ar/">
+         <obtenerMovimientosResult>
+            <Movimiento>
+               <fecha>2019-06-05T11:56:03</fecha>
+               <tipoMovimiento>PICKING</tipoMovimiento>
+               <numeroComprobante>OBUBK0000207237</numeroComprobante>
+               <usuario>Rocio Aranda</usuario>
+               <subCliente>BUBK207237</subCliente>
+               <razonSocial>MARIO ALEJANDRO FORTUNATI</razonSocial>
+               <compania>SANTANDER RIO S.A.</compania>
+               <codigo>000000000BRH318</codigo>
+               <producto>Set de 4 copones de Vino</producto>
+               <lote/>
+               <fechaVencimiento>0001-01-01T00:00:00</fechaVencimiento>
+               <serie/>
+               <entrada>0.000</entrada>
+               <salida>-1.000</salida>
+               <neto>3073.000</neto>
+            </Movimiento>
+            <Movimiento>
+               <fecha>2019-06-05T11:56:03</fecha>
+               <tipoMovimiento>PICKING</tipoMovimiento>
+               <numeroComprobante>OBUBK0000207238</numeroComprobante>
+               <usuario>Rocio Aranda</usuario>
+               <subCliente>BUBK207238</subCliente>
+               <razonSocial>NICOLAS AGUSTIN HUSER</razonSocial>
+               <compania>SANTANDER RIO S.A.</compania>
+               <codigo>000000000BRH318</codigo>
+               <producto>Set de 4 copones de Vino</producto>
+               <lote/>
+               <fechaVencimiento>0001-01-01T00:00:00</fechaVencimiento>
+               <serie/>
+               <entrada>0.000</entrada>
+               <salida>-1.000</salida>
+               <neto>3072.000</neto>
+            </Movimiento>
+            <Movimiento>
+               <fecha>2019-06-05T11:56:03</fecha>
+               <tipoMovimiento>PICKING</tipoMovimiento>
+               <numeroComprobante>OBUBK0000207239</numeroComprobante>
+               <usuario>Rocio Aranda</usuario>
+               <subCliente>BUBK207239</subCliente>
+               <razonSocial>PEDRO JOSE MIRALLES</razonSocial>
+               <compania>SANTANDER RIO S.A.</compania>
+               <codigo>000000000BRH318</codigo>
+               <producto>Set de 4 copones de Vino</producto>
+               <lote/>
+               <fechaVencimiento>0001-01-01T00:00:00</fechaVencimiento>
+               <serie/>
+               <entrada>0.000</entrada>
+               <salida>-1.000</salida>
+               <neto>3071.000</neto>
+            </Movimiento>
+         </obtenerMovimientosResult>
+      </obtenerMovimientosResponse>
+   </soap:Body>
+</soap:Envelope>

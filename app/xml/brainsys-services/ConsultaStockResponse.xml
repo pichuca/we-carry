@@ -1,0 +1,40 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <obtenerStockResponse xmlns="http://brainsys.com.ar/">
+         <obtenerStockResult>
+            <Stock>
+               <fecha>2019-06-04T00:00:00</fecha>
+               <emplazamiento>(TOR)SOUTH POST</emplazamiento>
+               <almacen>TORTUGAS</almacen>
+               <compania>SANTANDER RIO S.A.</compania>
+               <producto>PLANCHITA GAMA ELEGANCE DIG ARG</producto>
+               <codigoProducto>0000000000SCPLA</codigoProducto>
+               <lote/>
+               <fechaVencimiento>0001-01-01T00:00:00</fechaVencimiento>
+               <serie/>
+               <cantidadFisica>1000.00</cantidadFisica>
+               <cantidadPendienteAlmacenaje>0.00</cantidadPendienteAlmacenaje>
+               <cantidadPendienteRecogida>0.00</cantidadPendienteRecogida>
+               <stockTotal>1000.00</stockTotal>
+               <estado>DISPONIBLE</estado>
+            </Stock>
+            <Stock>
+               <fecha>2019-06-05T00:00:00</fecha>
+               <emplazamiento>(TOR)SOUTH POST</emplazamiento>
+               <almacen>TORTUGAS</almacen>
+               <compania>SANTANDER RIO S.A.</compania>
+               <producto>PLANCHITA GAMA ELEGANCE DIG ARG</producto>
+               <codigoProducto>0000000000SCPLA</codigoProducto>
+               <lote/>
+               <fechaVencimiento>0001-01-01T00:00:00</fechaVencimiento>
+               <serie/>
+               <cantidadFisica>1000.00</cantidadFisica>
+               <cantidadPendienteAlmacenaje>0.00</cantidadPendienteAlmacenaje>
+               <cantidadPendienteRecogida>0.00</cantidadPendienteRecogida>
+               <stockTotal>1000.00</stockTotal>
+               <estado>DISPONIBLE</estado>
+            </Stock>
+         </obtenerStockResult>
+      </obtenerStockResponse>
+   </soap:Body>
+</soap:Envelope>

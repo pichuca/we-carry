@@ -1,0 +1,37 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bra="http://brainsys.com.ar/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <bra:obtenerMovimientos>
+         <!--Optional:-->
+         <bra:sesion>
+            <!--Optional:-->
+            <bra:usuario>
+               <bra:usua_id></bra:usua_id>
+               <!--Optional:-->
+               <bra:usua_nombre></bra:usua_nombre>
+               <!--Optional:-->
+               <bra:usua_clie_id></bra:usua_clie_id>
+               <!--Optional:-->
+               <bra:usua_estadoPorDefecto></bra:usua_estadoPorDefecto>
+               <bra:usua_vencimientoPassword></bra:usua_vencimientoPassword>
+               <bra:usua_ingreso></bra:usua_ingreso>
+               <!--Optional:-->
+               <bra:usua_password></bra:usua_password>
+               <bra:usua_altaPassword></bra:usua_altaPassword>
+            </bra:usuario>
+            <bra:fecha></bra:fecha>
+         </bra:sesion>
+         <!--Optional:-->
+         <bra:filtro>
+            <bra:fechaDesde>2019-06-04</bra:fechaDesde>
+            <bra:fechaHasta>2019-06-05</bra:fechaHasta>
+            <!--Optional:-->
+            <bra:compania>001</bra:compania>
+            <!--Optional:-->
+            <bra:producto>000000000BRH318</bra:producto>
+            <!--Optional:-->
+            <bra:tipo>PICKING</bra:tipo>
+         </bra:filtro>
+      </bra:obtenerMovimientos>
+   </soapenv:Body>
+</soapenv:Envelope>

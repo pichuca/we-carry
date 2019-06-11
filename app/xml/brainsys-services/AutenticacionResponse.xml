@@ -1,0 +1,19 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <autenticarResponse xmlns="http://brainsys.com.ar/">
+         <autenticarResult>
+            <usuario>
+               <usua_id></usua_id>
+               <usua_nombre></usua_nombre>
+               <usua_clie_id></usua_clie_id>
+               <usua_estadoPorDefecto></usua_estadoPorDefecto>
+               <usua_vencimientoPassword></usua_vencimientoPassword>
+               <usua_ingreso></usua_ingreso>
+               <usua_password></usua_password>
+               <usua_altaPassword></usua_altaPassword>
+            </usuario>
+            <fecha></fecha>
+         </autenticarResult>
+      </autenticarResponse>
+   </soap:Body>
+</soap:Envelope>
