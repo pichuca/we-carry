@@ -14,7 +14,7 @@ const axios = require('axios');
 module.exports = function soapRequest(url, headers, xml, timeout = 1000) {
   return new Promise((resolve, reject) => {
     axios({
-      method: 'post',
+      method: 'get',
       url,
       headers,
       data: xml,
