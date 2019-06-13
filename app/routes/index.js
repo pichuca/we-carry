@@ -14,65 +14,15 @@ const { ensureAuthenticated } = require('../config/auth');
  */
 const getStock = (sessionXML) => {
     console.log(`Get stock function called`);
-    // parseString(sessionXML, function (err, result) {
-    //     if (err) {
-    //         console.log(`Error on parsing XML response for authentication: ${err}`);
-    //     } else {
-    //         console.log('XML parsed to JSON');
-    //         // console.dir(result);
-    //         const sessionObject = JSON.stringify({
-    //             __type: 'Intranet.ServiciosWeb.Sesion',
-    //             usuario: {
-    //                 usua_id: 24,
-    //                 usua_clie_id: '00000SO001',
-    //                 usuar_nombre: 'south',
-    //                 usua_estadoPorDefecto: 'DIS',
-    //                 usua_vencimientoPassword: 0
-    //             },
-    //             fecha: '\/Date(1560222000000)',
-    //             filtro:{}
-    //         });
-    //         // Get stock XML
-    //         (async () => {
-    //             try {
-    //                 const requestData = {
-    //                     url: 'http://190.221.30.210/intranet/ServiciosWeb/consultaStock.asmx',
-    //                     headers: {
-    //                         'Content-Type': 'text/xml;charset=UTF-8',
-    //                         'soapAction': 'http://190.221.30.210/intranet/ServiciosWeb/consultaStock.asmx/obtenerStock',
-    //                     },
-    //                     body: sessionObject,
-    //                     xml: fs.readFileSync('xml/brainsys-services/ConsultaStockRequest.xml')
-    //                 };
-    //                 // const { response } = await soapRequest(requestData.url, requestData.headers, requestData.xml, 10000);
-    //                 axios.post(
-    //                     requestData.url,
-    //                     requestData.xml,
-    //                     { headers: requestData.headers })
-    //                     .then(res => {
-    //                         console.log('Response for stock:');
-    //                         const { data, status } = res;
-    //                         console.log(data);
-    //                         console.log(status);
-    //                         // TODO: parse data to render
-    //                     }).catch(err => {
-    //                         console.log(err)
-    //                     });
-    //             } catch(err) {
-    //                 console.log(`Error on fetching stock: ${err}`);
-    //             }
-    //         })();
-    //     }
-    // });
     const requestData = {
         url: 'http://190.221.30.210/intranet/ServiciosWeb/consultaStock.asmx',
         headers: {
             'Content-Type': 'text/xml;charset=UTF-8',
             'soapAction': 'http://brainsys.com.ar/obtenerStock',
         },
-        // body: sessionObject,
         xml: fs.readFileSync('xml/brainsys-services/ConsultaStockRequest.xml'),
     };
+
     (async () => {
         console.log('SOAP obtenerStock async function triggered');
         try {
@@ -80,12 +30,15 @@ const getStock = (sessionXML) => {
             const { body, statusCode } = response;
             console.log(body);
             console.log(statusCode);
-            if (!body) {
-                console.warn('No body for session object');
-            } else {
-                console.log('Fetching stock');
-                getStock(body);
-            }
+            console.log('Stock fetched as XML...');
+            parseString(body, function (err, result) {
+                if (err) {
+                    console.log(`Error on parsing XML response for authentication: ${err}`);
+                } else {
+                    console.log('Converting stock XML to JSON:');
+                    console.log(result);
+                }
+            });
         } catch(err) {
             console.log(`SOAP ERROR on async function: ${err}`);
         }
