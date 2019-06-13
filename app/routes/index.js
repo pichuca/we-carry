@@ -28,15 +28,16 @@ const getStock = (sessionXML) => {
         try {
             const { response } = await soapRequest(requestData.url, requestData.headers, requestData.xml, 100000); // Stock needs bigger timeouts
             const { body, statusCode } = response;
-            console.log(body);
-            console.log(statusCode);
+            console.log(`Request finished with status code: ${statusCode}`);
             console.log('Stock fetched as XML...');
             parseString(body, function (err, result) {
                 if (err) {
                     console.log(`Error on parsing XML response for authentication: ${err}`);
                 } else {
-                    console.log('Converting stock XML to JSON:');
-                    console.log(result);
+                    console.log('XML converted to JSON:');
+                    console.log(result['soap:Envelope']['soap:Body'][0].obtenerStockResponse[0].obtenerStockResult[0].Stock);
+                    let stockArray = result['soap:Envelope']['soap:Body'][0].obtenerStockResponse[0].obtenerStockResult[0].Stock;
+                    console.log(`Stock array length: ${stockArray.length}`);
                 }
             });
         } catch(err) {
