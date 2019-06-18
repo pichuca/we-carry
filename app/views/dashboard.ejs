@@ -1,44 +1,79 @@
 <div id="dashboard" class="sections">
+    <div id="fetchingStock" class="alert alert-dismissible alert-success collapse success-message">
+        <!-- <button type="button" class="close">&times;</button> -->
+        <strong>Su stock esta en camino,</strong> esto puede tardar unos segundos...
+    </div>
     <h6 class="lead mb-3">Bienvenido, <%= user.name %></h6>
+    <p class="stock-available" style="display: none;">Su stock esta disponible...</p>
     <h1>Inventario</h1>
+    <button id="getStockButton">Traer Stock</button>
     <table class="table table-hover">
         <thead>
             <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">SKU</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Codigo de Producto</th>
             <th scope="col">Disponibilidad</th>
-            <th scope="col">Pedidos</th>
+            <th scope="col">Deposito</th>
             </tr>
         </thead>
-        <tbody>
-            <tr class="table-default">
-            <th scope="row">Gorras de golf</th>
-            <td>
-                <a href="/products/159/gorrasgolf/6/10">159</a>
-            </td>
-            <td>6</td>
-            <td>10</td>
-            </tr>
-            <tr class="table-default">
-            <th scope="row">Botines</th>
-            <td>
-                <a href="/products/237/botines/10/6">237</a>
-            </td>
-            <td>10</td>
-            <td>6</td>
-            </tr>
-            <tr class="table-default">
-            <th scope="row">Camperon de lluvia</th>
-            <td>
-                <a href="/products/237/camperondelluvia/12/3">237</a>
-            </td>
-            <td>12</td>
-            <td>3</td>
-            </tr>
+        <tbody id="stock">
+            <!-- Stock renders here -->
         </tbody>
     </table> 
 </div>
 <script>
     // Show header when view is dashboard.
     document.getElementsByTagName('header')[0].classList.add('show');
+    $('#getStockButton').css({
+        visibility: 'hidden'
+    });
+    // Manage stock
+    if (sessionStorage.getItem('stock') !== null) {
+        console.log('Stock available... Using local Stock.');
+        $('button').hide();
+        var storedStock = sessionStorage.getItem('stock');
+        $('#stock').html(storedStock);
+    } else {
+        console.log('Should Trigger click');
+        setTimeout(function() {
+            $("#getStockButton").trigger("click");
+        }, 200);
+    }
+    $("button").on("click", function (event) {
+        event.preventDefault();
+        $('html, body').animate({scrollTop:0}, 'fast');
+        $('.loader-wrapper').show();
+        $.ajax({
+            type: 'GET',
+            url: '/dashboard/getStock',
+            success: function(stock) {
+                $('.loader-wrapper').hide();
+                var html = '';
+                for (var i = 0; i <= 20; i++) {
+                    html += '<tr class="table-default">'+
+                            '<th scope="row">' + stock[i].producto + '</th>'+
+                            '<td>'+
+                                '<a href="/products/'+ stock[i].codigoProducto +'/' + stock[i].producto[0].trim() + '/' + Math.round(stock[i].stockTotal) + '">' + stock[i].codigoProducto + '</a>'+
+                            '</td>'+
+                            '<td>' + Math.round(stock[i].stockTotal) + '</td>'+
+                            '<td>' + stock[i].almacen + '</td>'+
+                        '</tr>';
+                }
+                $('#stock').html(html);
+                $('.stock-available').show().fadeOut(10000);
+
+                if (typeof(Storage) !== "undefined") {
+                    // Code for sessionStorage/sessionStorage.
+                    sessionStorage.setItem('stock', html);
+                    console.log('Stock added to sessionStorage');
+                    $('#button').hide();
+                } else {
+                    console.log('No Storage support.');
+                }
+            },
+            error: function(error) {
+                console.log(`Error when fetching stock.`);
+            }
+        });
+  });
 </script>

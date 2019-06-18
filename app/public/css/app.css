@@ -430,6 +430,12 @@ table {
     margin-bottom: 0;
 }
 
+.loader-wrapper .message {
+    display: none;
+    z-index: 999999;
+    opacity: 1 !important;
+}
+
 .loader {
     color: #99CC33;
     font-size: 90px;
