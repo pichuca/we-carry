@@ -12,6 +12,14 @@ const { ensureAuthenticated } = require('../config/auth');
 // TODO: should add welcome view if want to re add register option
 router.get('/', (req, res) => res.render('login'));
 
+router.get('/welcome', ensureAuthenticated, (req, res) => {
+    res.render('welcome', {
+        user: {
+            name: req.user.name
+        }
+    });
+});
+
 // Dashboard
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
     res.render('dashboard', {

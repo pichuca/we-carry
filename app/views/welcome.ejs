@@ -1,12 +1,16 @@
-<div id="welcome-page" class="row mt-5">
+<div id="welcome-page" class="sections">
     <div class="col-md-6 m-auto">
-        <div class="card card-body text-center">
-        <div class="logo"></div>
-        <p>Ingresa o crea una cuenta si todavía no estas registrado</p>
-        <a href="/users/register" class="btn btn-primary btn-block mb-2"
-            >Registrarse</a
-        >
-        <a href="/users/login" class="btn btn-secondary btn-block">Ingresar</a>
-        </div>
+    <h1>Bienvenido <b><%= user.name %></b>, te estabamos!</h1>
+    <p>
+        Desde esta plataforma podrás
+        administrar tus productos,
+        visualizar los pedidos, realizar
+        solicitudes, integraciones y
+        también analizar tus ventas.
+    </p>
     </div>
 </div>
+<script>
+    // Show header
+    document.getElementsByTagName('header')[0].classList.add('show');
+</script>
