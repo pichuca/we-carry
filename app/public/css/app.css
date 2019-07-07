@@ -113,6 +113,13 @@ ul, ol, li {
     padding-right: 20px;
 }
 
+#login-page .white-input:focus {
+    outline: none;
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
 #login-page button {
     color: #FFFFFF !important;
     font-weight: bold;
