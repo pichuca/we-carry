@@ -302,10 +302,16 @@ header img.app-logo {
     #login-page .we-carry-guy {
         display: block;
     }
+    #login-page .login-form-cards {
+        margin: 5% 0 0 0 !important;
+    }
 }
 @media screen and (max-width: 1223px) {
     #login-page .we-carry-guy {
         display: none;
+    }
+    #login-page .login-form-cards {
+        margin: initial;
     }
 }
 /* Mobile */
