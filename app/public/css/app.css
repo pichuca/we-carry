@@ -58,6 +58,66 @@ ul, ol, li {
     height: 6em;
     top: 30px;
 }
+#welcome-page h1 {
+    /* Overrides */
+    margin: 0;
+    text-align: left;
+}
+
+/* Welcome page Boxes */
+#welcome-page .row {
+    margin: 20px 0 20px;
+}
+
+#welcome-page .row .col-sm,
+#welcome-page .row .col-md-4 {
+    padding: 15px;
+}
+
+#welcome-page .row a,
+#welcome-page .row a:hover  {
+    border: 0;
+    background: none;
+    text-decoration: none;
+}
+
+#welcome-page .options-links:hover {
+    cursor: pointer;
+    border: 2px solid #99CC33;
+    border-radius: 40px;
+}
+
+#welcome-page .options-links .top-card {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    background-color: #99CC33;
+    height: 60px;
+    text-align: center;
+}
+
+#welcome-page .options-links .top-card h3 {
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#welcome-page .options-links .bottom-card {
+    height: 235px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+#welcome-page .options-links .bottom-card h4 {
+    text-align: center;
+    color: #555555;
+    margin-top: 40px;
+    font-size: 1.1rem;
+}
+
 #welcome-page a,
 #login-page button.btn-primary,
 #register-page button.btn-primary {
