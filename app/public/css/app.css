@@ -804,6 +804,36 @@ table {
     }
   }
 
+/* Stats */
+#stats .top-header {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+#stats h1 {
+    margin: 100px 0 20px;
+}
+
+#stats h1,
+#stats h2 {
+    margin-left: 20px;
+}
+#stats h2 {
+    padding-top: 22px;
+    font-size: 1.2rem;
+}
+#stats .details {
+    display: flex;
+    margin-top: 30px;
+}
+
+#stats .products,
+#stats .locations,
+#stats .months {
+    width: 33.3%;
+    padding: 2px;
+}
+
   /* tooltip */
 .tooltip {
     position: relative;

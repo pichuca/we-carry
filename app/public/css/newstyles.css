@@ -14,6 +14,9 @@
 .top-heading.full {
     width: 100%;
 }
+.top-heading-33 {
+    width: 33.33%;
+}
 .top-heading-25 {
     width: 25%;
     padding: 6px 25px 0;
