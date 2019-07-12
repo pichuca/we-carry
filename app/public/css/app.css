@@ -563,6 +563,7 @@ table {
 .back {
     color: #55565B;
     text-decoration: underline;
+    font-size: 20px;
 }
 
 .back:hover,
