@@ -542,6 +542,25 @@ table {
     text-align: left;
     margin-left: 0;
 }
+#uploadfile .row {
+    max-width: 420px;
+}
+#uploadfile .row .col .form-group {
+    background-color: #E1E1E1;
+    min-height: 200px;
+    text-align: center;
+    max-width: 420px;
+    padding-top: 20px;
+}
+#uploadfile .top-header {
+    height: 60px;
+    text-align: center;
+}
+
+#uploadfile h2 {
+    margin-top: 18px;
+    width: 100%;
+}
 
 .back,
 .back {
@@ -555,10 +574,23 @@ table {
     color: #99CC33;
     text-decoration: none;
 }
-
+#uploadfile p {
+    padding: 0 20px 0;
+    text-align: left;
+}
+#uploadfile form {
+    margin-top: 40px;
+}
 #uploadfile input[type="submit"] {
-    background-color: #55565B;
-    border-color: #55565B;
+    background-color: #99CC33;
+    border-color: #99CC33;
+    border-radius: 30px;
+    width: 90%;
+    margin: 10px 10px 0;
+    color: #FFFFFF;
+    font-weight: bolder;
+    font-size: 16px;
+    letter-spacing: 2px;
 }
 
 #uploadfile input[type="submit"]:hover {

@@ -1,15 +1,17 @@
 <div id="uploadfile" class="sections">
-    <h1>Subi tu archivo Excel:</h1>
-    <p>Subi el archivo con el listado de tus productos a ingresar en nuestro deposito y envialo.</p>
     <br>
     <div class="row">
         <div class="col">
-            <div class="form-group">
+            <div class="top-round-borders green-background top-header white-font-color">
+                    <h2>SUBIR ARCHIVO .XLSX</h2>
+            </div>
+            <div class="form-group bottom-round-borders">
+                <p>Subi el archivo con el listado de tus productos a ingresar en nuestro deposito y envialo.</p>
                 <form ref='uploadForm' action="/entries/fileupload" id="uploadForm" method="post" encType="multipart/form-data">
                     <label class="form-check-label">
                         <input type="file" name="fileupload" />
                     </label>
-                    <input id="uploadfilesubmit" type="submit" class="btn btn-primary success" />
+                    <input id="uploadfilesubmit" type="submit" class="btn" />
                 </form>
             </div>
             <a class="back" href="/entries">Volver</a>
