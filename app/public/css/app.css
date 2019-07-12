@@ -488,6 +488,14 @@ table {
     margin-bottom: 40px;
 }
 
+#generatefile .add-item-wrapper {
+    width: calc(100% - 400px);
+    padding: 0 20px 0;
+}
+/* #generatefile .add-item-wrapper .form-group {
+    width: 50%;
+} */
+
 #generatefile .html2excel {
     padding: 20px 20px 0;
 }
@@ -514,6 +522,10 @@ table {
 #generatefile .html2excel button:hover {
     background-color: #55565B;
     border-color: #55565B;
+}
+
+#generatefile #additemmodal {
+    width: 100%;
 }
 
 #entries button.btn-outline-danger {
@@ -837,6 +849,24 @@ table {
     #tracking-page .icons img.dots {
         height: auto;
     }
+
+    #generatefile .wrappers {
+        display: flex;
+    }
+
+    #generatefile #additemform {
+        display: flex;
+    }
+    #generatefile .form-1,
+    #generatefile .form-2 {
+        width: 50%;
+        padding: 10px;
+    }
+    #generatefile form#additemform textarea {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        height: 119px;
+    }
 }
 @media screen and (max-width: 1223px) {
     #login-page .we-carry-guy {
@@ -862,6 +892,10 @@ table {
     #tracking-page .icons img,
     #tracking-page .icons img.dots {
         height: auto;
+    }
+    #generatefile .wrappers,
+    #generatefile #additemform {
+        display: initial;
     }
 }
 /* Mobile */

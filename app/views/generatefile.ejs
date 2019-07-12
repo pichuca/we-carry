@@ -97,42 +97,118 @@
         </div>
     </div>
 
-
-    <h1>Generar archivo Excel:</h1>
-    <p>Crea el listado de tus productos a ingresar en nuestro deposito y envialo como archivo Excel automaticamente desde acá.</p>
+    <h5>Crea el listado de tus productos a ingresar en nuestro deposito y envialo como archivo Excel automaticamente desde acá.</h5>
     <br>
-    <div class="generate-wrapper">
-        <div class="top-header green-background white-font-color top-round-borders">
-            <h2>CREAR ARCHIVO .XLSX</h2>
-        </div>
-        <div class="html2excel grey-background bottom-round-borders">
-            <div class="row">
-                <div class="col">
-                    <button id="add-item-button" type="button" class="btn" onclick="converter.openAddItemModal()">Agregar Item</button>
+    <div class="wrappers">
+        <div class="generate-wrapper">
+            <div class="top-header green-background white-font-color top-round-borders">
+                <h2>CREAR ARCHIVO .XLSX</h2>
+            </div>
+            <div class="html2excel grey-background bottom-round-borders">
+                <div class="row">
+                    <div class="col">
+                        <button id="add-item-button" type="button" class="btn" onclick="converter.openAddItemModal()">Agregar Item</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn" onclick="converter.sendExcelFileViaMail()">Enviar archivo Excel por mail</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn" onclick="converter.downloadFile(event)">Descargar archivo Excel</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn" onclick="converter.resetAll()">Borrar Todo</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input id="file-name" class="form-control" type="text" placeholder="Ingresa el nombre de tu archivo (sin .xlsx)" onkeyup="converter.fileNameDebounceKeyUp(event)" onfocusout="converter.clearFileNameInput()" />
+                    <label class="col-form-label" for="file-name">Nombre del archivo: </label>
+                    <span id="file-title"><span class="file-title-text"></span><code>.xlsx</code></span>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <button type="button" class="btn" onclick="converter.sendExcelFileViaMail()">Enviar archivo Excel por mail</button>
+        </div> 
+        <!-- End wrapper -->
+        <!-- Add item form -->
+        <div class="add-item-wrapper">
+            <form id="additemform">
+                <div class="form-1">
+                    <div class="form-group">
+                        <!-- <label for="numnerid">NRO ID</label> -->
+                        <input type="text" class="form-control datafield" id="numnerid" aria-describedby="id-number" placeholder="NRO ID">
+                        <!-- <small id="emailHelp" class="form-text text-muted">El numero de identificación de tu producto.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="nameandsurname">Nombre y apellido</label> -->
+                        <input type="text" class="form-control datafield" id="nameandsurname" aria-describedby="name-surname" placeholder="Nombre y apellido">
+                        <!-- <small id="emailHelp" class="form-text text-muted">El nombre y apellido del remitente.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="street">Calle</label> -->
+                        <input type="text" class="form-control datafield" id="street" aria-describedby="street" placeholder="Calle">
+                        <!-- <small id="emailHelp" class="form-text text-muted">Calle a la cual debe ser enviado el item.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="zipcode">CP</label> -->
+                        <input type="text" class="form-control datafield" id="zipcode" aria-describedby="zipcode" placeholder="CP">
+                        <!-- <small id="emailHelp" class="form-text text-muted">Codigo Postal.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="localidad">Localidad</label> -->
+                        <input type="text" class="form-control datafield" id="localidad" aria-describedby="localidad" placeholder="Localidad">
+                        <!-- <small id="emailHelp" class="form-text text-muted">Localidad.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="localidad">Provincia</label> -->
+                        <input type="text" class="form-control datafield" id="province" aria-describedby="province" placeholder="Provincia">
+                        <!-- <small id="emailHelp" class="form-text text-muted">Provincia.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="localidad">Codigo de Producto</label> -->
+                        <input type="text" class="form-control datafield" id="product-code" aria-describedby="product-code" placeholder="Codigo de producto">
+                        <!-- <small id="emailHelp" class="form-text text-muted">Codigo de producto.</small> -->
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button type="button" class="btn" onclick="converter.downloadFile(event)">Descargar archivo Excel</button>
+                <!-- Half form -->
+                <div class="form-2">
+                    <div class="form-group">
+                        <!-- <label for="localidad">Descripción</label> -->
+                        <input type="text" class="form-control datafield" id="description" aria-describedby="description" placeholder="Descripción">
+                        <!-- <small id="emailHelp" class="form-text text-muted">Descripción de producto.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="localidad">VD</label> -->
+                        <input type="text" class="form-control datafield" id="vd" aria-describedby="vd" placeholder="VD">
+                        <!-- <small id="emailHelp" class="form-text text-muted">VD.</small> -->
+                    </div>
+                    <div class="form-group">
+                            <!-- <label for="email">Email</label> -->
+                        <input type="text" class="form-control datafield" id="email" aria-describedby="email" placeholder="Email">
+                        <!-- <small id="emailHelp" class="form-text text-muted">Direccioón de</small> -->
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="observations">Observaciones</label> -->
+                        <textarea class="form-control datafield" id="observations" rows="3" placeholder="Observaciones" cols="119"></textarea>
+                    </div>
+                    <div class="form-group">
+                            <!-- <label for="email">Cantidad</label> -->
+                        <input type="number" class="form-control datafield" id="quantity" aria-describedby="quantity" placeholder="Cantidad" min="0">
+                        <!-- <small id="emailHelp" class="form-text text-muted">Cantidad.</small> -->
+                    </div>
+                    <div class="form-group">
+                            <!-- <label for="email">Gestion a realizar</label> -->
+                        <input type="text" class="form-control datafield" id="action" aria-describedby="action" placeholder="Gestion a realizar">
+                        <!-- <small id="emailHelp" class="form-text text-muted">Gestion a realizar.</small> -->
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button type="button" class="btn" onclick="converter.resetAll()">Borrar Todo</button>
-                </div>
-            </div>
-            <div class="form-group">
-                <input id="file-name" class="form-control" type="text" placeholder="Ingresa el nombre de tu archivo (sin .xlsx)" onkeyup="converter.fileNameDebounceKeyUp(event)" onfocusout="converter.clearFileNameInput()" />
-                <label class="col-form-label" for="file-name">Nombre del archivo: </label>
-                <span id="file-title"><span class="file-title-text"></span><code>.xlsx</code></span>
-            </div>
+            </form>
         </div>
     </div>
+    <!-- End wrappers -->
     <a class="back" href="/entries">Volver</a>
     <!-- TABLE -->
     <div class="table-wrapper" style="overflow-x:auto;">
