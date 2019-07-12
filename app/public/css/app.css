@@ -488,9 +488,8 @@ table {
     margin-bottom: 40px;
 }
 
-#generatefile .add-item-wrapper {
-    width: calc(100% - 400px);
-    padding: 0 20px 0;
+#generatefile .add-item-wrapper h2 {
+    margin-left: 20px;
 }
 /* #generatefile .add-item-wrapper .form-group {
     width: 50%;
@@ -526,6 +525,10 @@ table {
 
 #generatefile #additemmodal {
     width: 100%;
+}
+
+#generatefile .top-header {
+    height: 60px;
 }
 
 #entries button.btn-outline-danger {
@@ -575,7 +578,8 @@ table {
 }
 
 #uploadfile h2,
-.generate-wrapper h2 {
+.generate-wrapper h2,
+.add-item-wrapper h2 {
     margin-top: 18px;
     width: 100%;
 }
@@ -856,6 +860,7 @@ table {
 
     #generatefile #additemform {
         display: flex;
+        padding-top: 20px;
     }
     #generatefile .form-1,
     #generatefile .form-2 {
@@ -866,6 +871,17 @@ table {
         margin-top: 0px;
         margin-bottom: 0px;
         height: 119px;
+    }
+    #generatefile #additemform input,
+    #generatefile #additemform textarea {
+        background-color: #FFFFFF;
+        border-radius: 25px;
+        padding-left: 10px;
+    }
+
+    #generatefile .add-item-wrapper {
+        width: calc(100% - 400px);
+        padding: 0 20px 0;
     }
 }
 @media screen and (max-width: 1223px) {
@@ -895,7 +911,15 @@ table {
     }
     #generatefile .wrappers,
     #generatefile #additemform {
-        display: initial;
+        display: inherit;
+        padding: 20px 20px 20px;
+    }
+
+    #generatefile #additemform input,
+    #generatefile #additemform textarea {
+        background-color: #FFFFFF;
+        border-radius: 25px;
+        padding-left: 10px;
     }
 }
 /* Mobile */
