@@ -101,90 +101,96 @@
     <h1>Generar archivo Excel:</h1>
     <p>Crea el listado de tus productos a ingresar en nuestro deposito y envialo como archivo Excel automaticamente desde acá.</p>
     <br>
+    <div class="generate-wrapper">
+        <div class="top-header green-background white-font-color top-round-borders">
+            <h2>CREAR ARCHIVO .XLSX</h2>
+        </div>
+        <div class="html2excel grey-background bottom-round-borders">
+            <div class="row">
+                <div class="col">
+                    <button id="add-item-button" type="button" class="btn" onclick="converter.openAddItemModal()">Agregar Item</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn" onclick="converter.sendExcelFileViaMail()">Enviar archivo Excel por mail</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn" onclick="converter.downloadFile(event)">Descargar archivo Excel</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn" onclick="converter.resetAll()">Borrar Todo</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <input id="file-name" class="form-control" type="text" placeholder="Ingresa el nombre de tu archivo (sin .xlsx)" onkeyup="converter.fileNameDebounceKeyUp(event)" onfocusout="converter.clearFileNameInput()" />
+                <label class="col-form-label" for="file-name">Nombre del archivo: </label>
+                <span id="file-title"><span class="file-title-text"></span><code>.xlsx</code></span>
+            </div>
+        </div>
+    </div>
     <a class="back" href="/entries">Volver</a>
-    <div class="html2excel">
-        <div class="row">
-            <div class="col">
-                <button id="add-item-button" type="button" class="btn btn-success" onclick="converter.openAddItemModal()">Agregar Item</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button type="button" class="btn btn-success" onclick="converter.sendExcelFileViaMail()">Enviar archivo Excel por mail</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button type="button" class="btn btn-success" onclick="converter.downloadFile(event)">Descargar archivo Excel</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button type="button" class="btn btn-success" onclick="converter.resetAll()">Borrar Todo</button>
-            </div>
-        </div>
-        <div class="form-group">
-            <input id="file-name" class="form-control" type="text" placeholder="Ingresa el nombre de tu archivo (sin .xlsx)" onkeyup="converter.fileNameDebounceKeyUp(event)" onfocusout="converter.clearFileNameInput()" />
-            <label class="col-form-label" for="file-name">Nombre del archivo: </label>
-            <span id="file-title"><span class="file-title-text"></span><code>.xlsx</code></span>
-        </div>
-        <div class="table-wrapper" style="overflow-x:auto;">
-            <table id="products" class="table table-hover" style="visibility: hidden;">
-                <thead>
-                    <tr class="table-default">
-                    <th scope="col">NRO_ID</th>
-                    <th scope="col">Nombre y Apellido</th> 
-                    <th scope="col">CALLE</th>
-                    <th scope="col">CP</th>
-                    <th scope="col">LOCALIDAD</th>
-                    <th scope="col">PROVINCIA</th>
-                    <th scope="col">CODIGO DE PRODUCTO</th>
-                    <th scope="col">DESCRIPCION DEL PRODUCTO</th>
-                    <th scope="col">VD</th>
-                    <th scope="col">E-MAIL</th>
-                    <th scope="col">OBSERVACION</th>
-                    <th scope="col">CANTIDAD</th>
-                    <th scope="col">GESTION A REALIZAR</th>
-                </tr>
-                </thead>
-                <tr class="editor">
-                    <!-- USER INPUT -->
-                    <td id="id-number"></td>
-                    <td id="full-name"></td>
-                    <td id="street"></td>
-                    <td id="zipcode"></td>
-                    <td id="locality"></td>
-                    <td id="province"></td>
-                    <td id="product-id"></td>
-                    <td id="product-description"></td>
-                    <td id="vd"></td>
-                    <td id="email"></td>
-                    <td id="observation"></td>
-                    <td id="quantity"></td>
-                    <td id="mgmt-to-be-carried-out"></td>
-                </tr>
-            </table>
-            <table id="products-for-excel" class="table table-hover">
-                <tr class="table-default" style="visibility:hidden;">
-                <th>NRO_ID</th>
-                <th>Nombre y Apellido</th> 
-                <th>CALLE</th>
-                <th>CP</th>
-                <th>LOCALIDAD</th>
-                <th>PROVINCIA</th>
-                <th>CODIGO DE PRODUCTO</th>
-                <th>DESCRIPCION DEL PRODUCTO</th>
-                <th>VD</th>
-                <th>E-MAIL</th>
-                <th>OBSERVACION</th>
-                <th>CANTIDAD</th>
-                <th>GESTION A REALIZAR</th>
-                </tr>
-                <tr class="data">
-                    <!-- Info append's here -->
-                </tr>
-            </table>
-        </div>
+    <!-- TABLE -->
+    <div class="table-wrapper" style="overflow-x:auto;">
+        <table id="products" class="table table-hover" style="visibility: hidden;">
+            <thead>
+                <tr class="table-default">
+                <th scope="col">NRO_ID</th>
+                <th scope="col">Nombre y Apellido</th> 
+                <th scope="col">CALLE</th>
+                <th scope="col">CP</th>
+                <th scope="col">LOCALIDAD</th>
+                <th scope="col">PROVINCIA</th>
+                <th scope="col">CODIGO DE PRODUCTO</th>
+                <th scope="col">DESCRIPCION DEL PRODUCTO</th>
+                <th scope="col">VD</th>
+                <th scope="col">E-MAIL</th>
+                <th scope="col">OBSERVACION</th>
+                <th scope="col">CANTIDAD</th>
+                <th scope="col">GESTION A REALIZAR</th>
+            </tr>
+            </thead>
+            <tr class="editor">
+                <!-- USER INPUT -->
+                <td id="id-number"></td>
+                <td id="full-name"></td>
+                <td id="street"></td>
+                <td id="zipcode"></td>
+                <td id="locality"></td>
+                <td id="province"></td>
+                <td id="product-id"></td>
+                <td id="product-description"></td>
+                <td id="vd"></td>
+                <td id="email"></td>
+                <td id="observation"></td>
+                <td id="quantity"></td>
+                <td id="mgmt-to-be-carried-out"></td>
+            </tr>
+        </table>
+        <table id="products-for-excel" class="table table-hover">
+            <tr class="table-default" style="visibility:hidden;">
+            <th>NRO_ID</th>
+            <th>Nombre y Apellido</th> 
+            <th>CALLE</th>
+            <th>CP</th>
+            <th>LOCALIDAD</th>
+            <th>PROVINCIA</th>
+            <th>CODIGO DE PRODUCTO</th>
+            <th>DESCRIPCION DEL PRODUCTO</th>
+            <th>VD</th>
+            <th>E-MAIL</th>
+            <th>OBSERVACION</th>
+            <th>CANTIDAD</th>
+            <th>GESTION A REALIZAR</th>
+            </tr>
+            <tr class="data">
+                <!-- Info append's here -->
+            </tr>
+        </table>
     </div>
 </div>
 <script>
