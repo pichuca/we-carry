@@ -1,5 +1,6 @@
 <div id="tracking-page" class="sections">
-    <h1>Tracking</h1>
+    <h1>Tracking <span><a class="back" href="/orders">Volver</a></span></h1>
+    
     <div class="tracking-wrapper">
         <div class="list-header top-header green-background top-round-borders">
                 <div class="top-heading full white-font-color">
@@ -12,11 +13,27 @@
                     ID: <%= product.id %>
                 </h1>
                 <div class="icons">
-                    <img src="/images/svg/tracking/ready-to-ship-inactive.svg" alt="ready to ship icon" width="95" height="95">
-                    <img src="/images/svg/tracking/dots.svg" alt="splitting dots" width="70">
-                    <img src="/images/svg/tracking/on-the-way-active.svg" alt="on the way icon" width="112" height="112">
-                    <img src="/images/svg/tracking/dots.svg" alt="splitting dots" width="70">
-                    <img src="/images/svg/tracking/delivered-inactive.svg" alt="delivered icon" width="95" height="95">
+                    <img src="/images/svg/tracking/ready-to-ship-inactive.svg" alt="ready to ship icon">
+                    <img src="/images/svg/tracking/dots.svg" alt="splitting dots"class="dots">
+                    <img src="/images/svg/tracking/on-the-way-active.svg" alt="on the way icon">
+                    <img src="/images/svg/tracking/dots.svg" alt="splitting dots" class="dots">
+                    <img src="/images/svg/tracking/delivered-inactive.svg" alt="delivered icon">
+                </div>
+                <div class="status">
+                    <h3>ESTADO:</h3>
+                    <p class="status-description">Tu producto esta <%= product.status %> en este momento.
+                        <br> 
+                        Fue retirado del deposito el dia:
+                        <br>
+                        <span class="time"><%= product.time %></span>
+                    </p>
+                    <h3>DESTINO:</h3>
+                    <span class="destination">
+                        <%= product.destination %>.
+                    </span>
+                    <a href="<%= product.linkURL %>" target="_blank">
+                        Ver mapa
+                    </a>
                 </div>
             </div>
             <div class="map">
@@ -24,34 +41,6 @@
             </div>
         </div>
     </div>
-    <h3>Hace el seguimiento de tu producto: <code><%= product.name %></code></h3>
-    <h4>
-        <code><span class="name">ID:</span> <%= product.id %></code>
-    </h4>
-    <br>
-    <h5>
-        Estado: <code><%= product.status %></code>
-    </h5>
-    <br>
-    <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-    <p>
-        Tu producto esta en camino en este momento. Fue retirado del deposito el dia:
-    </p>
-    <p class="time">
-        <code>
-            <%= product.time %>
-        </code>
-    </p>
-    <h3>Destino:</h3>
-    <p class="code">
-        <%= product.destination %>
-        <a href="<%= product.linkURL %>" target="_blank">
-            Ver mapa
-        </a>
-    </p>
-    <a class="back" href="/orders">Volver</a>
 </div>
 <script>
     // Show header when view is tracking.

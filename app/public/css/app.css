@@ -379,83 +379,6 @@ header img.app-logo {
 #mobileMenu {
     display: none;
 }
-@media screen and (min-width: 1224px) {
-    #login-page .we-carry-guy {
-        display: block;
-    }
-    #login-page .login-form-cards {
-        margin: 5% 0 0 0 !important;
-    }
-}
-@media screen and (max-width: 1223px) {
-    #login-page .we-carry-guy {
-        display: none;
-    }
-    #login-page .login-form-cards {
-        margin: initial;
-    }
-}
-/* Mobile */
-@media screen and (max-width: 1024px) {
-    header .links .navs,
-    .user-module a {
-        display: none;
-    }
-    #mobileMenu {
-        display: flex;
-    }
-
-    header .links {
-        padding-left: 1.0rem;
-    }
-
-    #mobileMenu i,
-    #mobileMenu #mobileMenuIcon {
-        font-size: 28px;
-        color: #55565B;
-        margin: 19px 20px;
-        cursor: pointer;
-    }
-
-    #mobileMenu #mobileMenuIcon.selected {
-        color: #99CC33;
-    }
-    
-    #mobileMenu .links {
-        display: none;
-        width: 100% !important;
-        height: auto;
-        top: 65px;
-        position: absolute;
-        left: 0;
-        background-color: #555;
-        opacity: 0.9;
-        text-align: center;
-    }
-
-    #mobileMenu .links a {
-        color: #99CC33;
-        font-weight: bold;
-        margin: 20px 0 20px;
-        background-color: transparent;
-    }
-
-    #mobileMenu .links a.btn {
-        background-color: transparent !important;
-        border: none;
-    }
-
-    #mobileMenu .links a:hover {
-        text-decoration: underline;
-    }
-    
-    #mobileMenu img.app-logo {
-        width: 120px;
-        height: auto;
-        position: relative;
-        top: 23px;
-    }
-}
 
 table {
     font-size: 0.8125rem;
@@ -588,11 +511,13 @@ table {
 
 /* Tracking page */
 #tracking-page h1 {
-    margin: 104px 0 25px;
+    margin: 84px 0 5px;
 }
-#tracking-page .time {
+#tracking-page .time,
+#tracking-page .destination {
     font-size: 30px;
     text-transform: capitalize;
+    color: #99CC33;
 }
 
 #tracking-page code.destination,
@@ -600,19 +525,28 @@ table {
     color: #555555 !important;
 }
 
-#tracking-page .info-body {
-    width: 100%;
-    display: flex;
-    padding: 25px;
-}
-
 #tracking-page .info-body h1 {
     margin: 0;
 }
 
-#tracking-page .info,
+#tracking-page .icons {
+    margin-top: 30px;
+}
+
+/* This was added in the media queries */
+/* #tracking-page .info,
 #tracking-page .map {
     width: 50%;
+} */
+#tracking-page .status h3 {
+    font-size: 15px;
+    color: #949494;
+    margin-top: 30px;
+}
+
+#tracking-page .status-description {
+    color: #56575C;
+    font-size: 20px;
 }
 
 #product-page .card {
@@ -772,4 +706,119 @@ table {
 }
 .tooltip:hover .tooltiptext {
     visibility: visible;
+}
+
+@media screen and (min-width: 1224px) {
+    #login-page .we-carry-guy {
+        display: block;
+    }
+    #login-page .login-form-cards {
+        margin: 5% 0 0 0 !important;
+    }
+    #tracking-page .info,
+    #tracking-page .map {
+        width: 50%;
+    }
+    #tracking-page .info-body {
+        width: 100%;
+        display: flex;
+        padding: 25px;
+    }
+    #tracking-page .icons img {
+        width: 92px;
+    }
+    #tracking-page .icons img.dots {
+        width: 70px;
+    }
+    #tracking-page .icons img,
+    #tracking-page .icons img.dots {
+        height: auto;
+    }
+}
+@media screen and (max-width: 1223px) {
+    #login-page .we-carry-guy {
+        display: none;
+    }
+    #login-page .login-form-cards {
+        margin: initial;
+    }
+    #tracking-page .info-body {
+        width: 100%;
+        padding: 25px;
+    }
+    #tracking-page .info,
+    #tracking-page .map {
+        width: 100%;
+    }
+    #tracking-page .icons img {
+        width: 72px;
+    }
+    #tracking-page .icons img.dots {
+        width: 50px;
+    }
+    #tracking-page .icons img,
+    #tracking-page .icons img.dots {
+        height: auto;
+    }
+}
+/* Mobile */
+@media screen and (max-width: 1024px) {
+    header .links .navs,
+    .user-module a {
+        display: none;
+    }
+    #mobileMenu {
+        display: flex;
+    }
+
+    header .links {
+        padding-left: 1.0rem;
+    }
+
+    #mobileMenu i,
+    #mobileMenu #mobileMenuIcon {
+        font-size: 28px;
+        color: #55565B;
+        margin: 19px 20px;
+        cursor: pointer;
+    }
+
+    #mobileMenu #mobileMenuIcon.selected {
+        color: #99CC33;
+    }
+    
+    #mobileMenu .links {
+        display: none;
+        width: 100% !important;
+        height: auto;
+        top: 65px;
+        position: absolute;
+        left: 0;
+        background-color: #555;
+        opacity: 0.9;
+        text-align: center;
+    }
+
+    #mobileMenu .links a {
+        color: #99CC33;
+        font-weight: bold;
+        margin: 20px 0 20px;
+        background-color: transparent;
+    }
+
+    #mobileMenu .links a.btn {
+        background-color: transparent !important;
+        border: none;
+    }
+
+    #mobileMenu .links a:hover {
+        text-decoration: underline;
+    }
+    
+    #mobileMenu img.app-logo {
+        width: 120px;
+        height: auto;
+        position: relative;
+        top: 23px;
+    }
 }

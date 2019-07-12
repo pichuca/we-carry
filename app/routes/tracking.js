@@ -6,7 +6,7 @@ const moment = require('moment');
 moment.locale('es');
 const formattedTime = moment().format('MMMM Do YYYY, h:mm:ss a');
 // TODO: get dynamic destination info
-const productDestination = 'Universidad de San Andres, Buenoa Aires';
+const productDestination = 'Universidad de San Andres, Buenos Aires';
 
 // Create MAP link
 const MAPS_API_URL = 'https://www.google.com/maps/search/?api=1&query=';
