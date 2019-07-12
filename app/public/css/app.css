@@ -822,17 +822,6 @@ table {
     padding-top: 22px;
     font-size: 1.2rem;
 }
-#stats .details {
-    display: flex;
-    margin-top: 30px;
-}
-
-#stats .products,
-#stats .locations,
-#stats .months {
-    width: 33.3%;
-    padding: 2px;
-}
 
 #stats li.item {
     display: flex;
@@ -928,6 +917,16 @@ table {
         width: calc(100% - 400px);
         padding: 0 20px 0;
     }
+    #stats .details {
+        display: flex;
+        margin-top: 30px;
+    }
+    #stats .products,
+    #stats .locations,
+    #stats .months {
+        width: 33.3%;
+        padding: 2px;
+    }
 }
 @media screen and (max-width: 1223px) {
     #login-page .we-carry-guy {
@@ -965,6 +964,18 @@ table {
         background-color: #FFFFFF;
         border-radius: 25px;
         padding-left: 10px;
+    }
+
+    #stats .details {
+        display: inherit;
+        margin-top: 30px;
+    }
+
+    #stats .products,
+    #stats .locations,
+    #stats .months {
+        width: 100%;
+        padding: 2px;
     }
 }
 /* Mobile */
