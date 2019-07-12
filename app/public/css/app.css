@@ -34,10 +34,19 @@ ul, ol, li {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.sections .section-titles {
+    display: flex;
+    margin: 100px 0 20px;
+}
+
+.sections .section-titles h1,
+.sections .section-titles h6 {
+    width: 50%;
+}
+
 .sections h1 {
     color: #99CC33;
-    text-align: center;
-    margin: 20px;
+    text-align: left;
 }
 
 /* Welcome page */
@@ -81,10 +90,17 @@ ul, ol, li {
     text-decoration: none;
 }
 
-#welcome-page .options-links:hover {
+#welcome-page .options-links:hover,
+#welcome-page .options-links .bottom-card:hover {
     cursor: pointer;
-    border: 2px solid #99CC33;
-    border-radius: 40px;
+    background-color: #99CC33;
+}
+
+#welcome-page .options-links:hover {
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
 #welcome-page .options-links .top-card {
@@ -450,7 +466,10 @@ table {
 }
 
 #dashboard .lead {
-    margin-top: 3px;
+    text-align: right;
+    position: relative;
+    top: 13px;
+    right: 40px;
 }
 
 #dashboard a,
