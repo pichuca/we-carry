@@ -593,6 +593,17 @@ table {
 
 #product-page .card {
     background: #555555 !important;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+#product-page .card-header {
+    background-color: #99CC33;
+    border-top-right-radius: 27px;
+    border-top-left-radius: 27px;
+}
+#product-page .card-header h1 {
+    color: #FFFFFF;
 }
 
 #product-page h1 {

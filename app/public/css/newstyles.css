@@ -18,6 +18,11 @@
     border-top-right-radius: 30px;
 }
 
+.bottom-round-borders { 
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
 /* Dashboard specific */
 .stock-wrapper {
     margin-bottom: 40px;
@@ -65,11 +70,6 @@ ul.items-list {
 }
 
 /* End list item */
-
-.bottom-round-borders { 
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-}
 
 .green-background {
     background-color: #99CC33;
