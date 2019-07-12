@@ -807,7 +807,7 @@ table {
 /* Stats */
 #stats .top-header {
     height: 60px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 #stats h1 {
@@ -834,6 +834,21 @@ table {
     padding: 2px;
 }
 
+#stats li.item {
+    display: flex;
+    padding: 5px 0 0 20px;
+    line-height: 36px;
+    height: 46px;
+}
+
+#stats li.item.different-background {
+    background-color: #F0F0F0;
+}
+
+#stats .left,
+#stats .right {
+    width: 50%;
+}
   /* tooltip */
 .tooltip {
     position: relative;
