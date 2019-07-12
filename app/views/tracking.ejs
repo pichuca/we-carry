@@ -1,4 +1,29 @@
 <div id="tracking-page" class="sections">
+    <h1>Tracking</h1>
+    <div class="tracking-wrapper">
+        <div class="list-header top-header green-background top-round-borders">
+                <div class="top-heading full white-font-color">
+                    Hace el seguimiento de tu producto: <b><%= product.name %></b>
+                </div>
+        </div>
+        <div class="info-body grey-background bottom-round-borders">
+            <div class="info">
+                <h1>
+                    ID: <%= product.id %>
+                </h1>
+                <div class="icons">
+                    <img src="/images/svg/tracking/ready-to-ship-inactive.svg" alt="ready to ship icon" width="95" height="95">
+                    <img src="/images/svg/tracking/dots.svg" alt="splitting dots" width="70">
+                    <img src="/images/svg/tracking/on-the-way-active.svg" alt="on the way icon" width="112" height="112">
+                    <img src="/images/svg/tracking/dots.svg" alt="splitting dots" width="70">
+                    <img src="/images/svg/tracking/delivered-inactive.svg" alt="delivered icon" width="95" height="95">
+                </div>
+            </div>
+            <div class="map">
+                <img src="/images/tracking/map.png" alt="tracking map" class="responsive">
+            </div>
+        </div>
+    </div>
     <h3>Hace el seguimiento de tu producto: <code><%= product.name %></code></h3>
     <h4>
         <code><span class="name">ID:</span> <%= product.id %></code>

@@ -7,6 +7,13 @@
     line-height: 54px;
     max-height: 60px;
 }
+.top-heading {
+    padding: 6px 25px 0;
+    font-size: 1rem;
+}
+.top-heading.full {
+    width: 100%;
+}
 .top-heading-25 {
     width: 25%;
     padding: 6px 25px 0;
@@ -88,4 +95,10 @@ ul.items-list {
 
 .white-font-color {
     color: #FFFFFF;
+}
+
+/* Responsive images */
+.responsive {
+    width: 100%;
+    height: auto;
 }
