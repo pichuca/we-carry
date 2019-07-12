@@ -420,6 +420,63 @@ table {
     color: #99CC33;
 }
 
+/* Entries */
+#entries h1 {
+    margin-left: 20px;
+}
+#entries .entries-wrapper {
+    display: flex;
+    margin-top: 20px;
+}
+#entries .entries-wrapper a {
+    text-decoration: none;
+}
+#entries .entries-wrapper a:hover {
+    text-decoration: underline;
+    color: #555555;
+}
+#entries .row:last-child {
+    margin-left: 8px;
+}
+#entries .row .col {
+    width: 220px;
+}
+#entries .link-top {
+    height: 60px;
+    background-color: #99CC33;
+    color: #FFFFFF;
+    padding-top: 18px;
+    padding-left: 20px;
+}
+
+#entries .link-body {
+    height: 160px;
+    background-color: #E1E1E1;
+    text-align: center;
+}
+
+#entries .left-header {
+    border-top-left-radius: 30px;
+}
+
+#entries .right-header {
+    border-top-right-radius: 30px;
+}
+
+#entries .left-body {
+    border-bottom-left-radius: 30px;
+}
+
+#entries .right-body {
+    border-bottom-right-radius: 30px;
+}
+
+#entries img {
+    width: 86px;
+    height: auto;
+    margin: 30px 0 0 10px;
+}
+
 #entries .table-wrapper {
     overflow-x:auto
 }
