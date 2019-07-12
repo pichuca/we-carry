@@ -472,6 +472,10 @@ table {
     right: 40px;
 }
 
+#orders .orders-wrapper {
+    margin-top: 20px;
+}
+
 #dashboard a,
 #orders a {
     margin-left: 20px;
@@ -727,4 +731,26 @@ table {
       transform: rotate(360deg);
     }
   }
-  
+
+  /* tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted #555555;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #99CC33;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}

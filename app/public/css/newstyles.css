@@ -54,7 +54,7 @@ ul.items-list {
 }
 
 .list-item:hover {
-    background-color: #56575C;
+    background-color: #b9d581;
     color: #FFFFFF;
 }
 
@@ -67,6 +67,13 @@ ul.items-list {
 .list-item .inner a {
     /* a tags override */
     margin-left: 0 !important;
+}
+
+/* Orders overrides */
+#orders .list-item .inner {
+    padding: 5px 0;
+    margin-left: 25px;
+    line-height: 42px;
 }
 
 /* End list item */

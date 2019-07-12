@@ -1,6 +1,99 @@
 <div id="orders" class="sections">
     <h1>Pedidos</h1>
-    <table class="table table-hover">
+    <div class="orders-wrapper">
+        <div class="list-header top-header green-background top-round-borders">
+                <div class="top-heading-25 white-font-color">Nombre</div>
+                <div class="top-heading-25 white-font-color">SKU</div>
+                <div class="top-heading-25 white-font-color">Cantidad</div>
+                <div class="top-heading-25 white-font-color">Status</div>
+                <div class="top-heading-25 white-font-color">Tracking</div>
+        </div>
+        <ul id="stock" class="items-list bottom-round-borders">
+            <!-- stock renders here -->
+            <li class="list-item">
+                    <div class="inner">
+                        <span>Gorras de golf</span>
+                    </div>
+                    <div class="inner">
+                        <span>
+                            <a href="/products/159/gorrasgolf/6">159</a>
+                        </span>
+                    </div>
+                    <div class="inner">
+                        <span>6 u.</span>
+                    </div>
+                    <div class="inner">
+                        <span>
+                            <img src="/images/svg/tracking/ready-to-ship-active.svg" alt="ready to ship icon" width="42" height="42">
+                            <img src="/images/svg/tracking/on-the-way-inactive.svg" alt="ready to ship icon" width="42" height="42">
+                            <img src="/images/svg/tracking/delivered-inactive.svg" alt="ready to ship icon" width="42" height="42">
+                        </span>
+                    </div>
+                    <div class="inner">
+                        <span>
+                            <a href="/tracking/159/gorrasgolf">
+                                <img src="/images/svg/tracking/tracking-eye.svg" alt="tracking icon" width="42" height="42">
+                            </a>
+                        </span>
+                    </div>
+            </li>
+            <li class="list-item grey-background">
+                    <div class="inner">
+                        <span>Botines</span>
+                    </div>
+                    <div class="inner">
+                        <span>
+                            <a href="/products/237/botines/10">237</a>
+                        </span>
+                    </div>
+                    <div class="inner">
+                        <span>6 u.</span>
+                    </div>
+                    <div class="inner">
+                        <span>
+                            <img src="/images/svg/tracking/ready-to-ship-inactive.svg" alt="ready to ship icon" width="42" height="42">
+                            <img src="/images/svg/tracking/on-the-way-active.svg" alt="ready to ship icon" width="42" height="42">
+                            <img src="/images/svg/tracking/delivered-inactive.svg" alt="ready to ship icon" width="42" height="42">
+                        </span>
+                    </div>
+                    <div class="inner">
+                        <span>
+                            <a href="/tracking/237/botines">
+                                <img src="/images/svg/tracking/tracking-eye.svg" alt="tracking icon" width="42" height="42">
+                            </a>
+                        </span>
+                    </div>
+            </li>
+            <li class="list-item">
+                    <div class="inner">
+                        <span>Botines</span>
+                    </div>
+                    <div class="inner">
+                        <span>
+                            <a href="/products/237/camperondelluvia/12">87</a>
+                        </span>
+                    </div>
+                    <div class="inner">
+                        <span>6 u.</span>
+                    </div>
+                    <div class="inner">
+                        <span>
+                            <img src="/images/svg/tracking/ready-to-ship-inactive.svg" alt="ready to ship icon" width="42" height="42">
+                            <img src="/images/svg/tracking/on-the-way-inactive.svg" alt="ready to ship icon" width="42" height="42">
+                            <img src="/images/svg/tracking/delivered-active.svg" alt="ready to ship icon" width="42" height="42">
+                        </span>
+                    </div>
+                    <div class="inner">
+                        <span>
+                            <a href="/tracking/237/camperondelluvia">
+                                <img src="/images/svg/tracking/tracking-eye.svg" alt="tracking icon" width="42" height="42">
+                            </a>
+                        </span>
+                    </div>
+            </li>
+        </ul>
+    </div>
+    <!-- <table class="table table-hover">
         <thead>
             <tr>
             <th scope="col">Nombre</th>
@@ -34,7 +127,7 @@
             <tr class="table-default">
             <th scope="row">Botines</th>
             <td>
-                <a href="/products/237/botines/10/6">237</a>
+                <a href="/products/237/botines/10">237</a>
             </td>
             <td>10</td>
             <td>
@@ -72,7 +165,7 @@
                 </td>
             </tr>
         </tbody>
-    </table> 
+    </table>  -->
 </div>
 <script>
     // Show header when view is dashboard.
