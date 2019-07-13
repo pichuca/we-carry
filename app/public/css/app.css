@@ -838,6 +838,7 @@ table {
 #stats .right {
     width: 50%;
 }
+
   /* tooltip */
 .tooltip {
     position: relative;
@@ -927,6 +928,21 @@ table {
         width: 33.3%;
         padding: 2px;
     }
+    #integrations-page .apps {
+        display: flex;
+        margin-top: 30px;
+    }
+    #integrations-page .apps .card {
+        width: 476px;
+        height: 300px; 
+        border-radius: 30px;
+        margin: 5px;
+    }
+    #integrations-page .apps .card.tienda-nube img {
+        width: 226px;
+        height: auto;
+        margin: 32px auto;
+    }
 }
 @media screen and (max-width: 1223px) {
     #login-page .we-carry-guy {
@@ -976,6 +992,21 @@ table {
     #stats .months {
         width: 100%;
         padding: 2px;
+    }
+    #integrations-page .apps {
+        display: flex;
+        margin-top: 30px;
+    }
+    #integrations-page .apps .card {
+        width: 476px;
+        height: 300px; 
+        border-radius: 30px;
+        margin: 5px;
+    }
+    #integrations-page .apps .card.tienda-nube img {
+        width: 226px;
+        height: auto;
+        margin: 32px auto;
     }
 }
 /* Mobile */
@@ -1037,5 +1068,34 @@ table {
         height: auto;
         position: relative;
         top: 23px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    #integrations-page .apps {
+        display: inherit;
+        margin-top: 30px;
+    }
+    #integrations-page .apps .card {
+        width: 476px;
+        height: 300px; 
+        border-radius: 30px;
+    }
+    #integrations-page .apps .card.tienda-nube img {
+        width: 226px;
+        height: auto;
+        margin: 32px auto;
+    }
+
+    #integrations-page .apps .card {
+        width: 100%;
+        height: 300px; 
+        border-radius: 30px;
+        margin: 25px 0 0 0;
+    }
+    #integrations-page .apps .card.tienda-nube img {
+        width: 226px;
+        height: auto;
+        margin: 32px auto;
     }
 }
