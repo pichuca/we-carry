@@ -25,10 +25,10 @@
          <!--Optional:-->
          <bra:filtro>
             <bra:fechaDesde>2019-06-13</bra:fechaDesde>
-            <!-- <bra:fechaHasta></bra:fechaHasta>
-            <bra:compania></bra:compania>
-            <bra:producto></bra:producto>
-            <bra:lote></bra:lote> -->
+            <bra:fechaHasta>2019-06-13</bra:fechaHasta>
+            <!-- <bra:compania></bra:compania>-->
+            <!-- <bra:producto></bra:producto> -->
+            <!-- <bra:lote>1</bra:lote>  -->
          </bra:filtro>
       </bra:obtenerStock>
    </soapenv:Body>

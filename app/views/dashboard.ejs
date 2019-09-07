@@ -75,7 +75,7 @@
                     html += '<li class="list-item'+isGray+'">'+
                             '<div class="inner"><span>'+stock[i].producto+'</span></div>'+
                             '<div class="inner"> <span>'+
-                                    '<a href="/products/'+ stock[i].codigoProducto +'/' + stock[i].producto[0].trim() + '/' + Math.round(stock[i].stockTotal) + '">' + stock[i].codigoProducto + '</a>'+
+                                    '<a href="/products/'+ stock[i].codigoProducto[0].replace(/-|\s/g,"").trim() +'/' + stock[i].producto[0].replace(/-|\s/g,"").trim() + '/' + Math.round(stock[i].stockTotal) + '">' + stock[i].codigoProducto + '</a>'+
                             '</span></div>'+
                             '<div class="inner"><span>'+ Math.round(stock[i].stockTotal) +' u.</span></div>'+
                             '<div class="inner"><span>'+stock[i].almacen+'</span></div>'+
