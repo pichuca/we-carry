@@ -26,7 +26,7 @@
     "formidable": "^1.2.1",
     "moment": "^2.24.0",
     "mongodb-stitch-browser-sdk": "^4.3.2",
-    "mongoose": "^5.4.19",
+    "mongoose": "^5.7.5",
     "node-persist": "^3.0.4",
     "nodemailer": "^5.1.1",
     "passport": "^0.4.0",
